@@ -64,6 +64,11 @@ NSDictionary * currentPoint;
     
     [self addChild:_player];
     
+    // access audio object
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    // play background sound
+    [audio playBg:@"TileMap.caf" loop:TRUE];
+    
     // Create a back button
     CCButton *backButton = [CCButton buttonWithTitle:@"[ Volver ]" fontName:@"Verdana-Bold" fontSize:18.0f];
     backButton.positionType = CCPositionTypeNormalized;
