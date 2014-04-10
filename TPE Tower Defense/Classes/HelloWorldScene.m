@@ -53,13 +53,13 @@ NSDictionary * currentPoint;
     CCTiledMapObjectGroup *objectGroup = [_tileMap objectGroupNamed:@"Objects"];
     NSAssert(objectGroup != nil, @"tile map has no objects object layer");
     
-    NSDictionary *startPoint = [objectGroup objectNamed:@"start"];
+    NSDictionary *startPoint = [objectGroup objectNamed:_tileMap.properties[@"startPosition"]];
     long x = [startPoint[@"x"] integerValue];
     long y = [startPoint[@"y"] integerValue];
     
     currentPoint = startPoint;
     
-    _player = [CCSprite spriteWithImageNamed:@"Player.png"];
+    _player = [CCSprite spriteWithImageNamed:@"soldier_blue_right.png"];
     _player.position = ccp(x,y);
     
     [self addChild:_player];
@@ -122,8 +122,20 @@ NSDictionary * currentPoint;
     
     currentPoint = nextPoint;
     
-    _player.position = ccp(x,y);
+    [self removeChild:_player];
+
+    if([currentPoint[@"direction"] isEqual: @"right"]) {
+        _player = [CCSprite spriteWithImageNamed:@"soldier_blue_right.png"];
+    } else if([currentPoint[@"direction"] isEqual: @"left"]) {
+        _player = [CCSprite spriteWithImageNamed:@"soldier_blue_left.png"];
+    } else if ([currentPoint[@"direction"] isEqual: @"up"]) {
+        _player = [CCSprite spriteWithImageNamed:@"soldier_blue_up.png"];
+    } else {
+        _player = [CCSprite spriteWithImageNamed:@"soldier_blue_down.png"];
+    }
     
+    _player.position = ccp(x,y);
+    [self addChild:_player];
 }
 
 -(void)setPlayerPosition:(CGPoint)position {

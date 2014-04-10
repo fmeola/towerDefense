@@ -220,6 +220,10 @@
 		9D88407918F6E45D00BE6E36 /* TileMap.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407218F6E45D00BE6E36 /* TileMap.caf */; };
 		9D88407A18F6E45D00BE6E36 /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407318F6E45D00BE6E36 /* tmw_desert_spacing.png */; };
 		9D88408018F6FC5100BE6E36 /* TileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407F18F6FC5100BE6E36 /* TileMap.tmx */; };
+		9DE4E73618F73A2A00A4E876 /* soldier_blue_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73218F73A2A00A4E876 /* soldier_blue_down.png */; };
+		9DE4E73718F73A2A00A4E876 /* soldier_blue_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */; };
+		9DE4E73818F73A2A00A4E876 /* soldier_blue_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */; };
+		9DE4E73918F73A2A00A4E876 /* soldier_blue_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73518F73A2A00A4E876 /* soldier_blue_up.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -669,6 +673,10 @@
 		9D88407218F6E45D00BE6E36 /* TileMap.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TileMap.caf; sourceTree = "<group>"; };
 		9D88407318F6E45D00BE6E36 /* tmw_desert_spacing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmw_desert_spacing.png; sourceTree = "<group>"; };
 		9D88407F18F6FC5100BE6E36 /* TileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TileMap.tmx; sourceTree = "<group>"; };
+		9DE4E73218F73A2A00A4E876 /* soldier_blue_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_down.png; sourceTree = "<group>"; };
+		9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_left.png; sourceTree = "<group>"; };
+		9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_right.png; sourceTree = "<group>"; };
+		9DE4E73518F73A2A00A4E876 /* soldier_blue_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_up.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1570,6 +1578,10 @@
 		9D88406C18F6E45D00BE6E36 /* TileGameResources */ = {
 			isa = PBXGroup;
 			children = (
+				9DE4E73218F73A2A00A4E876 /* soldier_blue_down.png */,
+				9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */,
+				9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */,
+				9DE4E73518F73A2A00A4E876 /* soldier_blue_up.png */,
 				9D88407F18F6FC5100BE6E36 /* TileMap.tmx */,
 				9D88406D18F6E45D00BE6E36 /* hit.caf */,
 				9D88406E18F6E45D00BE6E36 /* meta_tiles.png */,
@@ -1661,6 +1673,7 @@
 				9D883DCE18F6E38D00BE6E36 /* Default.png in Resources */,
 				9D88407818F6E45D00BE6E36 /* Player.png in Resources */,
 				9D883DD718F6E38D00BE6E36 /* Icon.png in Resources */,
+				9DE4E73918F73A2A00A4E876 /* soldier_blue_up.png in Resources */,
 				9D883DE518F6E38D00BE6E36 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				9D883DD418F6E38D00BE6E36 /* Default-Landscape~ipad.png in Resources */,
 				9D88407918F6E45D00BE6E36 /* TileMap.caf in Resources */,
@@ -1670,6 +1683,7 @@
 				9D883DDB18F6E38D00BE6E36 /* Icon-72.png in Resources */,
 				9D883F2918F6E38F00BE6E36 /* LICENSE_cocos2d.txt in Resources */,
 				9D883DD218F6E38D00BE6E36 /* Default-568h@2x.png in Resources */,
+				9DE4E73618F73A2A00A4E876 /* soldier_blue_down.png in Resources */,
 				9D883DF218F6E38D00BE6E36 /* iTunesArtwork in Resources */,
 				9D883DED18F6E38D00BE6E36 /* Icon-Spotlight-iOS7.png in Resources */,
 				9D883DE118F6E38D00BE6E36 /* Icon-76@2x.png in Resources */,
@@ -1680,8 +1694,10 @@
 				9D883DDF18F6E38D00BE6E36 /* Icon-76.png in Resources */,
 				9D883FB518F6E38F00BE6E36 /* ChangeLog in Resources */,
 				9D88407418F6E45D00BE6E36 /* hit.caf in Resources */,
+				9DE4E73718F73A2A00A4E876 /* soldier_blue_left.png in Resources */,
 				9D88408018F6FC5100BE6E36 /* TileMap.tmx in Resources */,
 				9D883DF418F6E38D00BE6E36 /* iTunesArtwork@2x in Resources */,
+				9DE4E73818F73A2A00A4E876 /* soldier_blue_right.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2029,6 +2045,7 @@
 				9D88406818F6E39000BE6E36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D88406918F6E39000BE6E36 /* Build configuration list for PBXNativeTarget "TPE Tower Defense" */ = {
 			isa = XCConfigurationList;
@@ -2037,6 +2054,7 @@
 				9D88406B18F6E39000BE6E36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
