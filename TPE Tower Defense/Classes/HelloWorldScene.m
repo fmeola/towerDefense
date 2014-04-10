@@ -10,15 +10,17 @@
 #import "HelloWorldScene.h"
 #import "IntroScene.h"
 
-NSDictionary * currentPoint;
-
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
 // -----------------------------------------------------------------------
 
 @implementation HelloWorldScene
 {
+    NSDictionary * currentPoint;
     CCSprite *_sprite;
+    NSString * wavesString;
+    CCLabelTTF * wavesLabel;
+    int waveCount;
 }
 
 // -----------------------------------------------------------------------
@@ -65,16 +67,26 @@ NSDictionary * currentPoint;
     [self addChild:_player];
     
     // access audio object
-    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    OALSimpleAudio * bgmusic = [OALSimpleAudio sharedInstance];
     // play background sound
-    [audio playBg:@"TileMap.caf" loop:TRUE];
+    [bgmusic playBg:@"TileMap.caf" loop:TRUE];
     
     // Create a back button
-    CCButton *backButton = [CCButton buttonWithTitle:@"[ Volver ]" fontName:@"Verdana-Bold" fontSize:18.0f];
+    CCButton *backButton = [CCButton buttonWithTitle:@"[ Volver ]" fontName:@"Helvetica-Bold" fontSize:16.0f];
+    backButton.color = [CCColor blackColor];
     backButton.positionType = CCPositionTypeNormalized;
     backButton.position = ccp(0.85f, 0.95f); // Top Right of screen
     [backButton setTarget:self selector:@selector(onBackClicked:)];
     [self addChild:backButton];
+    
+    // Mostrar las oleadas
+    waveCount = 1;
+    wavesString = [NSString stringWithFormat:@"Oleada #%d",waveCount];
+    wavesLabel = [CCLabelTTF labelWithString: wavesString fontName:@"Helvetica-Bold" fontSize:25.0f];
+    wavesLabel.positionType = CCPositionTypeNormalized;
+    wavesLabel.color = [CCColor blackColor];
+    wavesLabel.position = ccp(0.85f, 0.85f); // Middle of screen
+    [self addChild:wavesLabel];
     
     // done
 	return self;
@@ -137,6 +149,22 @@ NSDictionary * currentPoint;
         _player = [CCSprite spriteWithImageNamed:@"soldier_blue_up.png"];
     } else {
         _player = [CCSprite spriteWithImageNamed:@"soldier_blue_down.png"];
+    }
+    
+    if([currentPoint[@"next"] isEqual: @"p0"]) {
+        // access audio object
+        OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+        // play sound effect
+        [audio playEffect:@"pickup.caf"];
+        
+        waveCount++;
+        [self removeChild:wavesLabel];
+        wavesString = [NSString stringWithFormat:@"Oleada #%d",waveCount];
+        wavesLabel = [CCLabelTTF labelWithString: wavesString fontName:@"Helvetica-Bold" fontSize:25.0f];
+        wavesLabel.positionType = CCPositionTypeNormalized;
+        wavesLabel.color = [CCColor blackColor];
+        wavesLabel.position = ccp(0.85f, 0.85f); // Middle of screen
+        [self addChild:wavesLabel];
     }
     
     _player.position = ccp(x,y);
