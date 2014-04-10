@@ -10,6 +10,8 @@
 #import "HelloWorldScene.h"
 #import "IntroScene.h"
 
+NSDictionary * currentPoint;
+
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
 // -----------------------------------------------------------------------
@@ -43,22 +45,32 @@
     CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
     [self addChild:background];
     
-    // Add a sprite
-    _sprite = [CCSprite spriteWithImageNamed:@"Icon-72.png"];
-    _sprite.position  = ccp(self.contentSize.width/2,self.contentSize.height/2);
-    [self addChild:_sprite];
+    self.tileMap = [CCTiledMap tiledMapWithFile:@"TileMap.tmx"];
+    self.background = [_tileMap layerNamed:@"Background"];
     
-    // Animate sprite with action
-    CCActionRotateBy* actionSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];
-    [_sprite runAction:[CCActionRepeatForever actionWithAction:actionSpin]];
+    [self addChild:_tileMap];
+    
+    CCTiledMapObjectGroup *objectGroup = [_tileMap objectGroupNamed:@"Objects"];
+    NSAssert(objectGroup != nil, @"tile map has no objects object layer");
+    
+    NSDictionary *startPoint = [objectGroup objectNamed:@"start"];
+    long x = [startPoint[@"x"] integerValue];
+    long y = [startPoint[@"y"] integerValue];
+    
+    currentPoint = startPoint;
+    
+    _player = [CCSprite spriteWithImageNamed:@"Player.png"];
+    _player.position = ccp(x,y);
+    
+    [self addChild:_player];
     
     // Create a back button
-    CCButton *backButton = [CCButton buttonWithTitle:@"[ Menu ]" fontName:@"Verdana-Bold" fontSize:18.0f];
+    CCButton *backButton = [CCButton buttonWithTitle:@"[ Volver ]" fontName:@"Verdana-Bold" fontSize:18.0f];
     backButton.positionType = CCPositionTypeNormalized;
     backButton.position = ccp(0.85f, 0.95f); // Top Right of screen
     [backButton setTarget:self selector:@selector(onBackClicked:)];
     [self addChild:backButton];
-
+    
     // done
 	return self;
 }
@@ -98,14 +110,24 @@
 // -----------------------------------------------------------------------
 
 -(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    CGPoint touchLoc = [touch locationInNode:self];
     
-    // Log touch location
-    CCLOG(@"Move sprite to @ %@",NSStringFromCGPoint(touchLoc));
+    // El sprite salta a la posición final
+    CCTiledMapObjectGroup *objectGroup = [_tileMap objectGroupNamed:@"Objects"];
+    NSAssert(objectGroup != nil, @"tile map has no objects object layer");
     
-    // Move our sprite to touch location
-    CCActionMoveTo *actionMove = [CCActionMoveTo actionWithDuration:1.0f position:touchLoc];
-    [_sprite runAction:actionMove];
+    NSDictionary *nextPoint = [objectGroup objectNamed:currentPoint[@"next"]];
+ 
+    long x = [nextPoint[@"x"] integerValue];
+    long y = [nextPoint[@"y"] integerValue];
+    
+    currentPoint = nextPoint;
+    
+    _player.position = ccp(x,y);
+    
+}
+
+-(void)setPlayerPosition:(CGPoint)position {
+	_player.position = position;
 }
 
 // -----------------------------------------------------------------------
@@ -114,10 +136,10 @@
 
 - (void)onBackClicked:(id)sender
 {
-    // back to intro scene with transition
     [[CCDirector sharedDirector] replaceScene:[IntroScene scene]
                                withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0f]];
 }
 
 // -----------------------------------------------------------------------
+
 @end

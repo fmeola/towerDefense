@@ -18,6 +18,11 @@
  */
 @interface HelloWorldScene : CCScene
 
+@property (strong) CCTiledMap * tileMap;
+@property (strong) CCTiledMapLayer * background;
+@property (strong) CCSprite * player;
+//@property (strong) NSDictionary * currentPoint;
+
 // -----------------------------------------------------------------------
 
 + (HelloWorldScene *)scene;

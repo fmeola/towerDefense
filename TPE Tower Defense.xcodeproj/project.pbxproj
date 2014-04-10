@@ -212,6 +212,14 @@
 		9D88405D18F6E39000BE6E36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D88405C18F6E39000BE6E36 /* AppDelegate.m */; };
 		9D88406018F6E39000BE6E36 /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D88405F18F6E39000BE6E36 /* HelloWorldScene.m */; };
 		9D88406318F6E39000BE6E36 /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D88406218F6E39000BE6E36 /* IntroScene.m */; };
+		9D88407418F6E45D00BE6E36 /* hit.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88406D18F6E45D00BE6E36 /* hit.caf */; };
+		9D88407518F6E45D00BE6E36 /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D88406E18F6E45D00BE6E36 /* meta_tiles.png */; };
+		9D88407618F6E45D00BE6E36 /* move.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88406F18F6E45D00BE6E36 /* move.caf */; };
+		9D88407718F6E45D00BE6E36 /* pickup.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407018F6E45D00BE6E36 /* pickup.caf */; };
+		9D88407818F6E45D00BE6E36 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407118F6E45D00BE6E36 /* Player.png */; };
+		9D88407918F6E45D00BE6E36 /* TileMap.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407218F6E45D00BE6E36 /* TileMap.caf */; };
+		9D88407A18F6E45D00BE6E36 /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407318F6E45D00BE6E36 /* tmw_desert_spacing.png */; };
+		9D88408018F6FC5100BE6E36 /* TileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407F18F6FC5100BE6E36 /* TileMap.tmx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -653,6 +661,14 @@
 		9D88405F18F6E39000BE6E36 /* HelloWorldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HelloWorldScene.m; path = Classes/HelloWorldScene.m; sourceTree = "<group>"; };
 		9D88406118F6E39000BE6E36 /* IntroScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = Classes/IntroScene.h; sourceTree = "<group>"; };
 		9D88406218F6E39000BE6E36 /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
+		9D88406D18F6E45D00BE6E36 /* hit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hit.caf; sourceTree = "<group>"; };
+		9D88406E18F6E45D00BE6E36 /* meta_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta_tiles.png; sourceTree = "<group>"; };
+		9D88406F18F6E45D00BE6E36 /* move.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = move.caf; sourceTree = "<group>"; };
+		9D88407018F6E45D00BE6E36 /* pickup.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pickup.caf; sourceTree = "<group>"; };
+		9D88407118F6E45D00BE6E36 /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
+		9D88407218F6E45D00BE6E36 /* TileMap.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TileMap.caf; sourceTree = "<group>"; };
+		9D88407318F6E45D00BE6E36 /* tmw_desert_spacing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmw_desert_spacing.png; sourceTree = "<group>"; };
+		9D88407F18F6FC5100BE6E36 /* TileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TileMap.tmx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -724,6 +740,7 @@
 		9D883DCC18F6E38D00BE6E36 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9D88406C18F6E45D00BE6E36 /* TileGameResources */,
 				9D883DCD18F6E38D00BE6E36 /* Default.png */,
 				9D883DCF18F6E38D00BE6E36 /* Default@2x.png */,
 				9D883DD118F6E38D00BE6E36 /* Default-568h@2x.png */,
@@ -1550,6 +1567,21 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		9D88406C18F6E45D00BE6E36 /* TileGameResources */ = {
+			isa = PBXGroup;
+			children = (
+				9D88407F18F6FC5100BE6E36 /* TileMap.tmx */,
+				9D88406D18F6E45D00BE6E36 /* hit.caf */,
+				9D88406E18F6E45D00BE6E36 /* meta_tiles.png */,
+				9D88406F18F6E45D00BE6E36 /* move.caf */,
+				9D88407018F6E45D00BE6E36 /* pickup.caf */,
+				9D88407118F6E45D00BE6E36 /* Player.png */,
+				9D88407218F6E45D00BE6E36 /* TileMap.caf */,
+				9D88407318F6E45D00BE6E36 /* tmw_desert_spacing.png */,
+			);
+			path = TileGameResources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1618,16 +1650,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D88407618F6E45D00BE6E36 /* move.caf in Resources */,
 				9D883DD018F6E38D00BE6E36 /* Default@2x.png in Resources */,
 				9D883DE318F6E38D00BE6E36 /* Icon-120.png in Resources */,
 				9D883FE718F6E39000BE6E36 /* LICENSE_CCBReader.txt in Resources */,
 				9D883DD918F6E38D00BE6E36 /* Icon@2x.png in Resources */,
 				9D883DEB18F6E38D00BE6E36 /* Icon-Small@2x.png in Resources */,
 				9D883DDD18F6E38D00BE6E36 /* Icon-72@2x.png in Resources */,
+				9D88407518F6E45D00BE6E36 /* meta_tiles.png in Resources */,
 				9D883DCE18F6E38D00BE6E36 /* Default.png in Resources */,
+				9D88407818F6E45D00BE6E36 /* Player.png in Resources */,
 				9D883DD718F6E38D00BE6E36 /* Icon.png in Resources */,
 				9D883DE518F6E38D00BE6E36 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				9D883DD418F6E38D00BE6E36 /* Default-Landscape~ipad.png in Resources */,
+				9D88407918F6E45D00BE6E36 /* TileMap.caf in Resources */,
 				9D883DE918F6E38D00BE6E36 /* Icon-Small.png in Resources */,
 				9D883DE718F6E38D00BE6E36 /* Icon-Small-50.png in Resources */,
 				9D883FD018F6E39000BE6E36 /* LICENSE_Kazmath.txt in Resources */,
@@ -1638,9 +1674,13 @@
 				9D883DED18F6E38D00BE6E36 /* Icon-Spotlight-iOS7.png in Resources */,
 				9D883DE118F6E38D00BE6E36 /* Icon-76@2x.png in Resources */,
 				9D88405518F6E39000BE6E36 /* LICENSE_Chipmunk.txt in Resources */,
+				9D88407718F6E45D00BE6E36 /* pickup.caf in Resources */,
+				9D88407A18F6E45D00BE6E36 /* tmw_desert_spacing.png in Resources */,
 				9D883DEF18F6E38D00BE6E36 /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				9D883DDF18F6E38D00BE6E36 /* Icon-76.png in Resources */,
 				9D883FB518F6E38F00BE6E36 /* ChangeLog in Resources */,
+				9D88407418F6E45D00BE6E36 /* hit.caf in Resources */,
+				9D88408018F6FC5100BE6E36 /* TileMap.tmx in Resources */,
 				9D883DF418F6E38D00BE6E36 /* iTunesArtwork@2x in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
