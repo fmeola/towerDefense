@@ -170,4 +170,77 @@
    </properties>
   </object>
  </objectgroup>
+ <objectgroup name="Towers" width="18" height="10">
+  <object x="225" y="225" width="28" height="30"/>
+  <object x="257" y="193" width="28" height="30"/>
+  <object x="386" y="225" width="28" height="30"/>
+  <object x="225" y="192" width="28" height="30"/>
+  <object x="194" y="192" width="28" height="30"/>
+  <object x="193" y="225" width="28" height="30"/>
+  <object x="129" y="257" width="28" height="30"/>
+  <object x="162" y="192" width="28" height="30"/>
+  <object x="162" y="225" width="28" height="30"/>
+  <object x="65" y="257" width="28" height="30"/>
+  <object x="1" y="256" width="28" height="30"/>
+  <object x="1" y="291" width="28" height="30"/>
+  <object x="34" y="291" width="28" height="30"/>
+  <object x="162" y="291" width="28" height="30"/>
+  <object x="193" y="258" width="28" height="30"/>
+  <object x="225" y="258" width="28" height="30"/>
+  <object x="257" y="258" width="28" height="30"/>
+  <object x="289" y="193" width="28" height="30"/>
+  <object x="322" y="193" width="28" height="30"/>
+  <object x="322" y="225" width="28" height="30"/>
+  <object x="386" y="258" width="28" height="30"/>
+  <object x="354" y="258" width="28" height="30"/>
+  <object x="321" y="258" width="28" height="30"/>
+  <object x="193" y="291" width="28" height="30"/>
+  <object x="226" y="292" width="28" height="30"/>
+  <object x="258" y="292" width="28" height="30"/>
+  <object x="290" y="292" width="28" height="30"/>
+  <object x="321" y="291" width="28" height="30"/>
+  <object x="354" y="292" width="28" height="30"/>
+  <object x="386" y="292" width="28" height="30"/>
+  <object x="418" y="291" width="28" height="30"/>
+  <object x="450" y="291" width="28" height="30"/>
+  <object x="514" y="290" width="28" height="30"/>
+  <object x="546" y="290" width="28" height="30"/>
+  <object x="386" y="193" width="28" height="30"/>
+  <object x="354" y="225" width="28" height="30"/>
+  <object x="386" y="128" width="28" height="30"/>
+  <object x="354" y="128" width="28" height="30"/>
+  <object x="322" y="129" width="28" height="30"/>
+  <object x="290" y="128" width="28" height="30"/>
+  <object x="258" y="128" width="28" height="30"/>
+  <object x="514" y="65" width="28" height="30"/>
+  <object x="321" y="161" width="28" height="30"/>
+  <object x="289" y="161" width="28" height="30"/>
+  <object x="258" y="161" width="28" height="30"/>
+  <object x="194" y="129" width="28" height="30"/>
+  <object x="225" y="160" width="28" height="30"/>
+  <object x="162" y="128" width="28" height="30"/>
+  <object x="546" y="97" width="28" height="30"/>
+  <object x="546" y="64" width="28" height="30"/>
+  <object x="546" y="33" width="28" height="30"/>
+  <object x="546" y="1" width="28" height="30"/>
+  <object x="515" y="1" width="28" height="30"/>
+  <object x="482" y="1" width="28" height="30"/>
+  <object x="418" y="1" width="28" height="30"/>
+  <object x="386" y="1" width="28" height="30"/>
+  <object x="354" y="0" width="28" height="30"/>
+  <object x="322" y="0" width="28" height="30"/>
+  <object x="257" y="1" width="28" height="30"/>
+  <object x="226" y="1" width="28" height="30"/>
+  <object x="194" y="0" width="28" height="30"/>
+  <object x="162" y="0" width="28" height="30"/>
+  <object x="97" y="0" width="28" height="30"/>
+  <object x="66" y="1" width="28" height="30"/>
+  <object x="33" y="32" width="28" height="30"/>
+  <object x="33" y="65" width="28" height="30"/>
+  <object x="1" y="96" width="28" height="30"/>
+  <object x="1" y="64" width="28" height="30"/>
+  <object x="1" y="32" width="28" height="30"/>
+  <object x="1" y="0" width="28" height="30"/>
+  <object x="33" y="0" width="28" height="30"/>
+ </objectgroup>
 </map>

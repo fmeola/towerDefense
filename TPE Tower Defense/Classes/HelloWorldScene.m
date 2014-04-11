@@ -21,6 +21,7 @@
     NSString * wavesString;
     CCLabelTTF * wavesLabel;
     int waveCount;
+    CCTiledMapObjectGroup * towersGroup;
 }
 
 // -----------------------------------------------------------------------
@@ -65,6 +66,8 @@
     _player.position = ccp(x,y);
     
     [self addChild:_player];
+    
+    [self loadTowerPositions];
     
     // access audio object
     OALSimpleAudio * bgmusic = [OALSimpleAudio sharedInstance];
@@ -173,6 +176,12 @@
 
 -(void)setPlayerPosition:(CGPoint)position {
 	_player.position = position;
+}
+
+-(void)loadTowerPositions
+{
+    towersGroup = [_tileMap objectGroupNamed:@"Towers"];
+    NSAssert(towersGroup != nil, @"tile map has no objects object layer");
 }
 
 // -----------------------------------------------------------------------
