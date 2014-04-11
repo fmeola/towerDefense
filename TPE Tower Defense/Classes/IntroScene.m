@@ -39,13 +39,13 @@
 //    [self addChild:background];
     
     // Imagen de la Splash-Screen
-    CCSprite * image = [CCSprite spriteWithImageNamed:@"splash-background.jpg"];
+    CCSprite * image = [CCSprite spriteWithImageNamed:@"splash_screen.png"];
     image.positionType = CCPositionTypeNormalized;
-    image.position = ccp(0.5f, 0.5f);
+    image.position = ccp(0.5f, 0.8f);
     [self addChild:image];
     
     // Hello world
-    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Tower Defense" fontName:@"Helvetica-Bold" fontSize:60.0f];
+    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Greendale\n Runners" fontName:@"Helvetica-Bold" fontSize:60.0f];
     label.positionType = CCPositionTypeNormalized;
     label.color = [CCColor blackColor];
     label.position = ccp(0.5f, 0.5f); // Middle of screen
@@ -54,7 +54,7 @@
     // Helloworld scene button
     CCButton *helloWorldButton = [CCButton buttonWithTitle:@"[ Jugar ]" fontName:@"Helvetica-Bold" fontSize:24.0f];
     helloWorldButton.positionType = CCPositionTypeNormalized;
-    helloWorldButton.position = ccp(0.5f, 0.35f);
+    helloWorldButton.position = ccp(0.5f, 0.20f);
     [helloWorldButton setTarget:self selector:@selector(onSpinningClicked:)];
     [self addChild:helloWorldButton];
 

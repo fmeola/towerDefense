@@ -248,7 +248,13 @@
 		9DE71F2018F789C6007CC645 /* icon-tower-1-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1C18F789C6007CC645 /* icon-tower-1-enabled.png */; };
 		9DE71F2118F789C6007CC645 /* icon-tower-2-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1D18F789C6007CC645 /* icon-tower-2-enabled.png */; };
 		9DE71F2218F789C6007CC645 /* icon-tower-2-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1E18F789C6007CC645 /* icon-tower-2-disabled.png */; };
-		9DE71F2418F78DAA007CC645 /* splash-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F2318F78DAA007CC645 /* splash-background.jpg */; };
+		9DF8089418F847EA001CBB82 /* jeff-fall-left-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8088E18F847EA001CBB82 /* jeff-fall-left-1.png */; };
+		9DF8089518F847EA001CBB82 /* jeff-fall-left-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8088F18F847EA001CBB82 /* jeff-fall-left-2.png */; };
+		9DF8089618F847EA001CBB82 /* jeff-fall-left-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8089018F847EA001CBB82 /* jeff-fall-left-3.png */; };
+		9DF8089718F847EA001CBB82 /* jeff-fall-right-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8089118F847EA001CBB82 /* jeff-fall-right-1.png */; };
+		9DF8089818F847EA001CBB82 /* jeff-fall-right-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8089218F847EA001CBB82 /* jeff-fall-right-2.png */; };
+		9DF8089918F847EA001CBB82 /* jeff-fall-right-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8089318F847EA001CBB82 /* jeff-fall-right-3.png */; };
+		9DF8089B18F84ABF001CBB82 /* splash_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8089A18F84ABF001CBB82 /* splash_screen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -726,7 +732,13 @@
 		9DE71F1C18F789C6007CC645 /* icon-tower-1-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-1-enabled.png"; sourceTree = "<group>"; };
 		9DE71F1D18F789C6007CC645 /* icon-tower-2-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-2-enabled.png"; sourceTree = "<group>"; };
 		9DE71F1E18F789C6007CC645 /* icon-tower-2-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-2-disabled.png"; sourceTree = "<group>"; };
-		9DE71F2318F78DAA007CC645 /* splash-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "splash-background.jpg"; sourceTree = "<group>"; };
+		9DF8088E18F847EA001CBB82 /* jeff-fall-left-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-fall-left-1.png"; sourceTree = "<group>"; };
+		9DF8088F18F847EA001CBB82 /* jeff-fall-left-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-fall-left-2.png"; sourceTree = "<group>"; };
+		9DF8089018F847EA001CBB82 /* jeff-fall-left-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-fall-left-3.png"; sourceTree = "<group>"; };
+		9DF8089118F847EA001CBB82 /* jeff-fall-right-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-fall-right-1.png"; sourceTree = "<group>"; };
+		9DF8089218F847EA001CBB82 /* jeff-fall-right-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-fall-right-2.png"; sourceTree = "<group>"; };
+		9DF8089318F847EA001CBB82 /* jeff-fall-right-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-fall-right-3.png"; sourceTree = "<group>"; };
+		9DF8089A18F84ABF001CBB82 /* splash_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash_screen.png; path = ../Resources/splash_screen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1661,6 +1673,7 @@
 		9D88406C18F6E45D00BE6E36 /* TileGameResources */ = {
 			isa = PBXGroup;
 			children = (
+				9DF8089A18F84ABF001CBB82 /* splash_screen.png */,
 				9D6DF56618F838D40014622B /* HUD */,
 				9D6DF56518F838B90014622B /* Old */,
 				9DAFE36E18F81B5B00153902 /* jeff.tps */,
@@ -1668,7 +1681,6 @@
 				9DAFE36B18F814F000153902 /* jeff.png */,
 				9DE71F0F18F78750007CC645 /* tower-2.png */,
 				9DE71F1018F78750007CC645 /* tower-1.png */,
-				9DE71F2318F78DAA007CC645 /* splash-background.jpg */,
 				9D88407F18F6FC5100BE6E36 /* TileMap.tmx */,
 				9D88406D18F6E45D00BE6E36 /* hit.caf */,
 				9D88406E18F6E45D00BE6E36 /* meta_tiles.png */,
@@ -1683,6 +1695,12 @@
 		9DAFE37018F81EBA00153902 /* RawSprites */ = {
 			isa = PBXGroup;
 			children = (
+				9DF8088E18F847EA001CBB82 /* jeff-fall-left-1.png */,
+				9DF8088F18F847EA001CBB82 /* jeff-fall-left-2.png */,
+				9DF8089018F847EA001CBB82 /* jeff-fall-left-3.png */,
+				9DF8089118F847EA001CBB82 /* jeff-fall-right-1.png */,
+				9DF8089218F847EA001CBB82 /* jeff-fall-right-2.png */,
+				9DF8089318F847EA001CBB82 /* jeff-fall-right-3.png */,
 				9D6DF56718F839160014622B /* jeff-down-1.png */,
 				9D6DF56818F839160014622B /* jeff-down-2.png */,
 				9D6DF56918F839160014622B /* jeff-down-3.png */,
@@ -1774,9 +1792,9 @@
 				9DE71F2018F789C6007CC645 /* icon-tower-1-enabled.png in Resources */,
 				9D88407618F6E45D00BE6E36 /* move.caf in Resources */,
 				9D883DD018F6E38D00BE6E36 /* Default@2x.png in Resources */,
+				9DF8089518F847EA001CBB82 /* jeff-fall-left-2.png in Resources */,
 				9D883DE318F6E38D00BE6E36 /* Icon-120.png in Resources */,
 				9D883FE718F6E39000BE6E36 /* LICENSE_CCBReader.txt in Resources */,
-				9DE71F2418F78DAA007CC645 /* splash-background.jpg in Resources */,
 				9D883DD918F6E38D00BE6E36 /* Icon@2x.png in Resources */,
 				9D883DEB18F6E38D00BE6E36 /* Icon-Small@2x.png in Resources */,
 				9D883DDD18F6E38D00BE6E36 /* Icon-72@2x.png in Resources */,
@@ -1786,6 +1804,7 @@
 				9D6DF57018F839160014622B /* jeff-up-1.png in Resources */,
 				9D883DCE18F6E38D00BE6E36 /* Default.png in Resources */,
 				9D883DD718F6E38D00BE6E36 /* Icon.png in Resources */,
+				9DF8089718F847EA001CBB82 /* jeff-fall-right-1.png in Resources */,
 				9DAFE37E18F81EBA00153902 /* jeff-right-2.png in Resources */,
 				9DE4E73918F73A2A00A4E876 /* soldier_blue_up.png in Resources */,
 				9D883DE518F6E38D00BE6E36 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
@@ -1807,7 +1826,10 @@
 				9DAFE37C18F81EBA00153902 /* jeff-left-4.png in Resources */,
 				9D883F2918F6E38F00BE6E36 /* LICENSE_cocos2d.txt in Resources */,
 				9D883DD218F6E38D00BE6E36 /* Default-568h@2x.png in Resources */,
+				9DF8089918F847EA001CBB82 /* jeff-fall-right-3.png in Resources */,
+				9DF8089618F847EA001CBB82 /* jeff-fall-left-3.png in Resources */,
 				9DE71F1618F78750007CC645 /* tower-1.png in Resources */,
+				9DF8089B18F84ABF001CBB82 /* splash_screen.png in Resources */,
 				9DE4E73618F73A2A00A4E876 /* soldier_blue_down.png in Resources */,
 				9D883DF218F6E38D00BE6E36 /* iTunesArtwork in Resources */,
 				9D6DF57218F839160014622B /* jeff-up-3.png in Resources */,
@@ -1828,6 +1850,8 @@
 				9D0FCD2F18F822EB002BF610 /* LevelMusic.mp3 in Resources */,
 				9D88407418F6E45D00BE6E36 /* hit.caf in Resources */,
 				9DE4E73718F73A2A00A4E876 /* soldier_blue_left.png in Resources */,
+				9DF8089818F847EA001CBB82 /* jeff-fall-right-2.png in Resources */,
+				9DF8089418F847EA001CBB82 /* jeff-fall-left-1.png in Resources */,
 				9D88408018F6FC5100BE6E36 /* TileMap.tmx in Resources */,
 				9D883DF418F6E38D00BE6E36 /* iTunesArtwork@2x in Resources */,
 				9DE4E73818F73A2A00A4E876 /* soldier_blue_right.png in Resources */,

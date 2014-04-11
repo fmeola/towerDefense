@@ -186,6 +186,12 @@
             <filename>../Resources/RawSprites/jeff-up-1.png</filename>
             <filename>../Resources/RawSprites/jeff-up-2.png</filename>
             <filename>../Resources/RawSprites/jeff-up-3.png</filename>
+            <filename>../Resources/RawSprites/jeff-fall-left-1.png</filename>
+            <filename>../Resources/RawSprites/jeff-fall-left-2.png</filename>
+            <filename>../Resources/RawSprites/jeff-fall-left-3.png</filename>
+            <filename>../Resources/RawSprites/jeff-fall-right-1.png</filename>
+            <filename>../Resources/RawSprites/jeff-fall-right-2.png</filename>
+            <filename>../Resources/RawSprites/jeff-fall-right-3.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

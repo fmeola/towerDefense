@@ -7,11 +7,11 @@
             <key>jeff-down-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{51,62},{28,47}}</string>
+                <string>{{73,149},{28,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{28,47}}</string>
                 <key>sourceSize</key>
@@ -20,11 +20,11 @@
             <key>jeff-down-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,62},{28,47}}</string>
+                <string>{{73,100},{28,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{28,47}}</string>
                 <key>sourceSize</key>
@@ -33,20 +33,98 @@
             <key>jeff-down-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{51,32},{28,47}}</string>
+                <string>{{48,51},{28,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{28,47}}</string>
                 <key>sourceSize</key>
                 <string>{28,47}</string>
             </dict>
+            <key>jeff-fall-left-1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,152},{39,48}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{39,48}}</string>
+                <key>sourceSize</key>
+                <string>{39,48}</string>
+            </dict>
+            <key>jeff-fall-left-2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,102},{39,48}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{39,48}}</string>
+                <key>sourceSize</key>
+                <string>{39,48}</string>
+            </dict>
+            <key>jeff-fall-left-3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,52},{44,48}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{44,48}}</string>
+                <key>sourceSize</key>
+                <string>{44,48}</string>
+            </dict>
+            <key>jeff-fall-right-1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{40,202},{36,48}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{36,48}}</string>
+                <key>sourceSize</key>
+                <string>{36,48}</string>
+            </dict>
+            <key>jeff-fall-right-2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,202},{36,48}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{36,48}}</string>
+                <key>sourceSize</key>
+                <string>{36,48}</string>
+            </dict>
+            <key>jeff-fall-right-3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{44,48}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{44,48}}</string>
+                <key>sourceSize</key>
+                <string>{44,48}</string>
+            </dict>
             <key>jeff-left-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{100,49},{25,45}}</string>
+                <string>{{114,2},{25,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +137,7 @@
             <key>jeff-left-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{96,96},{30,45}}</string>
+                <string>{{103,96},{30,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,11 +150,11 @@
             <key>jeff-left-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,155},{22,45}}</string>
+                <string>{{116,190},{22,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{22,45}}</string>
                 <key>sourceSize</key>
@@ -85,11 +163,11 @@
             <key>jeff-left-4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{49,92},{34,45}}</string>
+                <string>{{78,2},{34,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{34,45}}</string>
                 <key>sourceSize</key>
@@ -98,7 +176,7 @@
             <key>jeff-right-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{100,2},{25,45}}</string>
+                <string>{{112,49},{25,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,11 +189,11 @@
             <key>jeff-right-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{49,128},{32,45}}</string>
+                <string>{{78,49},{32,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{32,45}}</string>
                 <key>sourceSize</key>
@@ -124,11 +202,11 @@
             <key>jeff-right-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,130},{23,45}}</string>
+                <string>{{103,143},{23,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{23,45}}</string>
                 <key>sourceSize</key>
@@ -137,11 +215,11 @@
             <key>jeff-right-4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,92},{36,45}}</string>
+                <string>{{78,198},{36,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{36,45}}</string>
                 <key>sourceSize</key>
@@ -150,11 +228,11 @@
             <key>jeff-up-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,32},{28,47}}</string>
+                <string>{{48,2},{28,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{28,47}}</string>
                 <key>sourceSize</key>
@@ -163,11 +241,11 @@
             <key>jeff-up-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{51,2},{28,47}}</string>
+                <string>{{43,151},{28,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{28,47}}</string>
                 <key>sourceSize</key>
@@ -176,11 +254,11 @@
             <key>jeff-up-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{28,47}}</string>
+                <string>{{43,102},{28,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{28,47}}</string>
                 <key>sourceSize</key>
@@ -194,9 +272,9 @@
             <key>realTextureFileName</key>
             <string>jeff.png</string>
             <key>size</key>
-            <string>{128,256}</string>
+            <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:0099c3c3ab672b3038dcb93f751b9721:618e38c5758acdd84a26d4138519991c:77a8f9686b7c00eb14e43cfea225b304$</string>
+            <string>$TexturePacker:SmartUpdate:a75549e955b7b079208130ccd6e7aea0:46a82894c4c279b6e13c36d87299639d:77a8f9686b7c00eb14e43cfea225b304$</string>
             <key>textureFileName</key>
             <string>jeff.png</string>
         </dict>
