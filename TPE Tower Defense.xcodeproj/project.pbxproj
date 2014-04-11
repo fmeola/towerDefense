@@ -230,6 +230,7 @@
 		9DE71F2018F789C6007CC645 /* icon-tower-1-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1C18F789C6007CC645 /* icon-tower-1-enabled.png */; };
 		9DE71F2118F789C6007CC645 /* icon-tower-2-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1D18F789C6007CC645 /* icon-tower-2-enabled.png */; };
 		9DE71F2218F789C6007CC645 /* icon-tower-2-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1E18F789C6007CC645 /* icon-tower-2-disabled.png */; };
+		9DE71F2418F78DAA007CC645 /* splash-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F2318F78DAA007CC645 /* splash-background.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -689,6 +690,7 @@
 		9DE71F1C18F789C6007CC645 /* icon-tower-1-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-1-enabled.png"; sourceTree = "<group>"; };
 		9DE71F1D18F789C6007CC645 /* icon-tower-2-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-2-enabled.png"; sourceTree = "<group>"; };
 		9DE71F1E18F789C6007CC645 /* icon-tower-2-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-2-disabled.png"; sourceTree = "<group>"; };
+		9DE71F2318F78DAA007CC645 /* splash-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "splash-background.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1600,6 +1602,7 @@
 				9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */,
 				9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */,
 				9DE4E73518F73A2A00A4E876 /* soldier_blue_up.png */,
+				9DE71F2318F78DAA007CC645 /* splash-background.jpg */,
 				9D88407F18F6FC5100BE6E36 /* TileMap.tmx */,
 				9D88406D18F6E45D00BE6E36 /* hit.caf */,
 				9D88406E18F6E45D00BE6E36 /* meta_tiles.png */,
@@ -1686,6 +1689,7 @@
 				9D883DD018F6E38D00BE6E36 /* Default@2x.png in Resources */,
 				9D883DE318F6E38D00BE6E36 /* Icon-120.png in Resources */,
 				9D883FE718F6E39000BE6E36 /* LICENSE_CCBReader.txt in Resources */,
+				9DE71F2418F78DAA007CC645 /* splash-background.jpg in Resources */,
 				9D883DD918F6E38D00BE6E36 /* Icon@2x.png in Resources */,
 				9D883DEB18F6E38D00BE6E36 /* Icon-Small@2x.png in Resources */,
 				9D883DDD18F6E38D00BE6E36 /* Icon-72@2x.png in Resources */,
@@ -2021,6 +2025,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2045,6 +2050,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

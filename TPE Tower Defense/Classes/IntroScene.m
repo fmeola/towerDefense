@@ -35,18 +35,24 @@
     if (!self) return(nil);
     
     // Create a colored background (Dark Grey)
-    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
-    [self addChild:background];
+//    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
+//    [self addChild:background];
+    
+    // Imagen de la Splash-Screen
+    CCSprite * image = [CCSprite spriteWithImageNamed:@"splash-background.jpg"];
+    image.positionType = CCPositionTypeNormalized;
+    image.position = ccp(0.5f, 0.5f);
+    [self addChild:image];
     
     // Hello world
-    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Tower Defense" fontName:@"Helvetica-Bold" fontSize:46.0f];
+    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Tower Defense" fontName:@"Helvetica-Bold" fontSize:60.0f];
     label.positionType = CCPositionTypeNormalized;
-    label.color = [CCColor redColor];
+    label.color = [CCColor blackColor];
     label.position = ccp(0.5f, 0.5f); // Middle of screen
     [self addChild:label];
     
     // Helloworld scene button
-    CCButton *helloWorldButton = [CCButton buttonWithTitle:@"[ Jugar ]" fontName:@"Helvetica-Bold" fontSize:18.0f];
+    CCButton *helloWorldButton = [CCButton buttonWithTitle:@"[ Jugar ]" fontName:@"Helvetica-Bold" fontSize:24.0f];
     helloWorldButton.positionType = CCPositionTypeNormalized;
     helloWorldButton.position = ccp(0.5f, 0.35f);
     [helloWorldButton setTarget:self selector:@selector(onSpinningClicked:)];
