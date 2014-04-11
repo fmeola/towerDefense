@@ -95,7 +95,7 @@
     // access audio object
     OALSimpleAudio * bgmusic = [OALSimpleAudio sharedInstance];
     // play background sound
-    [bgmusic playBg:@"TileMap.caf" loop:TRUE];
+    [bgmusic playBg:@"LevelMusic.mp3" loop:TRUE];
     
     // Create a back button
     CCButton *backButton = [CCButton buttonWithTitle:@"[ Volver ]" fontName:@"Helvetica-Bold" fontSize:16.0f];
@@ -150,16 +150,16 @@
     [self addChild:spriteSheet];
     
     NSMutableArray *walkAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=4; i++) {
+    for (int i=1; i<=3; i++) {
         [walkAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"jeff-right-%d.png",i]]];
+          [NSString stringWithFormat:@"jeff-left-%d.png",i]]];
     }
     
-    CCAnimation *walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.2f];
+    CCAnimation *walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.1f];
     
     CGSize winSize = [[CCDirector sharedDirector] viewSize];
-    self.jeff = [CCSprite spriteWithImageNamed:@"jeff-right-1.png"];
+    self.jeff = [CCSprite spriteWithImageNamed:@"jeff-left-1.png"];
     self.jeff.position = ccp(winSize.width/2, winSize.height/2);
     self.walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:walkAnim]];
     [self.jeff runAction:self.walkAction];

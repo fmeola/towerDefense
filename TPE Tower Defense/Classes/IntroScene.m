@@ -58,6 +58,11 @@
     [helloWorldButton setTarget:self selector:@selector(onSpinningClicked:)];
     [self addChild:helloWorldButton];
 
+    // access audio object
+    OALSimpleAudio * bgmusic = [OALSimpleAudio sharedInstance];
+    // play background sound
+    [bgmusic playBg:@"IntroMusic.mp3" loop:TRUE];
+    
     // done
 	return self;
 }
