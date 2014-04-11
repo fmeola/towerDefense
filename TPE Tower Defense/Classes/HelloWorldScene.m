@@ -172,6 +172,19 @@
     
     _player.position = ccp(x,y);
     [self addChild:_player];
+
+    // Obtengo la ubicación en coordenadas de la matriz del tile (int,int)
+    CGPoint location = [touch locationInView: [touch view]];
+    location = [[CCDirector sharedDirector] convertToGL: location];
+    CGPoint mappos = [_tileMap convertToNodeSpace:location];
+    mappos.x = (int)(mappos.x / _tileMap.tileSize.height);
+    mappos.y = (int)(mappos.y / _tileMap.tileSize.width);
+    CCLOG(@"X: %f\n",mappos.x);
+    CCLOG(@"Y: %f\n",mappos.y);
+    
+    // TODO ¿Cómo accedo al towersGroup[i] correspondiente con la posición anterior?
+    
+    // TODO Coloco una torre en la posición indicada, pero centrada en la cuadrícula.
 }
 
 -(void)setPlayerPosition:(CGPoint)position {
@@ -181,7 +194,7 @@
 -(void)loadTowerPositions
 {
     towersGroup = [_tileMap objectGroupNamed:@"Towers"];
-    NSAssert(towersGroup != nil, @"tile map has no objects object layer");
+    NSAssert(towersGroup != nil, @"tile map has no objects Towers layer");
 }
 
 // -----------------------------------------------------------------------
