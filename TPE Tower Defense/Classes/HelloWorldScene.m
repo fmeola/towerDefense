@@ -85,7 +85,7 @@
     
     currentPoint = startPoint;
     
-    _player = [CCSprite spriteWithImageNamed:@"soldier_blue_right.png"];
+    _player = [CCSprite spriteWithImageNamed:@"jeff-right-1.png"];
     _player.position = ccp(x,y);
     
     [self addChild:_player];
@@ -217,15 +217,8 @@
     
     [self removeChild:_player];
 
-    if([currentPoint[@"direction"] isEqual: @"right"]) {
-        _player = [CCSprite spriteWithImageNamed:@"soldier_blue_right.png"];
-    } else if([currentPoint[@"direction"] isEqual: @"left"]) {
-        _player = [CCSprite spriteWithImageNamed:@"soldier_blue_left.png"];
-    } else if ([currentPoint[@"direction"] isEqual: @"up"]) {
-        _player = [CCSprite spriteWithImageNamed:@"soldier_blue_up.png"];
-    } else {
-        _player = [CCSprite spriteWithImageNamed:@"soldier_blue_down.png"];
-    }
+    NSString * aux  = [NSString stringWithFormat:@"jeff-%@-1.png",currentPoint[@"direction"]];
+    _player = [CCSprite spriteWithImageNamed:(aux)];
     
     if([currentPoint[@"next"] isEqual: @"p0"]) {
         // access audio object
@@ -241,7 +234,7 @@
         wavesLabel.color = [CCColor blackColor];
         wavesLabel.position = ccp(0.85f, 0.85f); // Middle of screen
         [self addChild:wavesLabel];
-        
+
         score -= 10000;
         [self removeChild:scoreLabel];
         scoreString = [NSString stringWithFormat:@"Puntaje: %d",score];
@@ -267,6 +260,8 @@
     // TODO ¿Cómo accedo al towersGroup[i] correspondiente con la posición anterior?
     
     // TODO Coloco una torre en la posición indicada, pero centrada en la cuadrícula.
+    
+    [self ccTouchEnded:touch withEvent:event];
 }
 
 -(void)setPlayerPosition:(CGPoint)position {
@@ -277,6 +272,20 @@
 {
     towersGroup = [_tileMap objectGroupNamed:@"Towers"];
     NSAssert(towersGroup != nil, @"tile map has no objects Towers layer");
+}
+
+- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    // Jeff se mueve a donde se haya hecho un touch.
+    CGPoint touchLocation = [self convertToNodeSpace:touch.locationInWorld];
+    CGPoint moveDifference = ccpSub(touchLocation, self.jeff.position);
+    CGSize winSize = [[CCDirector sharedDirector] viewSize];
+    float jeffSpeed = winSize.width / 10.0f;
+    float distanceToMove = ccpLength(moveDifference);
+    float moveDuration = distanceToMove / jeffSpeed;
+    [self.jeff stopAction:self.moveAction];
+    self.moveAction = [CCActionMoveTo actionWithDuration:moveDuration position:touchLocation];
+    [self.jeff runAction:self.moveAction];
 }
 
 // -----------------------------------------------------------------------

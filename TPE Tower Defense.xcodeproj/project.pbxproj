@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		9D0FCD2F18F822EB002BF610 /* LevelMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D0FCD2E18F822EB002BF610 /* LevelMusic.mp3 */; };
 		9D0FCD3118F823B4002BF610 /* IntroMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D0FCD3018F823B4002BF610 /* IntroMusic.mp3 */; };
+		9D6DF56D18F839160014622B /* jeff-down-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56718F839160014622B /* jeff-down-1.png */; };
+		9D6DF56E18F839160014622B /* jeff-down-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56818F839160014622B /* jeff-down-2.png */; };
+		9D6DF56F18F839160014622B /* jeff-down-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56918F839160014622B /* jeff-down-3.png */; };
+		9D6DF57018F839160014622B /* jeff-up-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56A18F839160014622B /* jeff-up-1.png */; };
+		9D6DF57118F839160014622B /* jeff-up-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56B18F839160014622B /* jeff-up-2.png */; };
+		9D6DF57218F839160014622B /* jeff-up-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56C18F839160014622B /* jeff-up-3.png */; };
 		9D883DB418F6E38D00BE6E36 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DB318F6E38D00BE6E36 /* QuartzCore.framework */; };
 		9D883DB618F6E38D00BE6E36 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DB518F6E38D00BE6E36 /* OpenGLES.framework */; };
 		9D883DB818F6E38D00BE6E36 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DB718F6E38D00BE6E36 /* OpenAL.framework */; };
@@ -218,7 +224,6 @@
 		9D88407518F6E45D00BE6E36 /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D88406E18F6E45D00BE6E36 /* meta_tiles.png */; };
 		9D88407618F6E45D00BE6E36 /* move.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88406F18F6E45D00BE6E36 /* move.caf */; };
 		9D88407718F6E45D00BE6E36 /* pickup.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407018F6E45D00BE6E36 /* pickup.caf */; };
-		9D88407818F6E45D00BE6E36 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407118F6E45D00BE6E36 /* Player.png */; };
 		9D88407918F6E45D00BE6E36 /* TileMap.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407218F6E45D00BE6E36 /* TileMap.caf */; };
 		9D88407A18F6E45D00BE6E36 /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407318F6E45D00BE6E36 /* tmw_desert_spacing.png */; };
 		9D88408018F6FC5100BE6E36 /* TileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407F18F6FC5100BE6E36 /* TileMap.tmx */; };
@@ -259,6 +264,12 @@
 /* Begin PBXFileReference section */
 		9D0FCD2E18F822EB002BF610 /* LevelMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LevelMusic.mp3; sourceTree = "<group>"; };
 		9D0FCD3018F823B4002BF610 /* IntroMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IntroMusic.mp3; sourceTree = "<group>"; };
+		9D6DF56718F839160014622B /* jeff-down-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-down-1.png"; sourceTree = "<group>"; };
+		9D6DF56818F839160014622B /* jeff-down-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-down-2.png"; sourceTree = "<group>"; };
+		9D6DF56918F839160014622B /* jeff-down-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-down-3.png"; sourceTree = "<group>"; };
+		9D6DF56A18F839160014622B /* jeff-up-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-up-1.png"; sourceTree = "<group>"; };
+		9D6DF56B18F839160014622B /* jeff-up-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-up-2.png"; sourceTree = "<group>"; };
+		9D6DF56C18F839160014622B /* jeff-up-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-up-3.png"; sourceTree = "<group>"; };
 		9D883DB018F6E38D00BE6E36 /* TPE Tower Defense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TPE Tower Defense.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D883DB318F6E38D00BE6E36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9D883DB518F6E38D00BE6E36 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -691,7 +702,6 @@
 		9D88406E18F6E45D00BE6E36 /* meta_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta_tiles.png; sourceTree = "<group>"; };
 		9D88406F18F6E45D00BE6E36 /* move.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = move.caf; sourceTree = "<group>"; };
 		9D88407018F6E45D00BE6E36 /* pickup.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pickup.caf; sourceTree = "<group>"; };
-		9D88407118F6E45D00BE6E36 /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
 		9D88407218F6E45D00BE6E36 /* TileMap.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TileMap.caf; sourceTree = "<group>"; };
 		9D88407318F6E45D00BE6E36 /* tmw_desert_spacing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmw_desert_spacing.png; sourceTree = "<group>"; };
 		9D88407F18F6FC5100BE6E36 /* TileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TileMap.tmx; sourceTree = "<group>"; };
@@ -740,6 +750,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D6DF56418F838A20014622B /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				9D0FCD3018F823B4002BF610 /* IntroMusic.mp3 */,
+				9D0FCD2E18F822EB002BF610 /* LevelMusic.mp3 */,
+			);
+			name = Music;
+			sourceTree = "<group>";
+		};
+		9D6DF56518F838B90014622B /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				9DE4E73218F73A2A00A4E876 /* soldier_blue_down.png */,
+				9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */,
+				9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */,
+				9DE4E73518F73A2A00A4E876 /* soldier_blue_up.png */,
+			);
+			name = Old;
+			sourceTree = "<group>";
+		};
+		9D6DF56618F838D40014622B /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				9DE71F1B18F789C6007CC645 /* icon-tower-1-disabled.png */,
+				9DE71F1C18F789C6007CC645 /* icon-tower-1-enabled.png */,
+				9DE71F1D18F789C6007CC645 /* icon-tower-2-enabled.png */,
+				9DE71F1E18F789C6007CC645 /* icon-tower-2-disabled.png */,
+			);
+			name = HUD;
+			sourceTree = "<group>";
+		};
 		9D883DA718F6E38D00BE6E36 = {
 			isa = PBXGroup;
 			children = (
@@ -788,8 +829,7 @@
 		9D883DCC18F6E38D00BE6E36 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9D0FCD3018F823B4002BF610 /* IntroMusic.mp3 */,
-				9D0FCD2E18F822EB002BF610 /* LevelMusic.mp3 */,
+				9D6DF56418F838A20014622B /* Music */,
 				9DAFE37018F81EBA00153902 /* RawSprites */,
 				9D88406C18F6E45D00BE6E36 /* TileGameResources */,
 				9D883DCD18F6E38D00BE6E36 /* Default.png */,
@@ -1621,26 +1661,19 @@
 		9D88406C18F6E45D00BE6E36 /* TileGameResources */ = {
 			isa = PBXGroup;
 			children = (
+				9D6DF56618F838D40014622B /* HUD */,
+				9D6DF56518F838B90014622B /* Old */,
 				9DAFE36E18F81B5B00153902 /* jeff.tps */,
 				9DAFE36A18F814F000153902 /* jeff.plist */,
 				9DAFE36B18F814F000153902 /* jeff.png */,
 				9DE71F0F18F78750007CC645 /* tower-2.png */,
 				9DE71F1018F78750007CC645 /* tower-1.png */,
-				9DE71F1B18F789C6007CC645 /* icon-tower-1-disabled.png */,
-				9DE71F1C18F789C6007CC645 /* icon-tower-1-enabled.png */,
-				9DE71F1D18F789C6007CC645 /* icon-tower-2-enabled.png */,
-				9DE71F1E18F789C6007CC645 /* icon-tower-2-disabled.png */,
-				9DE4E73218F73A2A00A4E876 /* soldier_blue_down.png */,
-				9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */,
-				9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */,
-				9DE4E73518F73A2A00A4E876 /* soldier_blue_up.png */,
 				9DE71F2318F78DAA007CC645 /* splash-background.jpg */,
 				9D88407F18F6FC5100BE6E36 /* TileMap.tmx */,
 				9D88406D18F6E45D00BE6E36 /* hit.caf */,
 				9D88406E18F6E45D00BE6E36 /* meta_tiles.png */,
 				9D88406F18F6E45D00BE6E36 /* move.caf */,
 				9D88407018F6E45D00BE6E36 /* pickup.caf */,
-				9D88407118F6E45D00BE6E36 /* Player.png */,
 				9D88407218F6E45D00BE6E36 /* TileMap.caf */,
 				9D88407318F6E45D00BE6E36 /* tmw_desert_spacing.png */,
 			);
@@ -1650,6 +1683,12 @@
 		9DAFE37018F81EBA00153902 /* RawSprites */ = {
 			isa = PBXGroup;
 			children = (
+				9D6DF56718F839160014622B /* jeff-down-1.png */,
+				9D6DF56818F839160014622B /* jeff-down-2.png */,
+				9D6DF56918F839160014622B /* jeff-down-3.png */,
+				9D6DF56A18F839160014622B /* jeff-up-1.png */,
+				9D6DF56B18F839160014622B /* jeff-up-2.png */,
+				9D6DF56C18F839160014622B /* jeff-up-3.png */,
 				9DAFE37118F81EBA00153902 /* jeff-left-1.png */,
 				9DAFE37218F81EBA00153902 /* jeff-left-2.png */,
 				9DAFE37318F81EBA00153902 /* jeff-left-3.png */,
@@ -1744,8 +1783,8 @@
 				9D88407518F6E45D00BE6E36 /* meta_tiles.png in Resources */,
 				9DAFE36D18F814F000153902 /* jeff.png in Resources */,
 				9DAFE36C18F814F000153902 /* jeff.plist in Resources */,
+				9D6DF57018F839160014622B /* jeff-up-1.png in Resources */,
 				9D883DCE18F6E38D00BE6E36 /* Default.png in Resources */,
-				9D88407818F6E45D00BE6E36 /* Player.png in Resources */,
 				9D883DD718F6E38D00BE6E36 /* Icon.png in Resources */,
 				9DAFE37E18F81EBA00153902 /* jeff-right-2.png in Resources */,
 				9DE4E73918F73A2A00A4E876 /* soldier_blue_up.png in Resources */,
@@ -1759,6 +1798,8 @@
 				9D883DE918F6E38D00BE6E36 /* Icon-Small.png in Resources */,
 				9D0FCD3118F823B4002BF610 /* IntroMusic.mp3 in Resources */,
 				9D883DE718F6E38D00BE6E36 /* Icon-Small-50.png in Resources */,
+				9D6DF57118F839160014622B /* jeff-up-2.png in Resources */,
+				9D6DF56E18F839160014622B /* jeff-down-2.png in Resources */,
 				9D883FD018F6E39000BE6E36 /* LICENSE_Kazmath.txt in Resources */,
 				9DAFE38018F81EBA00153902 /* jeff-right-4.png in Resources */,
 				9D883DDB18F6E38D00BE6E36 /* Icon-72.png in Resources */,
@@ -1769,6 +1810,7 @@
 				9DE71F1618F78750007CC645 /* tower-1.png in Resources */,
 				9DE4E73618F73A2A00A4E876 /* soldier_blue_down.png in Resources */,
 				9D883DF218F6E38D00BE6E36 /* iTunesArtwork in Resources */,
+				9D6DF57218F839160014622B /* jeff-up-3.png in Resources */,
 				9D883DED18F6E38D00BE6E36 /* Icon-Spotlight-iOS7.png in Resources */,
 				9D883DE118F6E38D00BE6E36 /* Icon-76@2x.png in Resources */,
 				9D88405518F6E39000BE6E36 /* LICENSE_Chipmunk.txt in Resources */,
@@ -1780,6 +1822,8 @@
 				9DE71F1518F78750007CC645 /* tower-2.png in Resources */,
 				9D883DEF18F6E38D00BE6E36 /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				9D883DDF18F6E38D00BE6E36 /* Icon-76.png in Resources */,
+				9D6DF56D18F839160014622B /* jeff-down-1.png in Resources */,
+				9D6DF56F18F839160014622B /* jeff-down-3.png in Resources */,
 				9D883FB518F6E38F00BE6E36 /* ChangeLog in Resources */,
 				9D0FCD2F18F822EB002BF610 /* LevelMusic.mp3 in Resources */,
 				9D88407418F6E45D00BE6E36 /* hit.caf in Resources */,
