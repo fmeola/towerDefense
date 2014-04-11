@@ -17,11 +17,22 @@
 @implementation HelloWorldScene
 {
     NSDictionary * currentPoint;
+    
     CCSprite *_sprite;
+    
     NSString * wavesString;
     CCLabelTTF * wavesLabel;
     int waveCount;
+    
     CCTiledMapObjectGroup * towersGroup;
+    
+    NSString * moneyString;
+    CCLabelTTF * moneyLabel;
+    int money;
+    
+    NSString * scoreString;
+    CCLabelTTF * scoreLabel;
+    int score;
 }
 
 // -----------------------------------------------------------------------
@@ -85,13 +96,40 @@
     // Mostrar las oleadas
     waveCount = 1;
     wavesString = [NSString stringWithFormat:@"Oleada #%d",waveCount];
-    wavesLabel = [CCLabelTTF labelWithString: wavesString fontName:@"Helvetica-Bold" fontSize:25.0f];
+    wavesLabel = [CCLabelTTF labelWithString: wavesString fontName:@"Helvetica-Bold" fontSize:16.0f];
     wavesLabel.positionType = CCPositionTypeNormalized;
     wavesLabel.color = [CCColor blackColor];
     wavesLabel.position = ccp(0.85f, 0.85f); // Middle of screen
     [self addChild:wavesLabel];
     
-    // done
+    // Mostrar el dinero
+    money = 100;
+    moneyString = [NSString stringWithFormat:@"$ %d",money];
+    moneyLabel = [CCLabelTTF labelWithString: moneyString fontName:@"Helvetica" fontSize:16.0f];
+    moneyLabel.positionType = CCPositionTypeNormalized;
+    moneyLabel.color = [CCColor blueColor];
+    moneyLabel.position = ccp(0.85f, 0.80f);
+    [self addChild:moneyLabel];
+    
+    // Mostrar el puntaje
+    score = 100000;
+    scoreString = [NSString stringWithFormat:@"Puntaje: %d",score];
+    scoreLabel = [CCLabelTTF labelWithString: scoreString fontName:@"Helvetica" fontSize:16.0f];
+    scoreLabel.positionType = CCPositionTypeNormalized;
+    scoreLabel.color = [CCColor blueColor];
+    scoreLabel.position = ccp(0.85f, 0.75f);
+    [self addChild:scoreLabel];
+    
+    CCSprite * tower1buybutton = [CCSprite spriteWithImageNamed:@"icon-tower-1-enabled.png"];
+    tower1buybutton.positionType = CCPositionTypeNormalized;
+    tower1buybutton.position = ccp(0.80f, 0.10f);
+    [self addChild:tower1buybutton];
+    
+    CCSprite * tower2buybutton = [CCSprite spriteWithImageNamed:@"icon-tower-2-disabled.png"];
+    tower2buybutton.positionType = CCPositionTypeNormalized;
+    tower2buybutton.position = ccp(0.90f, 0.10f);
+    [self addChild:tower2buybutton];
+    
 	return self;
 }
 
@@ -163,11 +201,20 @@
         waveCount++;
         [self removeChild:wavesLabel];
         wavesString = [NSString stringWithFormat:@"Oleada #%d",waveCount];
-        wavesLabel = [CCLabelTTF labelWithString: wavesString fontName:@"Helvetica-Bold" fontSize:25.0f];
+        wavesLabel = [CCLabelTTF labelWithString: wavesString fontName:@"Helvetica-Bold" fontSize:16.0f];
         wavesLabel.positionType = CCPositionTypeNormalized;
         wavesLabel.color = [CCColor blackColor];
         wavesLabel.position = ccp(0.85f, 0.85f); // Middle of screen
         [self addChild:wavesLabel];
+        
+        score -= 10000;
+        [self removeChild:scoreLabel];
+        scoreString = [NSString stringWithFormat:@"Puntaje: %d",score];
+        scoreLabel = [CCLabelTTF labelWithString: scoreString fontName:@"Helvetica" fontSize:16.0f];
+        scoreLabel.positionType = CCPositionTypeNormalized;
+        scoreLabel.color = [CCColor blueColor];
+        scoreLabel.position = ccp(0.85f, 0.75f);
+        [self addChild:scoreLabel];
     }
     
     _player.position = ccp(x,y);

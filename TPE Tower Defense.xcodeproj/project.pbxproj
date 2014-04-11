@@ -224,6 +224,12 @@
 		9DE4E73718F73A2A00A4E876 /* soldier_blue_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */; };
 		9DE4E73818F73A2A00A4E876 /* soldier_blue_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */; };
 		9DE4E73918F73A2A00A4E876 /* soldier_blue_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73518F73A2A00A4E876 /* soldier_blue_up.png */; };
+		9DE71F1518F78750007CC645 /* tower-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F0F18F78750007CC645 /* tower-2.png */; };
+		9DE71F1618F78750007CC645 /* tower-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1018F78750007CC645 /* tower-1.png */; };
+		9DE71F1F18F789C6007CC645 /* icon-tower-1-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1B18F789C6007CC645 /* icon-tower-1-disabled.png */; };
+		9DE71F2018F789C6007CC645 /* icon-tower-1-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1C18F789C6007CC645 /* icon-tower-1-enabled.png */; };
+		9DE71F2118F789C6007CC645 /* icon-tower-2-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1D18F789C6007CC645 /* icon-tower-2-enabled.png */; };
+		9DE71F2218F789C6007CC645 /* icon-tower-2-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1E18F789C6007CC645 /* icon-tower-2-disabled.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -677,6 +683,12 @@
 		9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_left.png; sourceTree = "<group>"; };
 		9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_right.png; sourceTree = "<group>"; };
 		9DE4E73518F73A2A00A4E876 /* soldier_blue_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_up.png; sourceTree = "<group>"; };
+		9DE71F0F18F78750007CC645 /* tower-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tower-2.png"; sourceTree = "<group>"; };
+		9DE71F1018F78750007CC645 /* tower-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tower-1.png"; sourceTree = "<group>"; };
+		9DE71F1B18F789C6007CC645 /* icon-tower-1-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-1-disabled.png"; sourceTree = "<group>"; };
+		9DE71F1C18F789C6007CC645 /* icon-tower-1-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-1-enabled.png"; sourceTree = "<group>"; };
+		9DE71F1D18F789C6007CC645 /* icon-tower-2-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-2-enabled.png"; sourceTree = "<group>"; };
+		9DE71F1E18F789C6007CC645 /* icon-tower-2-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-2-disabled.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1578,6 +1590,12 @@
 		9D88406C18F6E45D00BE6E36 /* TileGameResources */ = {
 			isa = PBXGroup;
 			children = (
+				9DE71F0F18F78750007CC645 /* tower-2.png */,
+				9DE71F1018F78750007CC645 /* tower-1.png */,
+				9DE71F1B18F789C6007CC645 /* icon-tower-1-disabled.png */,
+				9DE71F1C18F789C6007CC645 /* icon-tower-1-enabled.png */,
+				9DE71F1D18F789C6007CC645 /* icon-tower-2-enabled.png */,
+				9DE71F1E18F789C6007CC645 /* icon-tower-2-disabled.png */,
 				9DE4E73218F73A2A00A4E876 /* soldier_blue_down.png */,
 				9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */,
 				9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */,
@@ -1662,6 +1680,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE71F2118F789C6007CC645 /* icon-tower-2-enabled.png in Resources */,
+				9DE71F2018F789C6007CC645 /* icon-tower-1-enabled.png in Resources */,
 				9D88407618F6E45D00BE6E36 /* move.caf in Resources */,
 				9D883DD018F6E38D00BE6E36 /* Default@2x.png in Resources */,
 				9D883DE318F6E38D00BE6E36 /* Icon-120.png in Resources */,
@@ -1675,6 +1695,7 @@
 				9D883DD718F6E38D00BE6E36 /* Icon.png in Resources */,
 				9DE4E73918F73A2A00A4E876 /* soldier_blue_up.png in Resources */,
 				9D883DE518F6E38D00BE6E36 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
+				9DE71F1F18F789C6007CC645 /* icon-tower-1-disabled.png in Resources */,
 				9D883DD418F6E38D00BE6E36 /* Default-Landscape~ipad.png in Resources */,
 				9D88407918F6E45D00BE6E36 /* TileMap.caf in Resources */,
 				9D883DE918F6E38D00BE6E36 /* Icon-Small.png in Resources */,
@@ -1683,13 +1704,16 @@
 				9D883DDB18F6E38D00BE6E36 /* Icon-72.png in Resources */,
 				9D883F2918F6E38F00BE6E36 /* LICENSE_cocos2d.txt in Resources */,
 				9D883DD218F6E38D00BE6E36 /* Default-568h@2x.png in Resources */,
+				9DE71F1618F78750007CC645 /* tower-1.png in Resources */,
 				9DE4E73618F73A2A00A4E876 /* soldier_blue_down.png in Resources */,
 				9D883DF218F6E38D00BE6E36 /* iTunesArtwork in Resources */,
 				9D883DED18F6E38D00BE6E36 /* Icon-Spotlight-iOS7.png in Resources */,
 				9D883DE118F6E38D00BE6E36 /* Icon-76@2x.png in Resources */,
 				9D88405518F6E39000BE6E36 /* LICENSE_Chipmunk.txt in Resources */,
 				9D88407718F6E45D00BE6E36 /* pickup.caf in Resources */,
+				9DE71F2218F789C6007CC645 /* icon-tower-2-disabled.png in Resources */,
 				9D88407A18F6E45D00BE6E36 /* tmw_desert_spacing.png in Resources */,
+				9DE71F1518F78750007CC645 /* tower-2.png in Resources */,
 				9D883DEF18F6E38D00BE6E36 /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				9D883DDF18F6E38D00BE6E36 /* Icon-76.png in Resources */,
 				9D883FB518F6E38F00BE6E36 /* ChangeLog in Resources */,
