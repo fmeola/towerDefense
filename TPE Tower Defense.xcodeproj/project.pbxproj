@@ -24,7 +24,7 @@
 		9D883DC018F6E38D00BE6E36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DBF18F6E38D00BE6E36 /* Foundation.framework */; };
 		9D883DC218F6E38D00BE6E36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DC118F6E38D00BE6E36 /* CoreGraphics.framework */; };
 		9D883DC418F6E38D00BE6E36 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DC318F6E38D00BE6E36 /* CoreText.framework */; };
-		9D883DCA18F6E38D00BE6E36 /* libObjectiveChipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DC718F6E38D00BE6E36 /* libObjectiveChipmunk.a */; };
+		9D883DCA18F6E38D00BE6E36 /* libObjectiveChipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DC718F6E38D00BE6E36 /* libObjectiveChipmunk.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		9D883DCE18F6E38D00BE6E36 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D883DCD18F6E38D00BE6E36 /* Default.png */; };
 		9D883DD018F6E38D00BE6E36 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D883DCF18F6E38D00BE6E36 /* Default@2x.png */; };
 		9D883DD218F6E38D00BE6E36 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D883DD118F6E38D00BE6E36 /* Default-568h@2x.png */; };
@@ -277,7 +277,7 @@
 		9D6DF56A18F839160014622B /* jeff-up-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-up-1.png"; sourceTree = "<group>"; };
 		9D6DF56B18F839160014622B /* jeff-up-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-up-2.png"; sourceTree = "<group>"; };
 		9D6DF56C18F839160014622B /* jeff-up-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-up-3.png"; sourceTree = "<group>"; };
-		9D883DB018F6E38D00BE6E36 /* TPE Tower Defense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TPE Tower Defense.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D883DB018F6E38D00BE6E36 /* Gr. Runners.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gr. Runners.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D883DB318F6E38D00BE6E36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9D883DB518F6E38D00BE6E36 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		9D883DB718F6E38D00BE6E36 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -807,7 +807,7 @@
 		9D883DB118F6E38D00BE6E36 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9D883DB018F6E38D00BE6E36 /* TPE Tower Defense.app */,
+				9D883DB018F6E38D00BE6E36 /* Gr. Runners.app */,
 				9D883DC718F6E38D00BE6E36 /* libObjectiveChipmunk.a */,
 			);
 			name = Products;
@@ -1741,7 +1741,7 @@
 			);
 			name = "TPE Tower Defense";
 			productName = "TPE Tower Defense";
-			productReference = 9D883DB018F6E38D00BE6E36 /* TPE Tower Defense.app */;
+			productReference = 9D883DB018F6E38D00BE6E36 /* Gr. Runners.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9D883DC618F6E38D00BE6E36 /* ObjectiveChipmunk */ = {
@@ -2150,8 +2150,8 @@
 				GCC_PREFIX_HEADER = "TPE Tower Defense/Supporting Files/Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/$(PROJECT_NAME)/Libraries/kazmath/include\"",
-					"\"$(SRCROOT)/$(PROJECT_NAME)/Libraries/Chipmunk/chipmunk/include\"",
 					"\"$(SRCROOT)/$(PROJECT_NAME)/Libraries/Chipmunk/objectivec/include\"",
+					"\"$(SRCROOT)/$(PROJECT_NAME)/Libraries/Chipmunk/chipmunk/include\"",
 				);
 				INFOPLIST_FILE = "TPE Tower Defense/Resources/Info.plist";
 				OTHER_LDFLAGS = (
@@ -2159,7 +2159,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Gr. Runners";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2177,8 +2177,8 @@
 				GCC_PREFIX_HEADER = "TPE Tower Defense/Supporting Files/Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/$(PROJECT_NAME)/Libraries/kazmath/include\"",
-					"\"$(SRCROOT)/$(PROJECT_NAME)/Libraries/Chipmunk/chipmunk/include\"",
 					"\"$(SRCROOT)/$(PROJECT_NAME)/Libraries/Chipmunk/objectivec/include\"",
+					"\"$(SRCROOT)/$(PROJECT_NAME)/Libraries/Chipmunk/chipmunk/include\"",
 				);
 				INFOPLIST_FILE = "TPE Tower Defense/Resources/Info.plist";
 				OTHER_LDFLAGS = (
@@ -2186,7 +2186,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Gr. Runners";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
