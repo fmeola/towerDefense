@@ -22,10 +22,15 @@
 @property (strong) CCTiledMapLayer * background;
 @property (strong) CCSprite * player;
 
+@property (nonatomic, strong) CCSprite *jeff;
+@property (nonatomic, strong) CCAction *walkAction;
+@property (nonatomic, strong) CCAction *moveAction;
+
 // -----------------------------------------------------------------------
 
-+ (HelloWorldScene *)scene;
++ (HelloWorldScene *) scene;
 - (id)init;
++ (CCScene *) jeffScene;
 
 // -----------------------------------------------------------------------
 @end

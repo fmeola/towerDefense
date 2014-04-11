@@ -9,6 +9,7 @@
 
 #import "HelloWorldScene.h"
 #import "IntroScene.h"
+#import "CCAnimation.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
@@ -33,6 +34,9 @@
     NSString * scoreString;
     CCLabelTTF * scoreLabel;
     int score;
+    
+    BOOL jeffMoving;
+    
 }
 
 // -----------------------------------------------------------------------
@@ -42,6 +46,14 @@
 + (HelloWorldScene *)scene
 {
     return [[self alloc] init];
+}
+
++(CCScene *) jeffScene
+{
+	CCScene *scene = [CCScene node];
+	HelloWorldScene *layer = [HelloWorldScene node];
+	[scene addChild: layer];
+	return scene;
 }
 
 // -----------------------------------------------------------------------
@@ -130,6 +142,29 @@
     tower2buybutton.position = ccp(0.90f, 0.10f);
     [self addChild:tower2buybutton];
     
+    // Sprite de Jeff corriendo
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"jeff.plist"];
+    
+    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"jeff.png"];
+    [self addChild:spriteSheet];
+    
+    NSMutableArray *walkAnimFrames = [NSMutableArray array];
+    for (int i=1; i<=4; i++) {
+        [walkAnimFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+          [NSString stringWithFormat:@"jeff-right-%d.png",i]]];
+    }
+    
+    CCAnimation *walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.2f];
+    
+    CGSize winSize = [[CCDirector sharedDirector] viewSize];
+    self.jeff = [CCSprite spriteWithImageNamed:@"jeff-right-1.png"];
+    self.jeff.position = ccp(winSize.width/2, winSize.height/2);
+    self.walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:walkAnim]];
+    [self.jeff runAction:self.walkAction];
+    [spriteSheet addChild:self.jeff];
+
 	return self;
 }
 
