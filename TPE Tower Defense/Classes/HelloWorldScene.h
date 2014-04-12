@@ -25,6 +25,9 @@
 @property (nonatomic, strong) CCSprite *jeff;
 @property (nonatomic, strong) CCAction *walkAction;
 @property (nonatomic, strong) CCAction *moveAction;
+//@property (nonatomic, strong) CCAction *waitAction;
+//@property (nonatomic, strong) CCActionSequence * sequenceAction;
+@property (nonatomic, strong) CCAnimation *walkAnim;
 
 // -----------------------------------------------------------------------
 

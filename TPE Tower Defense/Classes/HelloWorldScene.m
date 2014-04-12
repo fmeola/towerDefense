@@ -10,6 +10,7 @@
 #import "HelloWorldScene.h"
 #import "IntroScene.h"
 #import "CCAnimation.h"
+#import <math.h>
 
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
@@ -85,10 +86,10 @@
     
     currentPoint = startPoint;
     
-    _player = [CCSprite spriteWithImageNamed:@"jeff-right-1.png"];
-    _player.position = ccp(x,y);
-    
-    [self addChild:_player];
+//    _player = [CCSprite spriteWithImageNamed:@"jeff-right-1.png"];
+//    _player.position = ccp(x,y);
+//    
+//    [self addChild:_player];
     
     [self loadTowerPositions];
     
@@ -153,15 +154,15 @@
     for (int i=1; i<=3; i++) {
         [walkAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"jeff-left-%d.png",i]]];
+          [NSString stringWithFormat:@"jeff-right-%d.png",i]]];
     }
     
-    CCAnimation *walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.1f];
+    _walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.1f];
     
-    CGSize winSize = [[CCDirector sharedDirector] viewSize];
-    self.jeff = [CCSprite spriteWithImageNamed:@"jeff-left-1.png"];
-    self.jeff.position = ccp(winSize.width/2, winSize.height/2);
-    self.walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:walkAnim]];
+//    CGSize winSize = [[CCDirector sharedDirector] viewSize];
+    self.jeff = [CCSprite spriteWithImageNamed:@"jeff-right-1.png"];
+    self.jeff.position = ccp(x,y);
+    self.walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:_walkAnim]];
     [self.jeff runAction:self.walkAction];
     [spriteSheet addChild:self.jeff];
 
@@ -215,10 +216,24 @@
     
     currentPoint = nextPoint;
     
-    [self removeChild:_player];
+//    [self removeChild:_player];
 
-    NSString * aux  = [NSString stringWithFormat:@"jeff-%@-1.png",currentPoint[@"direction"]];
-    _player = [CCSprite spriteWithImageNamed:(aux)];
+//    NSString * aux  = [NSString stringWithFormat:@"jeff-%@-1.png",currentPoint[@"direction"]];
+//    _player = [CCSprite spriteWithImageNamed:(aux)];
+    
+    NSMutableArray *walkAnimFrames = [NSMutableArray array];
+
+    for (int i=1; i<=3; i++) {
+        [walkAnimFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+          [NSString stringWithFormat:@"jeff-%@-%d.png",currentPoint[@"direction"],i]]];
+    }
+    
+    _walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.1f];
+    [self.jeff stopAction:self.walkAction];
+    self.walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:_walkAnim]];
+    [self.jeff runAction:self.walkAction];
+    _jeff.position = ccp(x,y);
     
     if([currentPoint[@"next"] isEqual: @"p0"]) {
         // access audio object
@@ -245,24 +260,72 @@
         [self addChild:scoreLabel];
     }
     
-    _player.position = ccp(x,y);
-    [self addChild:_player];
+//    while(![currentPoint[@"next"] isEqual: @"p0"]) {
+//        CGPoint destinyLocation = ccp([currentPoint[@"x"] integerValue],[currentPoint[@"y"] integerValue]);
+//        CGPoint moveDifference = ccpSub(destinyLocation, _jeff.position);
+//        CGSize winSize = [[CCDirector sharedDirector] viewSize];
+//        float jeffSpeed = winSize.width / 10.0f;
+//        float distanceToMove = ccpLength(moveDifference);
+//        float moveDuration = distanceToMove / jeffSpeed;
+//        
+////        [self.sequenceAction actionWithArray:nil]
+//        
+//        [_jeff stopAction:_moveAction];
+//        _moveAction = [CCActionMoveTo actionWithDuration:moveDuration position:destinyLocation];
+//        [_jeff runAction:_moveAction ];
+////        _waitAction = [CCActionDelay actionWithDuration:moveDuration];
+////        [_jeff runAction:_waitAction ];
+//        
+////        while (_jeff.position.x != destinyLocation.x || _jeff.position.y != destinyLocation.y) {
+////            // espero
+////        }
+//        
+//        NSDictionary *nextPoint = [objectGroup objectNamed:currentPoint[@"next"]];
+//        long x = [nextPoint[@"x"] integerValue];
+//        long y = [nextPoint[@"y"] integerValue];
+//        currentPoint = nextPoint;
+//    }
+    
+//    _player.position = ccp(x,y);
+//    [self addChild:_player];
 
     // Obtengo la ubicación en coordenadas de la matriz del tile (int,int)
-    CGPoint location = [touch locationInView: [touch view]];
-    location = [[CCDirector sharedDirector] convertToGL: location];
-    CGPoint mappos = [_tileMap convertToNodeSpace:location];
-    mappos.x = (int)(mappos.x / _tileMap.tileSize.height);
-    mappos.y = (int)(mappos.y / _tileMap.tileSize.width);
-    CCLOG(@"X: %f\n",mappos.x);
-    CCLOG(@"Y: %f\n",mappos.y);
     
-    // TODO ¿Cómo accedo al towersGroup[i] correspondiente con la posición anterior?
+//    CGPoint location = [touch locationInView: [touch view]];
+//    location = [[CCDirector sharedDirector] convertToGL: location];
+//    CGPoint mappos = [_tileMap convertToNodeSpace:location];
+//    mappos.x = (int)(mappos.x / _tileMap.tileSize.height);
+//    mappos.y = (int)(mappos.y / _tileMap.tileSize.width);
+//    CCLOG(@"X: %f Y: %f\n",mappos.x,mappos.y);
+    
+//    CGPoint currentTouchPoint = [touch locationInView:[touch view]];
+//    CCLOG(@"Posición: X: %f Y: %fn",currentTouchPoint.x,currentTouchPoint.y);
+    
+    // Recorro todas los lugares posibles donde se puede colocar una torre
+//    int ctpx = currentTouchPoint.x - fmod(currentTouchPoint.x,28);
+//    int ctpy = currentTouchPoint.y - fmod(currentTouchPoint.y,30);
+    
+//    NSMutableArray * towerDics = towersGroup.objects;
+//    for (NSDictionary * towerDic in towerDics) {
+//        int tdx = [towerDic[@"x"] integerValue];
+//        int tdy = [towerDic[@"y"] integerValue];
+//        if(ctpx > tdx && ctpx < tdx + 28 && ctpy > tdy && ctpy < tdy + 30) {
+//            CCLOG(@"CTP: %d, %d  TD: %d, %d\n",ctpx,ctpy,tdx,tdy);
+//            break;
+//        }
+//    }
     
     // TODO Coloco una torre en la posición indicada, pero centrada en la cuadrícula.
     
-    [self ccTouchEnded:touch withEvent:event];
+//    [self ccTouchEnded:touch withEvent:event];
 }
+
+//-(CGPoint) tileCoordForPosition: (CGPoint) position
+//{
+//    int x = (int)(position.x / _tileMap.tileSize.width);
+//    int y = ((_tileMap.mapSize.height * _tileMap.tileSize.height) - position.y) / _tileMap.tileSize.height;
+//    return ccp(x, y);
+//}
 
 -(void)setPlayerPosition:(CGPoint)position {
 	_player.position = position;
@@ -273,20 +336,20 @@
     towersGroup = [_tileMap objectGroupNamed:@"Towers"];
     NSAssert(towersGroup != nil, @"tile map has no objects Towers layer");
 }
-
-- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    // Jeff se mueve a donde se haya hecho un touch.
-    CGPoint touchLocation = [self convertToNodeSpace:touch.locationInWorld];
-    CGPoint moveDifference = ccpSub(touchLocation, self.jeff.position);
-    CGSize winSize = [[CCDirector sharedDirector] viewSize];
-    float jeffSpeed = winSize.width / 10.0f;
-    float distanceToMove = ccpLength(moveDifference);
-    float moveDuration = distanceToMove / jeffSpeed;
-    [self.jeff stopAction:self.moveAction];
-    self.moveAction = [CCActionMoveTo actionWithDuration:moveDuration position:touchLocation];
-    [self.jeff runAction:self.moveAction];
-}
+//
+//- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+//{
+//    // Jeff se mueve a donde se haya hecho un touch.
+//    CGPoint touchLocation = [self convertToNodeSpace:touch.locationInWorld];
+//    CGPoint moveDifference = ccpSub(touchLocation, self.jeff.position);
+//    CGSize winSize = [[CCDirector sharedDirector] viewSize];
+//    float jeffSpeed = winSize.width / 10.0f;
+//    float distanceToMove = ccpLength(moveDifference);
+//    float moveDuration = distanceToMove / jeffSpeed;
+//    [self.jeff stopAction:self.moveAction];
+//    self.moveAction = [CCActionMoveTo actionWithDuration:moveDuration position:touchLocation];
+//    [self.jeff runAction:self.moveAction];
+//}
 
 // -----------------------------------------------------------------------
 #pragma mark - Button Callbacks
@@ -299,5 +362,4 @@
 }
 
 // -----------------------------------------------------------------------
-
 @end
