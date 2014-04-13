@@ -15,6 +15,8 @@
 		9D6DF57018F839160014622B /* jeff-up-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56A18F839160014622B /* jeff-up-1.png */; };
 		9D6DF57118F839160014622B /* jeff-up-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56B18F839160014622B /* jeff-up-2.png */; };
 		9D6DF57218F839160014622B /* jeff-up-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56C18F839160014622B /* jeff-up-3.png */; };
+		9D73E5A318FA113F00BB2A98 /* money_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D73E5A218FA113F00BB2A98 /* money_bg.png */; };
+		9D73E5A718FA174C00BB2A98 /* wave_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D73E5A618FA174C00BB2A98 /* wave_bg.png */; };
 		9D883DB418F6E38D00BE6E36 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DB318F6E38D00BE6E36 /* QuartzCore.framework */; };
 		9D883DB618F6E38D00BE6E36 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DB518F6E38D00BE6E36 /* OpenGLES.framework */; };
 		9D883DB818F6E38D00BE6E36 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DB718F6E38D00BE6E36 /* OpenAL.framework */; };
@@ -277,6 +279,8 @@
 		9D6DF56A18F839160014622B /* jeff-up-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-up-1.png"; sourceTree = "<group>"; };
 		9D6DF56B18F839160014622B /* jeff-up-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-up-2.png"; sourceTree = "<group>"; };
 		9D6DF56C18F839160014622B /* jeff-up-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-up-3.png"; sourceTree = "<group>"; };
+		9D73E5A218FA113F00BB2A98 /* money_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = money_bg.png; sourceTree = "<group>"; };
+		9D73E5A618FA174C00BB2A98 /* wave_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wave_bg.png; sourceTree = "<group>"; };
 		9D883DB018F6E38D00BE6E36 /* Gr. Runners.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gr. Runners.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D883DB318F6E38D00BE6E36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9D883DB518F6E38D00BE6E36 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -787,6 +791,8 @@
 		9D6DF56618F838D40014622B /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				9D73E5A218FA113F00BB2A98 /* money_bg.png */,
+				9D73E5A618FA174C00BB2A98 /* wave_bg.png */,
 				9DE71F1B18F789C6007CC645 /* icon-tower-1-disabled.png */,
 				9DE71F1C18F789C6007CC645 /* icon-tower-1-enabled.png */,
 				9DE71F1D18F789C6007CC645 /* icon-tower-2-enabled.png */,
@@ -1841,6 +1847,7 @@
 				9D883DE118F6E38D00BE6E36 /* Icon-76@2x.png in Resources */,
 				9D88405518F6E39000BE6E36 /* LICENSE_Chipmunk.txt in Resources */,
 				9DAFE37D18F81EBA00153902 /* jeff-right-1.png in Resources */,
+				9D73E5A318FA113F00BB2A98 /* money_bg.png in Resources */,
 				9D88407718F6E45D00BE6E36 /* pickup.caf in Resources */,
 				9DAFE37A18F81EBA00153902 /* jeff-left-2.png in Resources */,
 				9DE71F2218F789C6007CC645 /* icon-tower-2-disabled.png in Resources */,
@@ -1849,6 +1856,7 @@
 				9D883DEF18F6E38D00BE6E36 /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				9D883DDF18F6E38D00BE6E36 /* Icon-76.png in Resources */,
 				9D6DF56D18F839160014622B /* jeff-down-1.png in Resources */,
+				9D73E5A718FA174C00BB2A98 /* wave_bg.png in Resources */,
 				9D6DF56F18F839160014622B /* jeff-down-3.png in Resources */,
 				9D883FB518F6E38F00BE6E36 /* ChangeLog in Resources */,
 				9D0FCD2F18F822EB002BF610 /* LevelMusic.mp3 in Resources */,

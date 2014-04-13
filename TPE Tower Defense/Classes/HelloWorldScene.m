@@ -102,35 +102,43 @@
     CCButton *backButton = [CCButton buttonWithTitle:@"[ Volver ]" fontName:@"Helvetica-Bold" fontSize:16.0f];
     backButton.color = [CCColor blackColor];
     backButton.positionType = CCPositionTypeNormalized;
-    backButton.position = ccp(0.85f, 0.95f); // Top Right of screen
+    backButton.position = ccp(0.10f, 0.95f);
     [backButton setTarget:self selector:@selector(onBackClicked:)];
     [self addChild:backButton];
     
-    // Mostrar las oleadas
-    waveCount = 1;
-    wavesString = [NSString stringWithFormat:@"Oleada #%d",waveCount];
-    wavesLabel = [CCLabelTTF labelWithString: wavesString fontName:@"Helvetica-Bold" fontSize:16.0f];
-    wavesLabel.positionType = CCPositionTypeNormalized;
-    wavesLabel.color = [CCColor blackColor];
-    wavesLabel.position = ccp(0.85f, 0.85f); // Middle of screen
-    [self addChild:wavesLabel];
-    
     // Mostrar el dinero
+    CCSprite * moneyBg = [CCSprite spriteWithImageNamed:@"money_bg.png"];
+    moneyBg.positionType = CCPositionTypeNormalized;
+    moneyBg.position = ccp(0.95f, 0.80f);
+    [self addChild:moneyBg];
     money = 100;
     moneyString = [NSString stringWithFormat:@"$ %d",money];
-    moneyLabel = [CCLabelTTF labelWithString: moneyString fontName:@"Helvetica" fontSize:16.0f];
+    moneyLabel = [CCLabelTTF labelWithString: moneyString fontName:@"Helvetica-Bold" fontSize:16.0f];
     moneyLabel.positionType = CCPositionTypeNormalized;
-    moneyLabel.color = [CCColor blueColor];
-    moneyLabel.position = ccp(0.85f, 0.80f);
+    moneyLabel.color = [CCColor whiteColor];
+    moneyLabel.position = ccp(0.95f, 0.79f);
     [self addChild:moneyLabel];
+    
+    // Mostrar las oleadas
+    CCSprite * waveBg = [CCSprite spriteWithImageNamed:@"wave_bg.png"];
+    waveBg.positionType = CCPositionTypeNormalized;
+    waveBg.position = ccp(0.95f, 0.92f);
+    [self addChild:waveBg];
+    waveCount = 1;
+    wavesString = [NSString stringWithFormat:@"%d / N",waveCount];
+    wavesLabel = [CCLabelTTF labelWithString: wavesString fontName:@"Helvetica-Bold" fontSize:16.0f];
+    wavesLabel.positionType = CCPositionTypeNormalized;
+    wavesLabel.color = [CCColor whiteColor];
+    wavesLabel.position = ccp(0.95f, 0.91f);
+    [self addChild:wavesLabel];
     
     // Mostrar el puntaje
     score = 100000;
     scoreString = [NSString stringWithFormat:@"Puntaje: %d",score];
     scoreLabel = [CCLabelTTF labelWithString: scoreString fontName:@"Helvetica" fontSize:16.0f];
     scoreLabel.positionType = CCPositionTypeNormalized;
-    scoreLabel.color = [CCColor blueColor];
-    scoreLabel.position = ccp(0.85f, 0.75f);
+    scoreLabel.color = [CCColor blackColor];
+    scoreLabel.position = ccp(0.50f, 0.05f);
     [self addChild:scoreLabel];
     
     CCSprite * tower1buybutton = [CCSprite spriteWithImageNamed:@"icon-tower-1-enabled.png"];
@@ -243,11 +251,11 @@
         
         waveCount++;
         [self removeChild:wavesLabel];
-        wavesString = [NSString stringWithFormat:@"Oleada #%d",waveCount];
+        wavesString = [NSString stringWithFormat:@"%d / N",waveCount];
         wavesLabel = [CCLabelTTF labelWithString: wavesString fontName:@"Helvetica-Bold" fontSize:16.0f];
         wavesLabel.positionType = CCPositionTypeNormalized;
-        wavesLabel.color = [CCColor blackColor];
-        wavesLabel.position = ccp(0.85f, 0.85f); // Middle of screen
+        wavesLabel.color = [CCColor whiteColor];
+        wavesLabel.position = ccp(0.95f, 0.91f);
         [self addChild:wavesLabel];
 
         score -= 10000;
@@ -255,8 +263,8 @@
         scoreString = [NSString stringWithFormat:@"Puntaje: %d",score];
         scoreLabel = [CCLabelTTF labelWithString: scoreString fontName:@"Helvetica" fontSize:16.0f];
         scoreLabel.positionType = CCPositionTypeNormalized;
-        scoreLabel.color = [CCColor blueColor];
-        scoreLabel.position = ccp(0.85f, 0.75f);
+        scoreLabel.color = [CCColor blackColor];
+        scoreLabel.position = ccp(0.50f, 0.05f);
         [self addChild:scoreLabel];
     }
     
