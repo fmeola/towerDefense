@@ -44,17 +44,23 @@
     image.position = ccp(0.5f, 0.8f);
     [self addChild:image];
     
-    // Hello world
-    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Greendale\n Runners" fontName:@"Helvetica-Bold" fontSize:60.0f];
+    // Community Logo
+    CCSprite * cLogo = [CCSprite spriteWithImageNamed:@"community-logo.png"];
+    cLogo.positionType = CCPositionTypeNormalized;
+    cLogo.position = ccp(0.5f, 0.8f);
+    [self addChild:cLogo];
+    
+    // Game Title
+    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Greendale\n  Runners" fontName:@"Helvetica-Bold" fontSize:60.0f];
     label.positionType = CCPositionTypeNormalized;
     label.color = [CCColor blackColor];
-    label.position = ccp(0.5f, 0.5f); // Middle of screen
+    label.position = ccp(0.5f, 0.45f); // Middle of screen
     [self addChild:label];
     
-    // Helloworld scene button
+    // Play Button
     CCButton *helloWorldButton = [CCButton buttonWithTitle:@"[ Jugar ]" fontName:@"Helvetica-Bold" fontSize:24.0f];
     helloWorldButton.positionType = CCPositionTypeNormalized;
-    helloWorldButton.position = ccp(0.5f, 0.20f);
+    helloWorldButton.position = ccp(0.5f, 0.15f);
     [helloWorldButton setTarget:self selector:@selector(onSpinningClicked:)];
     [self addChild:helloWorldButton];
 

@@ -17,6 +17,7 @@
 		9D6DF57218F839160014622B /* jeff-up-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56C18F839160014622B /* jeff-up-3.png */; };
 		9D73E5A318FA113F00BB2A98 /* money_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D73E5A218FA113F00BB2A98 /* money_bg.png */; };
 		9D73E5A718FA174C00BB2A98 /* wave_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D73E5A618FA174C00BB2A98 /* wave_bg.png */; };
+		9D79F40A18FA2EEF00E843D9 /* community-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D79F40918FA2EEF00E843D9 /* community-logo.png */; };
 		9D883DB418F6E38D00BE6E36 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DB318F6E38D00BE6E36 /* QuartzCore.framework */; };
 		9D883DB618F6E38D00BE6E36 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DB518F6E38D00BE6E36 /* OpenGLES.framework */; };
 		9D883DB818F6E38D00BE6E36 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DB718F6E38D00BE6E36 /* OpenAL.framework */; };
@@ -281,6 +282,7 @@
 		9D6DF56C18F839160014622B /* jeff-up-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-up-3.png"; sourceTree = "<group>"; };
 		9D73E5A218FA113F00BB2A98 /* money_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = money_bg.png; sourceTree = "<group>"; };
 		9D73E5A618FA174C00BB2A98 /* wave_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wave_bg.png; sourceTree = "<group>"; };
+		9D79F40918FA2EEF00E843D9 /* community-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "community-logo.png"; sourceTree = "<group>"; };
 		9D883DB018F6E38D00BE6E36 /* Gr. Runners.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gr. Runners.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D883DB318F6E38D00BE6E36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9D883DB518F6E38D00BE6E36 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1682,6 +1684,7 @@
 		9D88406C18F6E45D00BE6E36 /* TileGameResources */ = {
 			isa = PBXGroup;
 			children = (
+				9D79F40918FA2EEF00E843D9 /* community-logo.png */,
 				9DF8089A18F84ABF001CBB82 /* splash_screen.png */,
 				9D6DF56618F838D40014622B /* HUD */,
 				9D6DF56518F838B90014622B /* Old */,
@@ -1814,6 +1817,7 @@
 				9D883DCE18F6E38D00BE6E36 /* Default.png in Resources */,
 				9D883DD718F6E38D00BE6E36 /* Icon.png in Resources */,
 				9DF8089718F847EA001CBB82 /* jeff-fall-right-1.png in Resources */,
+				9D79F40A18FA2EEF00E843D9 /* community-logo.png in Resources */,
 				9DAFE37E18F81EBA00153902 /* jeff-right-2.png in Resources */,
 				9DE4E73918F73A2A00A4E876 /* soldier_blue_up.png in Resources */,
 				9D883DE518F6E38D00BE6E36 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
