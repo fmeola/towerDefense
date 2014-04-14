@@ -12,7 +12,7 @@
 #import "cocos2d-ui.h"
 
 // -----------------------------------------------------------------------
-
+#define SPRITE_SIZE 3
 /**
  *  The main scene
  */
@@ -20,9 +20,8 @@
 
 @property (strong) CCTiledMap * tileMap;
 @property (strong) CCTiledMapLayer * background;
-@property (strong) CCSprite * player;
 
-@property (nonatomic, strong) CCSprite *jeff;
+@property (nonatomic, strong) CCSprite *character;
 @property (nonatomic, strong) CCAction *walkAction;
 @property (nonatomic, strong) CCAction *moveAction;
 //@property (nonatomic, strong) CCAction *waitAction;
@@ -33,9 +32,8 @@
 
 + (HelloWorldScene *) scene;
 - (id)init;
-+ (CCScene *) jeffScene;
 
--(void)createScoreLabel;
+-(void)createScoreLabelWithInitialScore:(int)initial;
 -(void)changeScore:(int)diff;
 -(void)defaultScoreLabel;
 
@@ -43,7 +41,7 @@
 -(void)increaseWavesCount:(int)diff;
 -(void)defaultWavesLabel;
 
--(void)createMoneyLabel;
+-(void)createMoneyLabelWithInitialMoney:(int)initial;
 -(void)changeMoney:(int)diff;
 -(void)defaultMoneyLabel;
 
@@ -53,5 +51,9 @@
 
 -(void)createBackButton;
 
+-(void)playAudioEffectNamed:(NSString *)name;
+
+-(void)createCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point;
+-(void)updateCharacerSprite:(NSString *)characterName withPosition:(CGPoint)point;
 // -----------------------------------------------------------------------
 @end

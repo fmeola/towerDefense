@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9D0FCD2F18F822EB002BF610 /* LevelMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D0FCD2E18F822EB002BF610 /* LevelMusic.mp3 */; };
 		9D0FCD3118F823B4002BF610 /* IntroMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D0FCD3018F823B4002BF610 /* IntroMusic.mp3 */; };
+		9D6C72AD18FB72C600824413 /* Test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C72AC18FB72C600824413 /* Test.txt */; };
 		9D6DF56D18F839160014622B /* jeff-down-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56718F839160014622B /* jeff-down-1.png */; };
 		9D6DF56E18F839160014622B /* jeff-down-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56818F839160014622B /* jeff-down-2.png */; };
 		9D6DF56F18F839160014622B /* jeff-down-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56918F839160014622B /* jeff-down-3.png */; };
@@ -274,6 +275,7 @@
 /* Begin PBXFileReference section */
 		9D0FCD2E18F822EB002BF610 /* LevelMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LevelMusic.mp3; sourceTree = "<group>"; };
 		9D0FCD3018F823B4002BF610 /* IntroMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IntroMusic.mp3; sourceTree = "<group>"; };
+		9D6C72AC18FB72C600824413 /* Test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Test.txt; sourceTree = "<group>"; };
 		9D6DF56718F839160014622B /* jeff-down-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-down-1.png"; sourceTree = "<group>"; };
 		9D6DF56818F839160014622B /* jeff-down-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-down-2.png"; sourceTree = "<group>"; };
 		9D6DF56918F839160014622B /* jeff-down-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-down-3.png"; sourceTree = "<group>"; };
@@ -1671,6 +1673,7 @@
 		9D88405A18F6E39000BE6E36 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9D6C72AC18FB72C600824413 /* Test.txt */,
 				9D88405B18F6E39000BE6E36 /* AppDelegate.h */,
 				9D88405C18F6E39000BE6E36 /* AppDelegate.m */,
 				9D88405E18F6E39000BE6E36 /* HelloWorldScene.h */,
@@ -1814,6 +1817,7 @@
 				9DAFE36D18F814F000153902 /* jeff.png in Resources */,
 				9DAFE36C18F814F000153902 /* jeff.plist in Resources */,
 				9D6DF57018F839160014622B /* jeff-up-1.png in Resources */,
+				9D6C72AD18FB72C600824413 /* Test.txt in Resources */,
 				9D883DCE18F6E38D00BE6E36 /* Default.png in Resources */,
 				9D883DD718F6E38D00BE6E36 /* Icon.png in Resources */,
 				9DF8089718F847EA001CBB82 /* jeff-fall-right-1.png in Resources */,
