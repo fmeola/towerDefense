@@ -35,5 +35,23 @@
 - (id)init;
 + (CCScene *) jeffScene;
 
+-(void)createScoreLabel;
+-(void)changeScore:(int)diff;
+-(void)defaultScoreLabel;
+
+-(void)createWavesLabel;
+-(void)increaseWavesCount:(int)diff;
+-(void)defaultWavesLabel;
+
+-(void)createMoneyLabel;
+-(void)changeMoney:(int)diff;
+-(void)defaultMoneyLabel;
+
+-(void)createTowerButtons;
+-(void)createTower1Button;
+-(void)createTower2Button;
+
+-(void)createBackButton;
+
 // -----------------------------------------------------------------------
 @end
