@@ -120,6 +120,7 @@
     long x = [nextPoint[@"x"] integerValue];
     long y = [nextPoint[@"y"] integerValue];
     currentPoint = nextPoint;
+    // Ver si lo actualizo de más
     [self updateCharacerSprite:@"jeff" withPosition:ccp(x,y)];
     // Si llego a la posición final
     if([currentPoint[@"next"] isEqual: @"p0"]) {
@@ -264,7 +265,6 @@
     CCSpriteBatchNode * spriteSheet = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.png",characterName]];
     [self addChild:spriteSheet];
     NSMutableArray * walkAnimFrames = [NSMutableArray array];
-    // Cómo saber el size del .plist
     for (int i=1; i<=SPRITE_SIZE; i++) {
         [walkAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
