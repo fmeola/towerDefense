@@ -34,6 +34,8 @@
     NSString * scoreString;
     CCLabelTTF * scoreLabel;
     int score;
+    
+    BOOL characterMoving;
 }
 
 // -----------------------------------------------------------------------
@@ -77,6 +79,7 @@
     [self createScoreLabelWithInitialScore:100000];
     [self createTowerButtons];
     [self createCharacterSprite:@"jeff" withPosition:ccp(x,y)];
+    characterMoving = NO;
     return self;
 }
 
@@ -293,4 +296,26 @@
     _character.position = point;
 }
 
+//-(void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+//{
+//    CGPoint destinyLocation = ccp([currentPoint[@"x"] integerValue],[currentPoint[@"y"] integerValue]);
+//    CGPoint moveDifference = ccpSub(destinyLocation, _character.position);
+//    CGSize winSize = [[CCDirector sharedDirector] viewSize];
+//    float characterSpeed = winSize.width / 10.0f;
+//    float distanceToMove = ccpLength(moveDifference);
+//    float moveDuration = distanceToMove / characterSpeed;
+//    [_character stopAction: _moveAction];
+//    if (!characterMoving) {
+//        [_character runAction:_moveAction];
+//    }
+//    _moveAction = [CCActionSequence actions: [CCActionMoveTo actionWithDuration:moveDuration position: destinyLocation],[CCActionCallFunc actionWithTarget:self selector:@selector(characterMoveEnded)], nil];
+//    [_character runAction: _moveAction];
+//    characterMoving = YES;
+//}
+
+//- (void)characterMoveEnded
+//{
+//    [_character stopAction: _moveAction];
+//    characterMoving = NO;
+//}
 @end
