@@ -20,12 +20,9 @@
 
 @property (strong) CCTiledMap * tileMap;
 @property (strong) CCTiledMapLayer * background;
-
 @property (nonatomic, strong) CCSprite *character;
 @property (nonatomic, strong) CCAction *walkAction;
 @property (nonatomic, strong) CCAction *moveAction;
-//@property (nonatomic, strong) CCAction *waitAction;
-//@property (nonatomic, strong) CCActionSequence * sequenceAction;
 @property (nonatomic, strong) CCAnimation *walkAnim;
 
 // -----------------------------------------------------------------------
@@ -54,6 +51,6 @@
 -(void)playAudioEffectNamed:(NSString *)name;
 
 -(void)createCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point;
--(void)updateCharacerSprite:(NSString *)characterName withPosition:(CGPoint)point;
+-(void)updateCharacerSprite:(NSString *)characterName;
 // -----------------------------------------------------------------------
 @end

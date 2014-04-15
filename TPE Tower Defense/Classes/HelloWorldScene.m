@@ -17,25 +17,18 @@
 
 @implementation HelloWorldScene
 {
+    CCTiledMapObjectGroup * objectGroup;
+    CCTiledMapObjectGroup * towersGroup;
     NSDictionary * currentPoint;
-    
-    CCSprite *_sprite;
-    
     NSString * wavesString;
     CCLabelTTF * wavesLabel;
     int waveCount;
-    
-    CCTiledMapObjectGroup * towersGroup;
-    
     NSString * moneyString;
     CCLabelTTF * moneyLabel;
     int money;
-    
     NSString * scoreString;
     CCLabelTTF * scoreLabel;
     int score;
-    
-    BOOL characterMoving;
 }
 
 // -----------------------------------------------------------------------
@@ -62,11 +55,9 @@
     _tileMap = [CCTiledMap tiledMapWithFile:@"TileMap.tmx"];
     _background = [_tileMap layerNamed:@"Background"];
     [self addChild:_tileMap];
-    CCTiledMapObjectGroup * objectGroup = [_tileMap objectGroupNamed:@"Objects"];
+    objectGroup = [_tileMap objectGroupNamed:@"Objects"];
     NSAssert(objectGroup != nil, @"tile map has no objects object layer");
     NSDictionary * startPoint = [objectGroup objectNamed:_tileMap.properties[@"startPosition"]];
-    long x = [startPoint[@"x"] integerValue];
-    long y = [startPoint[@"y"] integerValue];
     currentPoint = startPoint;
     towersGroup = [_tileMap objectGroupNamed:@"Towers"];
     NSAssert(towersGroup != nil, @"tile map has no objects Towers layer");
@@ -78,8 +69,7 @@
     [self createWavesLabel];
     [self createScoreLabelWithInitialScore:100000];
     [self createTowerButtons];
-    [self createCharacterSprite:@"jeff" withPosition:ccp(x,y)];
-    characterMoving = NO;
+    [self createCharacterSprite:@"jeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
     return self;
 }
 
@@ -117,20 +107,28 @@
 
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    CCTiledMapObjectGroup *objectGroup = [_tileMap objectGroupNamed:@"Objects"];
-    NSAssert(objectGroup != nil, @"tile map has no objects object layer");
-    NSDictionary *nextPoint = [objectGroup objectNamed:currentPoint[@"next"]];
-    long x = [nextPoint[@"x"] integerValue];
-    long y = [nextPoint[@"y"] integerValue];
+    NSDictionary * nextPoint = [objectGroup objectNamed:currentPoint[@"next"]];
     currentPoint = nextPoint;
     // Ver si lo actualizo de más
-    [self updateCharacerSprite:@"jeff" withPosition:ccp(x,y)];
+    [self updateCharacerSprite:@"jeff"];
     // Si llego a la posición final
     if([currentPoint[@"next"] isEqual: @"p0"]) {
         [self playAudioEffectNamed:@"pickup.caf"];
         [self increaseWavesCount:1];
         [self changeScore:-10000];
     }
+}
+
+-(void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    CGPoint destinyLocation = ccp([currentPoint[@"x"] integerValue],[currentPoint[@"y"] integerValue]);
+    CGPoint moveDifference = ccpSub(destinyLocation, _character.position);
+    CGSize winSize = [[CCDirector sharedDirector] viewSize];
+    float characterSpeed = winSize.width / 10.0f;
+    float distanceToMove = ccpLength(moveDifference);
+    float moveDuration = distanceToMove / characterSpeed;
+    _moveAction = [CCActionMoveTo actionWithDuration:moveDuration position:destinyLocation];
+    [_character runAction: _moveAction];
 }
 
 // -----------------------------------------------------------------------
@@ -281,7 +279,7 @@
     [spriteSheet addChild:_character];
 }
 
--(void)updateCharacerSprite:(NSString *)characterName withPosition:(CGPoint)point
+-(void)updateCharacerSprite:(NSString *)characterName
 {
     NSMutableArray * walkAnimFrames = [NSMutableArray array];
     for (int i=1; i<=SPRITE_SIZE; i++) {
@@ -293,29 +291,6 @@
     [_character stopAction:_walkAction];
     _walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:_walkAnim]];
     [_character runAction:_walkAction];
-    _character.position = point;
 }
 
-//-(void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
-//{
-//    CGPoint destinyLocation = ccp([currentPoint[@"x"] integerValue],[currentPoint[@"y"] integerValue]);
-//    CGPoint moveDifference = ccpSub(destinyLocation, _character.position);
-//    CGSize winSize = [[CCDirector sharedDirector] viewSize];
-//    float characterSpeed = winSize.width / 10.0f;
-//    float distanceToMove = ccpLength(moveDifference);
-//    float moveDuration = distanceToMove / characterSpeed;
-//    [_character stopAction: _moveAction];
-//    if (!characterMoving) {
-//        [_character runAction:_moveAction];
-//    }
-//    _moveAction = [CCActionSequence actions: [CCActionMoveTo actionWithDuration:moveDuration position: destinyLocation],[CCActionCallFunc actionWithTarget:self selector:@selector(characterMoveEnded)], nil];
-//    [_character runAction: _moveAction];
-//    characterMoving = YES;
-//}
-
-//- (void)characterMoveEnded
-//{
-//    [_character stopAction: _moveAction];
-//    characterMoving = NO;
-//}
 @end
