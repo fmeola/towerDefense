@@ -91,6 +91,7 @@
     // In pre-v3, touch enable and scheduleUpdate was called here
     // In v3, touch is enabled by setting userInterActionEnabled for the individual nodes
     // Per frame update is automatically enabled, if update is overridden
+    //[self schedule:@selector(addSoldier:) interval:1.5];
 }
 
 // -----------------------------------------------------------------------
@@ -292,5 +293,11 @@
     _walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:_walkAnim]];
     [_character runAction:_walkAction];
 }
+
+//- (void)addSoldier:(CCTime)dt
+//{
+//    NSDictionary * startPoint = [objectGroup objectNamed:_tileMap.properties[@"startPosition"]];
+//    [self createCharacterSprite:@"jeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
+//}
 
 @end
