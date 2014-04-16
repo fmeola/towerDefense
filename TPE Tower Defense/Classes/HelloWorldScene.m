@@ -29,6 +29,7 @@
     NSString * scoreString;
     CCLabelTTF * scoreLabel;
     int score;
+    CCSpriteBatchNode * spriteSheet;
 }
 
 // -----------------------------------------------------------------------
@@ -92,6 +93,10 @@
     // In v3, touch is enabled by setting userInterActionEnabled for the individual nodes
     // Per frame update is automatically enabled, if update is overridden
     //[self schedule:@selector(addSoldier:) interval:1.5];
+    
+    // ¿Está bien así?
+    // ¿No puedo precalcular todos los moveTo y ponerlos en un CCSequence?
+    [self schedule:@selector(moveCharacter:) interval:1.0f];
 }
 
 // -----------------------------------------------------------------------
@@ -105,32 +110,6 @@
 // -----------------------------------------------------------------------
 #pragma mark - Touch Handler
 // -----------------------------------------------------------------------
-
--(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    NSDictionary * nextPoint = [objectGroup objectNamed:currentPoint[@"next"]];
-    currentPoint = nextPoint;
-    // Ver si lo actualizo de más
-    [self updateCharacerSprite:@"jeff"];
-    // Si llego a la posición final
-    if([currentPoint[@"next"] isEqual: @"p0"]) {
-        [self playAudioEffectNamed:@"pickup.caf"];
-        [self increaseWavesCount:1];
-        [self changeScore:-10000];
-    }
-}
-
--(void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    CGPoint destinyLocation = ccp([currentPoint[@"x"] integerValue],[currentPoint[@"y"] integerValue]);
-    CGPoint moveDifference = ccpSub(destinyLocation, _character.position);
-    CGSize winSize = [[CCDirector sharedDirector] viewSize];
-    float characterSpeed = winSize.width / 10.0f;
-    float distanceToMove = ccpLength(moveDifference);
-    float moveDuration = distanceToMove / characterSpeed;
-    _moveAction = [CCActionMoveTo actionWithDuration:moveDuration position:destinyLocation];
-    [_character runAction: _moveAction];
-}
 
 // -----------------------------------------------------------------------
 #pragma mark - Button Callbacks
@@ -264,7 +243,7 @@
 -(void)createCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point
 {
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist",characterName]];
-    CCSpriteBatchNode * spriteSheet = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.png",characterName]];
+    spriteSheet = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.png",characterName]];
     [self addChild:spriteSheet];
     NSMutableArray * walkAnimFrames = [NSMutableArray array];
     for (int i=1; i<=SPRITE_SIZE; i++) {
@@ -292,6 +271,35 @@
     [_character stopAction:_walkAction];
     _walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:_walkAnim]];
     [_character runAction:_walkAction];
+}
+
+- (void)moveCharacter:(CCTime)dt
+{
+    NSDictionary * nextPoint = [objectGroup objectNamed:currentPoint[@"next"]];
+    currentPoint = nextPoint;
+    // Ver si lo actualizo de más
+    [self updateCharacerSprite:@"jeff"];
+    // Si llego a la posición final
+    if([currentPoint[@"next"] isEqual: @"p0"]) {
+        [self playAudioEffectNamed:@"pickup.caf"];
+        [self increaseWavesCount:1];
+        [self changeScore:-10000];
+        [_character stopAction:_walkAction];
+        [spriteSheet removeChild:_character cleanup: YES];
+        NSDictionary * startPoint = [objectGroup objectNamed:_tileMap.properties[@"startPosition"]];
+        // Ver si cargo de más.
+        [self createCharacterSprite:@"jeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
+    } else {
+        CGPoint destinyLocation = ccp([currentPoint[@"x"] floatValue],[currentPoint[@"y"] floatValue]);
+        CGPoint moveDifference = ccpSub(destinyLocation, _character.position);
+        CGSize winSize = [[CCDirector sharedDirector] viewSize];
+        float characterSpeed = winSize.width / 10.0f;
+        float distanceToMove = ccpLength(moveDifference);
+        float moveDuration = distanceToMove / characterSpeed;
+        CCLOG(@"%f",moveDuration);
+        _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];
+        [_character runAction: _moveAction];
+    }
 }
 
 //- (void)addSoldier:(CCTime)dt
