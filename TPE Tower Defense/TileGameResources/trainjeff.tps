@@ -6,7 +6,7 @@
         <key>texturePackerVersion</key>
         <string>3.3.2</string>
         <key>fileName</key>
-        <string>/Users/franco/TPE Tower Defense/initial/TPE Tower Defense/TileGameResources/train-jeff.tps</string>
+        <string>/Users/franco/TPE Tower Defense/initial/TPE Tower Defense/TileGameResources/trainjeff.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -38,7 +38,7 @@
         <key>dataFormat</key>
         <string>cocos2d</string>
         <key>textureFileName</key>
-        <filename>train-jeff.png</filename>
+        <filename>trainjeff.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -131,7 +131,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>train-jeff.plist</filename>
+                <filename>trainjeff.plist</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -172,10 +172,20 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../Resources/RawSprites/train-right-1.png</filename>
-            <filename>../Resources/RawSprites/train-right-2.png</filename>
-            <filename>../Resources/RawSprites/train-right-3.png</filename>
-            <filename>../Resources/RawSprites/train-right-4.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-right-1.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-right-2.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-right-3.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-right-4.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-down-1.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-down-2.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-down-3.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-left-1.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-left-2.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-left-3.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-left-4.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-up-1.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-up-2.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-up-3.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

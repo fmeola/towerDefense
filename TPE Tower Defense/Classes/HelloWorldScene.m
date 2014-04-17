@@ -71,6 +71,7 @@
     [self createScoreLabelWithInitialScore:100000];
     [self createTowerButtons];
     [self createCharacterSprite:@"jeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
+//    [self createCharacterSprite:@"trainjeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
     return self;
 }
 
@@ -96,6 +97,7 @@
     
     // ¿Está bien así?
     // ¿No puedo precalcular todos los moveTo y ponerlos en un CCSequence?
+    // ¿Cómo hago con más de una spritesheet?
     [self schedule:@selector(moveCharacter:) interval:1.0f];
 }
 
@@ -240,6 +242,19 @@
     [audio playEffect:name];
 }
 
+//-(void)createCharacterSprite2:(NSString *)characterName withPosition:(CGPoint)point
+//{
+//    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"%@.plist" textureFilename:@"%@.png"];
+//    CCSpriteBatchNode * batchNode = [CCSpriteBatchNode node];
+//    CCSpriteFrame * frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"%@.png"];
+//    batchNode.texture = frame.texture;
+//    [self addChild:batchNode];
+//    CCSprite * character = [CCSprite spriteWithSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"%@.png"]];
+//    character.position = point;
+//    [batchNode addChild:character];
+//}
+
+// Cómo saber el SPRITE_SIZE? En algunos son 3 y en otros 4.
 -(void)createCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point
 {
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist",characterName]];
@@ -291,21 +306,9 @@
         [self createCharacterSprite:@"jeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
     } else {
         CGPoint destinyLocation = ccp([currentPoint[@"x"] floatValue],[currentPoint[@"y"] floatValue]);
-        CGPoint moveDifference = ccpSub(destinyLocation, _character.position);
-        CGSize winSize = [[CCDirector sharedDirector] viewSize];
-        float characterSpeed = winSize.width / 10.0f;
-        float distanceToMove = ccpLength(moveDifference);
-        float moveDuration = distanceToMove / characterSpeed;
-        CCLOG(@"%f",moveDuration);
         _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];
         [_character runAction: _moveAction];
     }
 }
-
-//- (void)addSoldier:(CCTime)dt
-//{
-//    NSDictionary * startPoint = [objectGroup objectNamed:_tileMap.properties[@"startPosition"]];
-//    [self createCharacterSprite:@"jeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
-//}
 
 @end
