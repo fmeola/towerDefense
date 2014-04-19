@@ -21,6 +21,7 @@
     CCLabelTTF * scoreLabel;
     int score;
     CCSpriteBatchNode * spriteSheet;
+    NSString * currrentCharacterName;
 }
 
 // -----------------------------------------------------------------------
@@ -56,12 +57,17 @@
     // Música de fondo
     OALSimpleAudio * bgmusic = [OALSimpleAudio sharedInstance];
     [bgmusic playBg:@"LevelMusic.mp3" loop:TRUE];
+    
+    //////////
+    currrentCharacterName = @"jeff";
+    //////////
+    
     [self createBackButton];
     [self createMoneyLabelWithInitialMoney:100];
     [self createWavesLabel];
     [self createScoreLabelWithInitialScore:100000];
     [self createTowerButtons];
-    [self createCharacterSprite:@"trainjeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
+    [self createCharacterSprite:currrentCharacterName withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
     return self;
 }
 
@@ -283,7 +289,7 @@
     NSDictionary * nextPoint = [objectGroup objectNamed:currentPoint[@"next"]];
     currentPoint = nextPoint;
     // Ver si lo actualizo de más
-    [self updateCharacerSprite:@"trainjeff"];
+    [self updateCharacerSprite:currrentCharacterName];
     // Si llego a la posición final
     if([currentPoint[@"next"] isEqual: @"p0"]) {
         [self playAudioEffectNamed:@"pickup.caf"];
@@ -293,7 +299,8 @@
         [spriteSheet removeChild:_character cleanup: YES];
         NSDictionary * startPoint = [objectGroup objectNamed:_tileMap.properties[@"startPosition"]];
         // Ver si cargo de más.
-        [self createCharacterSprite:@"trainjeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
+        currrentCharacterName = @"trainjeff";
+        [self createCharacterSprite:currrentCharacterName withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
     } else {
         CGPoint destinyLocation = ccp([currentPoint[@"x"] floatValue],[currentPoint[@"y"] floatValue]);
         _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];
