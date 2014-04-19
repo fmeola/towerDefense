@@ -7,6 +7,7 @@
 
 + (AboutScene *)scene;
 - (id)init;
+- (void)onSpinningClicked:(id)sender;
 
 // -----------------------------------------------------------------------
 @end
