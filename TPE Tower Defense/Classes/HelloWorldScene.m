@@ -70,8 +70,7 @@
     [self createWavesLabel];
     [self createScoreLabelWithInitialScore:100000];
     [self createTowerButtons];
-    [self createCharacterSprite:@"jeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
-//    [self createCharacterSprite:@"trainjeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
+    [self createCharacterSprite:@"trainjeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
     return self;
 }
 
@@ -293,7 +292,7 @@
     NSDictionary * nextPoint = [objectGroup objectNamed:currentPoint[@"next"]];
     currentPoint = nextPoint;
     // Ver si lo actualizo de más
-    [self updateCharacerSprite:@"jeff"];
+    [self updateCharacerSprite:@"trainjeff"];
     // Si llego a la posición final
     if([currentPoint[@"next"] isEqual: @"p0"]) {
         [self playAudioEffectNamed:@"pickup.caf"];
@@ -303,7 +302,7 @@
         [spriteSheet removeChild:_character cleanup: YES];
         NSDictionary * startPoint = [objectGroup objectNamed:_tileMap.properties[@"startPosition"]];
         // Ver si cargo de más.
-        [self createCharacterSprite:@"jeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
+        [self createCharacterSprite:@"trainjeff" withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
     } else {
         CGPoint destinyLocation = ccp([currentPoint[@"x"] floatValue],[currentPoint[@"y"] floatValue]);
         _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];

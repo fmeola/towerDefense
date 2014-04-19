@@ -7,7 +7,7 @@
             <key>jeff-down-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{73,149},{28,47}}</string>
+                <string>{{2,2},{28,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>jeff-down-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{73,100},{28,47}}</string>
+                <string>{{32,2},{28,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>jeff-down-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{48,51},{28,47}}</string>
+                <string>{{62,2},{28,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>jeff-fall-left-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,152},{39,48}}</string>
+                <string>{{92,2},{39,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>jeff-fall-left-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,102},{39,48}}</string>
+                <string>{{133,2},{39,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +72,7 @@
             <key>jeff-fall-left-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,52},{44,48}}</string>
+                <string>{{174,2},{44,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +85,7 @@
             <key>jeff-fall-right-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{40,202},{36,48}}</string>
+                <string>{{2,52},{36,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>jeff-fall-right-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,202},{36,48}}</string>
+                <string>{{40,52},{36,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>jeff-fall-right-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{44,48}}</string>
+                <string>{{78,52},{44,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>jeff-left-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{114,2},{25,45}}</string>
+                <string>{{124,52},{25,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>jeff-left-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{103,96},{30,45}}</string>
+                <string>{{151,52},{30,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -150,7 +150,7 @@
             <key>jeff-left-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{116,190},{22,45}}</string>
+                <string>{{183,52},{22,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -163,7 +163,7 @@
             <key>jeff-left-4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,2},{34,45}}</string>
+                <string>{{207,52},{34,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -176,7 +176,7 @@
             <key>jeff-right-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{112,49},{25,45}}</string>
+                <string>{{2,102},{25,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -189,7 +189,7 @@
             <key>jeff-right-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,49},{32,45}}</string>
+                <string>{{29,102},{32,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -202,7 +202,7 @@
             <key>jeff-right-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{103,143},{23,45}}</string>
+                <string>{{63,102},{23,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -215,7 +215,7 @@
             <key>jeff-right-4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{78,198},{36,45}}</string>
+                <string>{{88,102},{36,45}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -228,7 +228,7 @@
             <key>jeff-up-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{48,2},{28,47}}</string>
+                <string>{{126,102},{28,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -241,7 +241,7 @@
             <key>jeff-up-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{43,151},{28,47}}</string>
+                <string>{{156,102},{28,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -254,7 +254,7 @@
             <key>jeff-up-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{43,102},{28,47}}</string>
+                <string>{{186,102},{28,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -274,7 +274,7 @@
             <key>size</key>
             <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a75549e955b7b079208130ccd6e7aea0:46a82894c4c279b6e13c36d87299639d:77a8f9686b7c00eb14e43cfea225b304$</string>
+            <string>$TexturePacker:SmartUpdate:74d4bf60f0a8dad82f5e92c21968d357:46a82894c4c279b6e13c36d87299639d:77a8f9686b7c00eb14e43cfea225b304$</string>
             <key>textureFileName</key>
             <string>jeff.png</string>
         </dict>

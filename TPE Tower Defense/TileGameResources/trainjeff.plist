@@ -7,7 +7,7 @@
             <key>trainjeff-down-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{54,2},{24,48}}</string>
+                <string>{{2,2},{24,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>trainjeff-down-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{80,2},{24,48}}</string>
+                <string>{{28,2},{24,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>trainjeff-down-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{28,2},{24,48}}</string>
+                <string>{{54,2},{24,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -43,10 +43,88 @@
                 <key>sourceSize</key>
                 <string>{24,48}</string>
             </dict>
+            <key>trainjeff-fall-left-1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{80,2},{49,48}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{49,48}}</string>
+                <key>sourceSize</key>
+                <string>{49,48}</string>
+            </dict>
+            <key>trainjeff-fall-left-2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{131,2},{47,48}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{47,48}}</string>
+                <key>sourceSize</key>
+                <string>{47,48}</string>
+            </dict>
+            <key>trainjeff-fall-left-3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{180,2},{47,48}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{47,48}}</string>
+                <key>sourceSize</key>
+                <string>{47,48}</string>
+            </dict>
+            <key>trainjeff-fall-right-1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,52},{47,48}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{47,48}}</string>
+                <key>sourceSize</key>
+                <string>{47,48}</string>
+            </dict>
+            <key>trainjeff-fall-right-2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{51,52},{49,48}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{49,48}}</string>
+                <key>sourceSize</key>
+                <string>{49,48}</string>
+            </dict>
+            <key>trainjeff-fall-right-3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{102,52},{48,48}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{48,48}}</string>
+                <key>sourceSize</key>
+                <string>{48,48}</string>
+            </dict>
             <key>trainjeff-left-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,202},{49,48}}</string>
+                <string>{{152,52},{49,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +137,7 @@
             <key>trainjeff-left-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{52,152},{49,48}}</string>
+                <string>{{203,52},{49,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +150,7 @@
             <key>trainjeff-left-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,152},{48,48}}</string>
+                <string>{{2,102},{48,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +163,7 @@
             <key>trainjeff-left-4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{79,52},{47,48}}</string>
+                <string>{{52,102},{47,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +176,7 @@
             <key>trainjeff-right-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{30,52},{47,48}}</string>
+                <string>{{101,102},{47,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +189,7 @@
             <key>trainjeff-right-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,102},{48,48}}</string>
+                <string>{{150,102},{48,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +202,7 @@
             <key>trainjeff-right-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{52,102},{48,48}}</string>
+                <string>{{200,102},{48,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +215,7 @@
             <key>trainjeff-right-4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{53,202},{49,48}}</string>
+                <string>{{2,152},{49,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -150,7 +228,7 @@
             <key>trainjeff-up-1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{24,48}}</string>
+                <string>{{53,152},{24,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -163,7 +241,7 @@
             <key>trainjeff-up-2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,52},{26,48}}</string>
+                <string>{{79,152},{26,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -176,7 +254,7 @@
             <key>trainjeff-up-3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{24,48}}</string>
+                <string>{{53,152},{24,48}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -194,9 +272,9 @@
             <key>realTextureFileName</key>
             <string>trainjeff.png</string>
             <key>size</key>
-            <string>{128,256}</string>
+            <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:85edd31826283c0065e40d7140f71f4d:111adb78af7cfe93963dbadb74f8685c:491342e25d86342705f881825cbce4bc$</string>
+            <string>$TexturePacker:SmartUpdate:f69cfa34c6bb1dfd8d72a773c06d8608:89e77ef26f0d3c3335de4dab85084579:491342e25d86342705f881825cbce4bc$</string>
             <key>textureFileName</key>
             <string>trainjeff.png</string>
         </dict>

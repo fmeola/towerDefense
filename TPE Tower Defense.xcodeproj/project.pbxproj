@@ -242,6 +242,12 @@
 		9DAFE37E18F81EBA00153902 /* jeff-right-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DAFE37618F81EBA00153902 /* jeff-right-2.png */; };
 		9DAFE37F18F81EBA00153902 /* jeff-right-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DAFE37718F81EBA00153902 /* jeff-right-3.png */; };
 		9DAFE38018F81EBA00153902 /* jeff-right-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DAFE37818F81EBA00153902 /* jeff-right-4.png */; };
+		9DB23CC61902013B00455CE4 /* trainjeff-fall-left-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB23CC01902013B00455CE4 /* trainjeff-fall-left-1.png */; };
+		9DB23CC71902013B00455CE4 /* trainjeff-fall-left-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB23CC11902013B00455CE4 /* trainjeff-fall-left-2.png */; };
+		9DB23CC81902013B00455CE4 /* trainjeff-fall-left-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB23CC21902013B00455CE4 /* trainjeff-fall-left-3.png */; };
+		9DB23CC91902013B00455CE4 /* trainjeff-fall-right-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB23CC31902013B00455CE4 /* trainjeff-fall-right-1.png */; };
+		9DB23CCA1902013B00455CE4 /* trainjeff-fall-right-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB23CC41902013B00455CE4 /* trainjeff-fall-right-2.png */; };
+		9DB23CCB1902013B00455CE4 /* trainjeff-fall-right-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB23CC51902013B00455CE4 /* trainjeff-fall-right-3.png */; };
 		9DE4E73618F73A2A00A4E876 /* soldier_blue_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73218F73A2A00A4E876 /* soldier_blue_down.png */; };
 		9DE4E73718F73A2A00A4E876 /* soldier_blue_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */; };
 		9DE4E73818F73A2A00A4E876 /* soldier_blue_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */; };
@@ -748,6 +754,12 @@
 		9DAFE37618F81EBA00153902 /* jeff-right-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-right-2.png"; sourceTree = "<group>"; };
 		9DAFE37718F81EBA00153902 /* jeff-right-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-right-3.png"; sourceTree = "<group>"; };
 		9DAFE37818F81EBA00153902 /* jeff-right-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-right-4.png"; sourceTree = "<group>"; };
+		9DB23CC01902013B00455CE4 /* trainjeff-fall-left-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-fall-left-1.png"; sourceTree = "<group>"; };
+		9DB23CC11902013B00455CE4 /* trainjeff-fall-left-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-fall-left-2.png"; sourceTree = "<group>"; };
+		9DB23CC21902013B00455CE4 /* trainjeff-fall-left-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-fall-left-3.png"; sourceTree = "<group>"; };
+		9DB23CC31902013B00455CE4 /* trainjeff-fall-right-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-fall-right-1.png"; sourceTree = "<group>"; };
+		9DB23CC41902013B00455CE4 /* trainjeff-fall-right-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-fall-right-2.png"; sourceTree = "<group>"; };
+		9DB23CC51902013B00455CE4 /* trainjeff-fall-right-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-fall-right-3.png"; sourceTree = "<group>"; };
 		9DE4E73218F73A2A00A4E876 /* soldier_blue_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_down.png; sourceTree = "<group>"; };
 		9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_left.png; sourceTree = "<group>"; };
 		9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_right.png; sourceTree = "<group>"; };
@@ -1747,6 +1759,12 @@
 		9DAFE37018F81EBA00153902 /* RawSprites */ = {
 			isa = PBXGroup;
 			children = (
+				9DB23CC01902013B00455CE4 /* trainjeff-fall-left-1.png */,
+				9DB23CC11902013B00455CE4 /* trainjeff-fall-left-2.png */,
+				9DB23CC21902013B00455CE4 /* trainjeff-fall-left-3.png */,
+				9DB23CC31902013B00455CE4 /* trainjeff-fall-right-1.png */,
+				9DB23CC41902013B00455CE4 /* trainjeff-fall-right-2.png */,
+				9DB23CC51902013B00455CE4 /* trainjeff-fall-right-3.png */,
 				9DF18E3618FF79BC00E25903 /* trainjeff-down-1.png */,
 				9DF18E3718FF79BC00E25903 /* trainjeff-down-2.png */,
 				9DF18E3818FF79BC00E25903 /* trainjeff-down-3.png */,
@@ -1873,6 +1891,7 @@
 				9D6DF57018F839160014622B /* jeff-up-1.png in Resources */,
 				9D6C72AD18FB72C600824413 /* Test.txt in Resources */,
 				9D883DCE18F6E38D00BE6E36 /* Default.png in Resources */,
+				9DB23CC61902013B00455CE4 /* trainjeff-fall-left-1.png in Resources */,
 				9D883DD718F6E38D00BE6E36 /* Icon.png in Resources */,
 				9DF8089718F847EA001CBB82 /* jeff-fall-right-1.png in Resources */,
 				9D79F40A18FA2EEF00E843D9 /* community-logo.png in Resources */,
@@ -1911,6 +1930,7 @@
 				9D883DF218F6E38D00BE6E36 /* iTunesArtwork in Resources */,
 				9D6DF57218F839160014622B /* jeff-up-3.png in Resources */,
 				9DF8089D18F84CAA001CBB82 /* Images.xcassets in Resources */,
+				9DB23CCA1902013B00455CE4 /* trainjeff-fall-right-2.png in Resources */,
 				9D883DED18F6E38D00BE6E36 /* Icon-Spotlight-iOS7.png in Resources */,
 				9D883DE118F6E38D00BE6E36 /* Icon-76@2x.png in Resources */,
 				9DF18E2E18FF779E00E25903 /* trainjeff-right-3.png in Resources */,
@@ -1932,13 +1952,17 @@
 				9DF18E4018FF79BC00E25903 /* trainjeff-down-1.png in Resources */,
 				9D73E5A718FA174C00BB2A98 /* wave_bg.png in Resources */,
 				9D6DF56F18F839160014622B /* jeff-down-3.png in Resources */,
+				9DB23CC71902013B00455CE4 /* trainjeff-fall-left-2.png in Resources */,
 				9D883FB518F6E38F00BE6E36 /* ChangeLog in Resources */,
 				9D0FCD2F18F822EB002BF610 /* LevelMusic.mp3 in Resources */,
 				9D88407418F6E45D00BE6E36 /* hit.caf in Resources */,
+				9DB23CC91902013B00455CE4 /* trainjeff-fall-right-1.png in Resources */,
 				9DF18E2F18FF779E00E25903 /* trainjeff-right-4.png in Resources */,
 				9DE4E73718F73A2A00A4E876 /* soldier_blue_left.png in Resources */,
+				9DB23CC81902013B00455CE4 /* trainjeff-fall-left-3.png in Resources */,
 				9DF8089818F847EA001CBB82 /* jeff-fall-right-2.png in Resources */,
 				9DF18E4318FF79BC00E25903 /* trainjeff-left-1.png in Resources */,
+				9DB23CCB1902013B00455CE4 /* trainjeff-fall-right-3.png in Resources */,
 				9DF8089418F847EA001CBB82 /* jeff-fall-left-1.png in Resources */,
 				9D88408018F6FC5100BE6E36 /* TileMap.tmx in Resources */,
 				9D883DF418F6E38D00BE6E36 /* iTunesArtwork@2x in Resources */,

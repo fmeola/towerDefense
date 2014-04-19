@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>3</int>
         <key>texturePackerVersion</key>
-        <string>3.3.2</string>
+        <string>3.3.3</string>
         <key>fileName</key>
         <string>/Users/franco/TPE Tower Defense/initial/TPE Tower Defense/TileGameResources/trainjeff.tps</string>
         <key>autoSDSettings</key>
@@ -186,6 +186,12 @@
             <filename>../Resources/RawSprites/trainjeff-up-1.png</filename>
             <filename>../Resources/RawSprites/trainjeff-up-2.png</filename>
             <filename>../Resources/RawSprites/trainjeff-up-3.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-fall-left-1.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-fall-left-2.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-fall-left-3.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-fall-right-1.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-fall-right-2.png</filename>
+            <filename>../Resources/RawSprites/trainjeff-fall-right-3.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
