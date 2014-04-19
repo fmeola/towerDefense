@@ -109,7 +109,7 @@
 
 - (void)onBackClicked:(id)sender
 {
-    [[CCDirector sharedDirector] replaceScene:[IntroScene scene] withTransition: [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0f]];
+    [[CCDirector sharedDirector] replaceScene:[IntroScene scene] withTransition:[CCTransition transitionCrossFadeWithDuration:1.0f]];
 }
 
 // -----------------------------------------------------------------------

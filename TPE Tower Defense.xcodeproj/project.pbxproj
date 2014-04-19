@@ -252,6 +252,8 @@
 		9DB23CC91902013B00455CE4 /* trainjeff-fall-right-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB23CC31902013B00455CE4 /* trainjeff-fall-right-1.png */; };
 		9DB23CCA1902013B00455CE4 /* trainjeff-fall-right-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB23CC41902013B00455CE4 /* trainjeff-fall-right-2.png */; };
 		9DB23CCB1902013B00455CE4 /* trainjeff-fall-right-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB23CC51902013B00455CE4 /* trainjeff-fall-right-3.png */; };
+		9DCE6DDB1902F9EE005D9ECF /* AboutScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE6DDA1902F9EE005D9ECF /* AboutScene.m */; };
+		9DCE6DDD1902FD15005D9ECF /* DayBreak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9DCE6DDC1902FD15005D9ECF /* DayBreak.mp3 */; };
 		9DE4E73618F73A2A00A4E876 /* soldier_blue_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73218F73A2A00A4E876 /* soldier_blue_down.png */; };
 		9DE4E73718F73A2A00A4E876 /* soldier_blue_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */; };
 		9DE4E73818F73A2A00A4E876 /* soldier_blue_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */; };
@@ -776,6 +778,9 @@
 		9DB23CC31902013B00455CE4 /* trainjeff-fall-right-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-fall-right-1.png"; sourceTree = "<group>"; };
 		9DB23CC41902013B00455CE4 /* trainjeff-fall-right-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-fall-right-2.png"; sourceTree = "<group>"; };
 		9DB23CC51902013B00455CE4 /* trainjeff-fall-right-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-fall-right-3.png"; sourceTree = "<group>"; };
+		9DCE6DD91902F9EE005D9ECF /* AboutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutScene.h; path = Classes/AboutScene.h; sourceTree = "<group>"; };
+		9DCE6DDA1902F9EE005D9ECF /* AboutScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutScene.m; path = Classes/AboutScene.m; sourceTree = "<group>"; };
+		9DCE6DDC1902FD15005D9ECF /* DayBreak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DayBreak.mp3; sourceTree = "<group>"; };
 		9DE4E73218F73A2A00A4E876 /* soldier_blue_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_down.png; sourceTree = "<group>"; };
 		9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_left.png; sourceTree = "<group>"; };
 		9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_right.png; sourceTree = "<group>"; };
@@ -849,6 +854,7 @@
 			children = (
 				9D0FCD3018F823B4002BF610 /* IntroMusic.mp3 */,
 				9D0FCD2E18F822EB002BF610 /* LevelMusic.mp3 */,
+				9DCE6DDC1902FD15005D9ECF /* DayBreak.mp3 */,
 			);
 			name = Music;
 			path = ..;
@@ -1757,6 +1763,8 @@
 				9D88405F18F6E39000BE6E36 /* HelloWorldScene.m */,
 				9D88406118F6E39000BE6E36 /* IntroScene.h */,
 				9D88406218F6E39000BE6E36 /* IntroScene.m */,
+				9DCE6DD91902F9EE005D9ECF /* AboutScene.h */,
+				9DCE6DDA1902F9EE005D9ECF /* AboutScene.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2055,6 +2063,7 @@
 				9DAFE37A18F81EBA00153902 /* jeff-left-2.png in Resources */,
 				9DE71F2218F789C6007CC645 /* icon-tower-2-disabled.png in Resources */,
 				9DF18E3418FF77AA00E25903 /* trainjeff.png in Resources */,
+				9DCE6DDD1902FD15005D9ECF /* DayBreak.mp3 in Resources */,
 				9D88407A18F6E45D00BE6E36 /* tmw_desert_spacing.png in Resources */,
 				9DE71F1518F78750007CC645 /* tower-2.png in Resources */,
 				9DF18E2D18FF779E00E25903 /* trainjeff-right-2.png in Resources */,
@@ -2157,6 +2166,7 @@
 				9D883EAA18F6E38E00BE6E36 /* CCSprite.m in Sources */,
 				9D883E0618F6E38E00BE6E36 /* CCActionInterval.m in Sources */,
 				9D883E7518F6E38E00BE6E36 /* CCPhysicsJoint.m in Sources */,
+				9DCE6DDB1902F9EE005D9ECF /* AboutScene.m in Sources */,
 				9D883E5318F6E38E00BE6E36 /* CCMotionStreak.m in Sources */,
 				9D883E0318F6E38E00BE6E36 /* CCActionInstant.m in Sources */,
 				9D883EFD18F6E38F00BE6E36 /* base64.c in Sources */,
@@ -2564,6 +2574,7 @@
 				9DA01FB7190207760018CDB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,6 @@
 #import "IntroScene.h"
 #import "HelloWorldScene.h"
+#import "AboutScene.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - IntroScene
@@ -25,7 +26,7 @@
     if (!self) return(nil);
     
     // Create a colored background (Dark Grey)
-//    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
+//    CCNodeColor * background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
 //    [self addChild:background];
     
     // Imagen de la Splash-Screen
@@ -54,6 +55,8 @@
     [helloWorldButton setTarget:self selector:@selector(onSpinningClicked:)];
     [self addChild:helloWorldButton];
 
+    [self createAboutButton];
+    
     // access audio object
     OALSimpleAudio * bgmusic = [OALSimpleAudio sharedInstance];
     // play background sound
@@ -61,6 +64,16 @@
     
     // done
 	return self;
+}
+
+-(void)createAboutButton
+{
+    CCButton * backButton = [CCButton buttonWithTitle:@"[ Acerca De ]" fontName:@"Helvetica-Bold" fontSize:16.0f];
+    backButton.color = [CCColor blackColor];
+    backButton.positionType = CCPositionTypeNormalized;
+    backButton.position = ccp(0.10f, 0.95f);
+    [backButton setTarget:self selector:@selector(onAboutClicked:)];
+    [self addChild:backButton];
 }
 
 // -----------------------------------------------------------------------
@@ -71,8 +84,12 @@
 {
     // start spinning scene with transition
     [[CCDirector sharedDirector] replaceScene:[HelloWorldScene scene]
-                               withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0f]];
+                               withTransition:[CCTransition transitionCrossFadeWithDuration:1.0f]];
 }
 
+- (void)onAboutClicked:(id)sender
+{
+    [[CCDirector sharedDirector] replaceScene:[AboutScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0f]];
+}
 // -----------------------------------------------------------------------
 @end
