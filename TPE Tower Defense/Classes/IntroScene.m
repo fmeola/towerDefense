@@ -1,13 +1,3 @@
-//
-//  IntroScene.m
-//  TPE Tower Defense
-//
-//  Created by Franco Román Meola on 10/04/14.
-//  Copyright Franco Román Meola 2014. All rights reserved.
-//
-// -----------------------------------------------------------------------
-
-// Import the interfaces
 #import "IntroScene.h"
 #import "HelloWorldScene.h"
 
