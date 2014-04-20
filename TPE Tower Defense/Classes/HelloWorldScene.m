@@ -219,11 +219,6 @@
     [self addChild:tower1price];
 }
 
--(CGPoint)getTowerPriceLabelPositionWithTowerButtonInPosition:(CGPoint) point
-{
-    return ccp(point.x+0.015,point.y-0.061);
-}
-
 -(void)createTower2Button
 {
     CCSprite * tower2buybutton = [CCSprite spriteWithImageNamed:@"icon-tower-2-enabled.png"];
@@ -235,6 +230,11 @@
     tower2price.color = [CCColor blackColor];
     tower2price.position = [self getTowerPriceLabelPositionWithTowerButtonInPosition: tower2buybutton.position];
     [self addChild:tower2price];
+}
+
+-(CGPoint)getTowerPriceLabelPositionWithTowerButtonInPosition:(CGPoint) point
+{
+    return ccp(point.x+0.015,point.y-0.061);
 }
 
 -(void)createBackButton
