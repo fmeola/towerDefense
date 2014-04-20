@@ -228,8 +228,8 @@
 		9D88407618F6E45D00BE6E36 /* move.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88406F18F6E45D00BE6E36 /* move.caf */; };
 		9D88407718F6E45D00BE6E36 /* pickup.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407018F6E45D00BE6E36 /* pickup.caf */; };
 		9D88407918F6E45D00BE6E36 /* TileMap.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407218F6E45D00BE6E36 /* TileMap.caf */; };
-		9D88407A18F6E45D00BE6E36 /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407318F6E45D00BE6E36 /* tmw_desert_spacing.png */; };
 		9D88408018F6FC5100BE6E36 /* TileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407F18F6FC5100BE6E36 /* TileMap.tmx */; };
+		9D8B350219034DF00060272D /* terrain.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8B350119034DF00060272D /* terrain.png */; };
 		9DA01FA8190207760018CDB3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA01FA7190207760018CDB3 /* XCTest.framework */; };
 		9DA01FA9190207760018CDB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DBF18F6E38D00BE6E36 /* Foundation.framework */; };
 		9DA01FAA190207760018CDB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DBD18F6E38D00BE6E36 /* UIKit.framework */; };
@@ -753,8 +753,8 @@
 		9D88406F18F6E45D00BE6E36 /* move.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = move.caf; sourceTree = "<group>"; };
 		9D88407018F6E45D00BE6E36 /* pickup.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pickup.caf; sourceTree = "<group>"; };
 		9D88407218F6E45D00BE6E36 /* TileMap.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TileMap.caf; sourceTree = "<group>"; };
-		9D88407318F6E45D00BE6E36 /* tmw_desert_spacing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmw_desert_spacing.png; sourceTree = "<group>"; };
 		9D88407F18F6FC5100BE6E36 /* TileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TileMap.tmx; sourceTree = "<group>"; };
+		9D8B350119034DF00060272D /* terrain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = terrain.png; sourceTree = "<group>"; };
 		9DA01FA6190207760018CDB3 /* TPE Tower Defense Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TPE Tower Defense Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA01FA7190207760018CDB3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9DA01FAD190207760018CDB3 /* TPE Tower Defense Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TPE Tower Defense Tests-Info.plist"; sourceTree = "<group>"; };
@@ -1875,8 +1875,8 @@
 		9DB23CCE190202D200455CE4 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				9D8B350119034DF00060272D /* terrain.png */,
 				9D88407F18F6FC5100BE6E36 /* TileMap.tmx */,
-				9D88407318F6E45D00BE6E36 /* tmw_desert_spacing.png */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -2064,7 +2064,6 @@
 				9DE71F2218F789C6007CC645 /* icon-tower-2-disabled.png in Resources */,
 				9DF18E3418FF77AA00E25903 /* trainjeff.png in Resources */,
 				9DCE6DDD1902FD15005D9ECF /* DayBreak.mp3 in Resources */,
-				9D88407A18F6E45D00BE6E36 /* tmw_desert_spacing.png in Resources */,
 				9DE71F1518F78750007CC645 /* tower-2.png in Resources */,
 				9DF18E2D18FF779E00E25903 /* trainjeff-right-2.png in Resources */,
 				9D883DEF18F6E38D00BE6E36 /* Icon-Spotlight-iOS7@2x.png in Resources */,
@@ -2076,6 +2075,7 @@
 				9DB23CC71902013B00455CE4 /* trainjeff-fall-left-2.png in Resources */,
 				9D883FB518F6E38F00BE6E36 /* ChangeLog in Resources */,
 				9D0FCD2F18F822EB002BF610 /* LevelMusic.mp3 in Resources */,
+				9D8B350219034DF00060272D /* terrain.png in Resources */,
 				9D88407418F6E45D00BE6E36 /* hit.caf in Resources */,
 				9DB23CC91902013B00455CE4 /* trainjeff-fall-right-1.png in Resources */,
 				9DF18E2F18FF779E00E25903 /* trainjeff-right-4.png in Resources */,

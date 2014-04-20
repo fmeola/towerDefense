@@ -4,173 +4,193 @@
   <property name="endPosition" value="p25"/>
   <property name="startPosition" value="p0"/>
  </properties>
- <tileset firstgid="1" name="tmw_desert_spacing" tilewidth="32" tileheight="32" spacing="1" margin="1">
-  <image source="tmw_desert_spacing.png" width="265" height="199"/>
+ <tileset firstgid="1" name="terrain" tilewidth="32" tileheight="32">
+  <image source="terrain.png" width="1024" height="1024"/>
  </tileset>
- <layer name="Background" width="18" height="10">
+ <layer name="Grass" width="18" height="10">
   <data encoding="base64" compression="zlib">
-   eJyVkdsKgCAQRP2NCsSu2k38/69LYYVhmRAfzkNre3Ima4yxgFfPBUdmgcwKQ2bsZCK+ObN0sirHAZ4tczXYwZPAEcGD32BdWfVulGw16wtnTvys7wCeB/Zbmdk/Yl3q7De5g1Ozk+xZyVi7Yr1oT5K7BdlNcObFw3r5A/c/pvwXmQ==
+   eJzTZmRg0B7Fo3iYYADEAR7x
   </data>
  </layer>
- <objectgroup name="Objects" width="18" height="10">
-  <object name="p1" x="33" y="193" width="26" height="28">
+ <layer name="Sendero" width="18" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAuCAbiEBJxKBZzioG4hERcisccESCeQgCLEmEONjli1ML8akqGOSZI+onxMy5zkDG636cSYc5kLPoGGwAA6x8iGw==
+  </data>
+ </layer>
+ <layer name="Rocks" width="18" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBi8oJ6JeLUJJKglFuylwExkt9/FYU4lULyKRDvqsKifCRSbRQP/YwPVQHtq8Nh1n5E4c2YDzZhDAzcDALROCMc=
+  </data>
+ </layer>
+ <layer name="Water" width="18" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAOiAXiOCqYUwvEdVQwZy4Qz6OCOaNgaAEAd4IC8g==
+  </data>
+ </layer>
+ <layer name="Cascade" width="18" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxLYmJgSAZiSkET0IxmKpizCGjGYiqYcwhoxmEqmDMKKANb6RwHAAgzBVw=
+  </data>
+ </layer>
+ <objectgroup name="Path" width="18" height="10">
+  <object name="p1" x="32" y="172" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p2"/>
    </properties>
   </object>
-  <object name="p2" x="65" y="194" width="26" height="28">
+  <object name="p2" x="64" y="173" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p3"/>
    </properties>
   </object>
-  <object name="p3" x="98" y="194" width="26" height="28">
+  <object name="p3" x="97" y="173" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p4"/>
    </properties>
   </object>
-  <object name="p0" x="1" y="192" width="26" height="28">
+  <object name="p0" x="2" y="172" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p1"/>
    </properties>
   </object>
-  <object name="p4" x="98" y="161" width="26" height="28">
+  <object name="p4" x="106" y="150" width="26" height="28">
    <properties>
     <property name="direction" value="up"/>
     <property name="next" value="p5"/>
    </properties>
   </object>
-  <object name="p5" x="98" y="129" width="26" height="28">
+  <object name="p5" x="106" y="118" width="26" height="28">
    <properties>
     <property name="direction" value="up"/>
     <property name="next" value="p6"/>
    </properties>
   </object>
-  <object name="p6" x="98" y="96" width="26" height="28">
+  <object name="p6" x="106" y="85" width="26" height="28">
    <properties>
     <property name="direction" value="up"/>
     <property name="next" value="p7"/>
    </properties>
   </object>
-  <object name="p7" x="98" y="65" width="26" height="28">
+  <object name="p7" x="96" y="47" width="26" height="28">
    <properties>
     <property name="direction" value="up"/>
     <property name="next" value="p8"/>
    </properties>
   </object>
-  <object name="p8" x="130" y="65" width="26" height="28">
+  <object name="p8" x="128" y="47" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p9"/>
    </properties>
   </object>
-  <object name="p9" x="163" y="66" width="26" height="28">
+  <object name="p9" x="161" y="48" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p10"/>
    </properties>
   </object>
-  <object name="p10" x="194" y="66" width="26" height="28">
+  <object name="p10" x="192" y="48" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p11"/>
    </properties>
   </object>
-  <object name="p11" x="227" y="66" width="26" height="28">
+  <object name="p11" x="225" y="48" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p12"/>
    </properties>
   </object>
-  <object name="p12" x="258" y="66" width="26" height="28">
+  <object name="p12" x="256" y="48" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p13"/>
    </properties>
   </object>
-  <object name="p13" x="291" y="66" width="26" height="28">
+  <object name="p13" x="289" y="48" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p14"/>
    </properties>
   </object>
-  <object name="p14" x="322" y="66" width="26" height="28">
+  <object name="p14" x="320" y="48" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p15"/>
    </properties>
   </object>
-  <object name="p15" x="355" y="66" width="26" height="28">
+  <object name="p15" x="353" y="48" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p16"/>
    </properties>
   </object>
-  <object name="p16" x="387" y="66" width="26" height="28">
+  <object name="p16" x="385" y="48" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p17"/>
    </properties>
   </object>
-  <object name="p17" x="419" y="66" width="26" height="28">
+  <object name="p17" x="417" y="48" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p18"/>
    </properties>
   </object>
-  <object name="p18" x="450" y="66" width="26" height="28">
+  <object name="p18" x="448" y="48" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p19"/>
    </properties>
   </object>
-  <object name="p19" x="450" y="98" width="26" height="28">
+  <object name="p19" x="460" y="85" width="26" height="28">
    <properties>
     <property name="direction" value="down"/>
     <property name="next" value="p20"/>
    </properties>
   </object>
-  <object name="p20" x="450" y="130" width="26" height="28">
+  <object name="p20" x="460" y="117" width="26" height="28">
    <properties>
     <property name="direction" value="down"/>
     <property name="next" value="p21"/>
    </properties>
   </object>
-  <object name="p21" x="450" y="161" width="26" height="28">
+  <object name="p21" x="460" y="148" width="26" height="28">
    <properties>
     <property name="direction" value="down"/>
     <property name="next" value="p22"/>
    </properties>
   </object>
-  <object name="p22" x="450" y="194" width="26" height="28">
+  <object name="p22" x="449" y="176" width="26" height="28">
    <properties>
     <property name="direction" value="down"/>
     <property name="next" value="p23"/>
    </properties>
   </object>
-  <object name="p23" x="482" y="194" width="26" height="28">
+  <object name="p23" x="481" y="176" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p24"/>
    </properties>
   </object>
-  <object name="p24" x="514" y="194" width="26" height="28">
+  <object name="p24" x="513" y="176" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p25"/>
    </properties>
   </object>
-  <object name="p25" x="547" y="194" width="26" height="28">
+  <object name="p25" x="546" y="176" width="26" height="28">
    <properties>
     <property name="direction" value="right"/>
     <property name="next" value="p0"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="Towers" width="18" height="10">
+ <objectgroup name="Towers" width="18" height="10" visible="0">
   <object x="225" y="225" width="28" height="30"/>
   <object x="257" y="193" width="28" height="30"/>
   <object x="386" y="225" width="28" height="30"/>

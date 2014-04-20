@@ -48,8 +48,8 @@
     _tileMap = [CCTiledMap tiledMapWithFile:@"TileMap.tmx"];
     _background = [_tileMap layerNamed:@"Background"];
     [self addChild:_tileMap];
-    objectGroup = [_tileMap objectGroupNamed:@"Objects"];
-    NSAssert(objectGroup != nil, @"tile map has no objects object layer");
+    objectGroup = [_tileMap objectGroupNamed:@"Path"];
+    NSAssert(objectGroup != nil, @"tile map has no Path object layer");
     NSDictionary * startPoint = [objectGroup objectNamed:_tileMap.properties[@"startPosition"]];
     currentPoint = startPoint;
     towersGroup = [_tileMap objectGroupNamed:@"Towers"];
@@ -210,16 +210,31 @@
 {
     CCSprite * tower1buybutton = [CCSprite spriteWithImageNamed:@"icon-tower-1-enabled.png"];
     tower1buybutton.positionType = CCPositionTypeNormalized;
-    tower1buybutton.position = ccp(0.80f, 0.10f);
+    tower1buybutton.position = ccp(0.83f, 0.10f);
     [self addChild:tower1buybutton];
+    CCLabelTTF * tower1price = [CCLabelTTF labelWithString:@"$10" fontName:@"Helvetica-Bold" fontSize:11.0f];
+    tower1price.positionType = CCPositionTypeNormalized;
+    tower1price.color = [CCColor blackColor];
+    tower1price.position = [self getTowerPriceLabelPositionWithTowerButtonInPosition: tower1buybutton.position];
+    [self addChild:tower1price];
+}
+
+-(CGPoint)getTowerPriceLabelPositionWithTowerButtonInPosition:(CGPoint) point
+{
+    return ccp(point.x+0.015,point.y-0.061);
 }
 
 -(void)createTower2Button
 {
-    CCSprite * tower2buybutton = [CCSprite spriteWithImageNamed:@"icon-tower-2-disabled.png"];
+    CCSprite * tower2buybutton = [CCSprite spriteWithImageNamed:@"icon-tower-2-enabled.png"];
     tower2buybutton.positionType = CCPositionTypeNormalized;
-    tower2buybutton.position = ccp(0.90f, 0.10f);
+    tower2buybutton.position = ccp(0.93f, 0.10f);
     [self addChild:tower2buybutton];
+    CCLabelTTF * tower2price = [CCLabelTTF labelWithString:@"$20" fontName:@"Helvetica-Bold" fontSize:11.0f];
+    tower2price.positionType = CCPositionTypeNormalized;
+    tower2price.color = [CCColor blackColor];
+    tower2price.position = [self getTowerPriceLabelPositionWithTowerButtonInPosition: tower2buybutton.position];
+    [self addChild:tower2price];
 }
 
 -(void)createBackButton

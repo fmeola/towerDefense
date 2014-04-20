@@ -36,7 +36,7 @@
 -(void)createTowerButtons;
 -(void)createTower1Button;
 -(void)createTower2Button;
-
+-(CGPoint)getTowerPriceLabelPositionWithTowerButtonInPosition:(CGPoint) point;
 -(void)createBackButton;
 
 -(void)playAudioEffectNamed:(NSString *)name;
