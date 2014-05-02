@@ -11,12 +11,11 @@
 
 @property (strong) CCTiledMap * tileMap;
 @property (strong) CCTiledMapLayer * background;
-@property (nonatomic, strong) CCSprite *character;
-@property (nonatomic, strong) CCAction *walkAction;
-@property (nonatomic, strong) CCAction *moveAction;
-@property (nonatomic, strong) CCAnimation *walkAnim;
-
-@property (nonatomic,strong) NSMutableArray * towers;
+@property (nonatomic, strong) CCSprite * character;
+@property (nonatomic, strong) CCAction * walkAction;
+@property (nonatomic, strong) CCAction * moveAction;
+@property (nonatomic, strong) CCAnimation * walkAnim;
+@property (nonatomic, strong) NSMutableArray * towers;
 
 
 // -----------------------------------------------------------------------

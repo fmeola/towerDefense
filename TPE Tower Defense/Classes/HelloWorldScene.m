@@ -23,6 +23,7 @@
     int score;
     CCSpriteBatchNode * spriteSheet;
     NSString * currrentCharacterName;
+    NSMutableSet * placedTowers;
 }
 
 @synthesize towers;
@@ -60,6 +61,8 @@
     // Música de fondo
     OALSimpleAudio * bgmusic = [OALSimpleAudio sharedInstance];
     [bgmusic playBg:@"LevelMusic.mp3" loop:TRUE];
+    
+    placedTowers = [NSMutableSet setWithObjects:nil];
     
     //////////
     currrentCharacterName = @"jeff";
@@ -111,6 +114,24 @@
 // -----------------------------------------------------------------------
 #pragma mark - Touch Handler
 // -----------------------------------------------------------------------
+
+-(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    CGPoint location = [touch locationInView: [touch view]];
+    NSInteger x = [self tileFromPosition:location].x * _tileMap.tileSize.width;
+    NSInteger y = [self tileFromPosition:location].y * _tileMap.tileSize.height;
+    NSLog(@"x:%ld, y:%ld",(long)x,(long)y);
+    for(NSDictionary * tb in [towersGroup objects]) {
+        NSInteger towerX = [tb[@"x"] intValue];
+        NSInteger towerY = [tb[@"y"] intValue];
+        if(x == towerX && y == towerY && [self spaceIsEmpty:tb]) {
+            CGPoint towerDestinyPosition = ccp(towerX,towerY);
+            Tower * tower = [Tower nodeWithTheGame:self location:towerDestinyPosition];
+            [towers addObject:tower];
+            [placedTowers addObject:tb];
+        }
+    }
+}
 
 // -----------------------------------------------------------------------
 #pragma mark - Button Callbacks
@@ -322,27 +343,19 @@
     return ccp(x, y);
 }
 
--(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+-(BOOL)spaceIsEmpty:(NSDictionary *)towerPlace
 {
-    CGPoint location = [touch locationInView: [touch view]];
-    NSInteger x = [self tileFromPosition:location].x * _tileMap.tileSize.width;
-    NSInteger y = [self tileFromPosition:location].y * _tileMap.tileSize.height;
-    NSLog(@"x:%ld, y:%ld",(long)x,(long)y);
-    for(NSDictionary * tb in [towersGroup objects])
-    {
-        NSInteger towerX = [tb[@"x"] intValue];
-        NSInteger towerY = [tb[@"y"] intValue];
-        if(x == towerX && y == towerY)
-        {
-            CGPoint towerDestinyPosition = ccp(towerX,towerY);
-            Tower * tower = [Tower nodeWithTheGame:self location: towerDestinyPosition];
-            [towers addObject:tower];
+    for (NSDictionary * d in placedTowers) {
+        if(d == towerPlace){
+            return FALSE;
         }
     }
+    return TRUE;
 }
 
 -(BOOL)canBuyTower
 {
+    //TODO que reciba el tipo de torre y así controla correctamente el precio
     return YES;
 }
 
