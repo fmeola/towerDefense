@@ -1,6 +1,7 @@
 #import "HelloWorldScene.h"
 #import "IntroScene.h"
 #import "CCAnimation.h"
+#import "Tower.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
@@ -23,6 +24,8 @@
     CCSpriteBatchNode * spriteSheet;
     NSString * currrentCharacterName;
 }
+
+@synthesize towers;
 
 // -----------------------------------------------------------------------
 #pragma mark - Create & Destroy
@@ -253,18 +256,6 @@
     [audio playEffect:name];
 }
 
-//-(void)createCharacterSprite2:(NSString *)characterName withPosition:(CGPoint)point
-//{
-//    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"%@.plist" textureFilename:@"%@.png"];
-//    CCSpriteBatchNode * batchNode = [CCSpriteBatchNode node];
-//    CCSpriteFrame * frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"%@.png"];
-//    batchNode.texture = frame.texture;
-//    [self addChild:batchNode];
-//    CCSprite * character = [CCSprite spriteWithSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"%@.png"]];
-//    character.position = point;
-//    [batchNode addChild:character];
-//}
-
 // Cómo saber el SPRITE_SIZE? En algunos son 3 y en otros 4.
 -(void)createCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point
 {
@@ -322,5 +313,46 @@
         [_character runAction: _moveAction];
     }
 }
+
+- (CGPoint)tileFromPosition:(CGPoint)position
+{
+    // Devuelve la posición de la matriz Tile
+    NSInteger x = (NSInteger)(position.x / _tileMap.tileSize.width);
+    NSInteger y = (NSInteger)(((_tileMap.mapSize.height * _tileMap.tileSize.width) - position.y) / _tileMap.tileSize.width);
+    return ccp(x, y);
+}
+
+-(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    CGPoint location = [touch locationInView: [touch view]];
+    NSInteger x = [self tileFromPosition:location].x * _tileMap.tileSize.width;
+    NSInteger y = [self tileFromPosition:location].y * _tileMap.tileSize.height;
+    NSLog(@"x:%ld, y:%ld",(long)x,(long)y);
+    for(NSDictionary * tb in [towersGroup objects])
+    {
+        NSInteger towerX = [tb[@"x"] intValue];
+        NSInteger towerY = [tb[@"y"] intValue];
+        if(x == towerX && y == towerY)
+        {
+            CGPoint towerDestinyPosition = ccp(towerX,towerY);
+            Tower * tower = [Tower nodeWithTheGame:self location: towerDestinyPosition];
+            [towers addObject:tower];
+        }
+    }
+}
+
+-(BOOL)canBuyTower
+{
+    return YES;
+}
+
+//- (CGPoint)tileToPosition:(CGPoint)p
+//{
+//    p = ccpMult(p, _tileMap.tileSize.width);
+//    p.x += _tileMap.tileSize.width / 2;
+//    p.y = _tileMap.contentSize.height - p.y;
+//    p.y -= _tileMap.tileSize.height / 2;
+//    return p;
+//}
 
 @end

@@ -16,6 +16,9 @@
 @property (nonatomic, strong) CCAction *moveAction;
 @property (nonatomic, strong) CCAnimation *walkAnim;
 
+@property (nonatomic,strong) NSMutableArray * towers;
+
+
 // -----------------------------------------------------------------------
 
 + (HelloWorldScene *) scene;

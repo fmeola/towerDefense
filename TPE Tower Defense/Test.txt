@@ -77,3 +77,16 @@
     int y = ((_tileMap.mapSize.height * _tileMap.tileSize.height) - position.y) / _tileMap.tileSize.height;
     return ccp(x, y);
 }
+
+-(void)createCharacterSprite2:(NSString *)characterName withPosition:(CGPoint)point
+{
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"%@.plist" textureFilename:@"%@.png"];
+    CCSpriteBatchNode * batchNode = [CCSpriteBatchNode node];
+    CCSpriteFrame * frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"%@.png"];
+    batchNode.texture = frame.texture;
+    [self addChild:batchNode];
+    CCSprite * character = [CCSprite spriteWithSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"%@.png"]];
+    character.position = point;
+    [batchNode addChild:character];
+}
+

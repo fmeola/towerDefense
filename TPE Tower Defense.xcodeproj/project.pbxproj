@@ -254,16 +254,12 @@
 		9DB23CCB1902013B00455CE4 /* trainjeff-fall-right-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB23CC51902013B00455CE4 /* trainjeff-fall-right-3.png */; };
 		9DCE6DDB1902F9EE005D9ECF /* AboutScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE6DDA1902F9EE005D9ECF /* AboutScene.m */; };
 		9DCE6DDD1902FD15005D9ECF /* DayBreak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9DCE6DDC1902FD15005D9ECF /* DayBreak.mp3 */; };
-		9DE4E73618F73A2A00A4E876 /* soldier_blue_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73218F73A2A00A4E876 /* soldier_blue_down.png */; };
-		9DE4E73718F73A2A00A4E876 /* soldier_blue_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */; };
-		9DE4E73818F73A2A00A4E876 /* soldier_blue_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */; };
-		9DE4E73918F73A2A00A4E876 /* soldier_blue_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE4E73518F73A2A00A4E876 /* soldier_blue_up.png */; };
-		9DE71F1518F78750007CC645 /* tower-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F0F18F78750007CC645 /* tower-2.png */; };
-		9DE71F1618F78750007CC645 /* tower-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1018F78750007CC645 /* tower-1.png */; };
 		9DE71F1F18F789C6007CC645 /* icon-tower-1-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1B18F789C6007CC645 /* icon-tower-1-disabled.png */; };
 		9DE71F2018F789C6007CC645 /* icon-tower-1-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1C18F789C6007CC645 /* icon-tower-1-enabled.png */; };
 		9DE71F2118F789C6007CC645 /* icon-tower-2-enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1D18F789C6007CC645 /* icon-tower-2-enabled.png */; };
 		9DE71F2218F789C6007CC645 /* icon-tower-2-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE71F1E18F789C6007CC645 /* icon-tower-2-disabled.png */; };
+		9DEB63BB1913DF5B00E7088D /* Tower.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB63BA1913DF5B00E7088D /* Tower.m */; };
+		9DEB63C21913F20C00E7088D /* Gattling.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DEB63C01913F20C00E7088D /* Gattling.png */; };
 		9DF18E2C18FF779E00E25903 /* trainjeff-right-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF18E2818FF779E00E25903 /* trainjeff-right-1.png */; };
 		9DF18E2D18FF779E00E25903 /* trainjeff-right-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF18E2918FF779E00E25903 /* trainjeff-right-2.png */; };
 		9DF18E2E18FF779E00E25903 /* trainjeff-right-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF18E2A18FF779E00E25903 /* trainjeff-right-3.png */; };
@@ -781,16 +777,13 @@
 		9DCE6DD91902F9EE005D9ECF /* AboutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutScene.h; path = Classes/AboutScene.h; sourceTree = "<group>"; };
 		9DCE6DDA1902F9EE005D9ECF /* AboutScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutScene.m; path = Classes/AboutScene.m; sourceTree = "<group>"; };
 		9DCE6DDC1902FD15005D9ECF /* DayBreak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DayBreak.mp3; sourceTree = "<group>"; };
-		9DE4E73218F73A2A00A4E876 /* soldier_blue_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_down.png; sourceTree = "<group>"; };
-		9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_left.png; sourceTree = "<group>"; };
-		9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_right.png; sourceTree = "<group>"; };
-		9DE4E73518F73A2A00A4E876 /* soldier_blue_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_blue_up.png; sourceTree = "<group>"; };
-		9DE71F0F18F78750007CC645 /* tower-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tower-2.png"; sourceTree = "<group>"; };
-		9DE71F1018F78750007CC645 /* tower-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tower-1.png"; sourceTree = "<group>"; };
 		9DE71F1B18F789C6007CC645 /* icon-tower-1-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-1-disabled.png"; sourceTree = "<group>"; };
 		9DE71F1C18F789C6007CC645 /* icon-tower-1-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-1-enabled.png"; sourceTree = "<group>"; };
 		9DE71F1D18F789C6007CC645 /* icon-tower-2-enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-2-enabled.png"; sourceTree = "<group>"; };
 		9DE71F1E18F789C6007CC645 /* icon-tower-2-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-tower-2-disabled.png"; sourceTree = "<group>"; };
+		9DEB63B91913DF5B00E7088D /* Tower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tower.h; path = Classes/Tower.h; sourceTree = "<group>"; };
+		9DEB63BA1913DF5B00E7088D /* Tower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tower.m; path = Classes/Tower.m; sourceTree = "<group>"; };
+		9DEB63C01913F20C00E7088D /* Gattling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gattling.png; sourceTree = "<group>"; };
 		9DF18E2818FF779E00E25903 /* trainjeff-right-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-right-1.png"; sourceTree = "<group>"; };
 		9DF18E2918FF779E00E25903 /* trainjeff-right-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-right-2.png"; sourceTree = "<group>"; };
 		9DF18E2A18FF779E00E25903 /* trainjeff-right-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-right-3.png"; sourceTree = "<group>"; };
@@ -863,12 +856,7 @@
 		9D6DF56518F838B90014622B /* Más */ = {
 			isa = PBXGroup;
 			children = (
-				9DE71F0F18F78750007CC645 /* tower-2.png */,
-				9DE71F1018F78750007CC645 /* tower-1.png */,
-				9DE4E73218F73A2A00A4E876 /* soldier_blue_down.png */,
-				9DE4E73318F73A2A00A4E876 /* soldier_blue_left.png */,
-				9DE4E73418F73A2A00A4E876 /* soldier_blue_right.png */,
-				9DE4E73518F73A2A00A4E876 /* soldier_blue_up.png */,
+				9DEB63C01913F20C00E7088D /* Gattling.png */,
 			);
 			name = "Más";
 			sourceTree = "<group>";
@@ -1761,6 +1749,8 @@
 				9D88405C18F6E39000BE6E36 /* AppDelegate.m */,
 				9D88405E18F6E39000BE6E36 /* HelloWorldScene.h */,
 				9D88405F18F6E39000BE6E36 /* HelloWorldScene.m */,
+				9DEB63B91913DF5B00E7088D /* Tower.h */,
+				9DEB63BA1913DF5B00E7088D /* Tower.m */,
 				9D88406118F6E39000BE6E36 /* IntroScene.h */,
 				9D88406218F6E39000BE6E36 /* IntroScene.m */,
 				9DCE6DD91902F9EE005D9ECF /* AboutScene.h */,
@@ -2016,7 +2006,6 @@
 				9DF8089718F847EA001CBB82 /* jeff-fall-right-1.png in Resources */,
 				9D79F40A18FA2EEF00E843D9 /* community-logo.png in Resources */,
 				9DAFE37E18F81EBA00153902 /* jeff-right-2.png in Resources */,
-				9DE4E73918F73A2A00A4E876 /* soldier_blue_up.png in Resources */,
 				9D883DE518F6E38D00BE6E36 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				9DAFE37F18F81EBA00153902 /* jeff-right-3.png in Resources */,
 				9DF18E4118FF79BC00E25903 /* trainjeff-down-2.png in Resources */,
@@ -2041,12 +2030,11 @@
 				9DAFE37C18F81EBA00153902 /* jeff-left-4.png in Resources */,
 				9D883F2918F6E38F00BE6E36 /* LICENSE_cocos2d.txt in Resources */,
 				9D883DD218F6E38D00BE6E36 /* Default-568h@2x.png in Resources */,
+				9DEB63C21913F20C00E7088D /* Gattling.png in Resources */,
 				9DF18E4218FF79BC00E25903 /* trainjeff-down-3.png in Resources */,
 				9DF8089918F847EA001CBB82 /* jeff-fall-right-3.png in Resources */,
 				9DF8089618F847EA001CBB82 /* jeff-fall-left-3.png in Resources */,
-				9DE71F1618F78750007CC645 /* tower-1.png in Resources */,
 				9DF8089B18F84ABF001CBB82 /* splash_screen.png in Resources */,
-				9DE4E73618F73A2A00A4E876 /* soldier_blue_down.png in Resources */,
 				9D883DF218F6E38D00BE6E36 /* iTunesArtwork in Resources */,
 				9D6DF57218F839160014622B /* jeff-up-3.png in Resources */,
 				9DF8089D18F84CAA001CBB82 /* Images.xcassets in Resources */,
@@ -2064,7 +2052,6 @@
 				9DE71F2218F789C6007CC645 /* icon-tower-2-disabled.png in Resources */,
 				9DF18E3418FF77AA00E25903 /* trainjeff.png in Resources */,
 				9DCE6DDD1902FD15005D9ECF /* DayBreak.mp3 in Resources */,
-				9DE71F1518F78750007CC645 /* tower-2.png in Resources */,
 				9DF18E2D18FF779E00E25903 /* trainjeff-right-2.png in Resources */,
 				9D883DEF18F6E38D00BE6E36 /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				9D883DDF18F6E38D00BE6E36 /* Icon-76.png in Resources */,
@@ -2079,7 +2066,6 @@
 				9D88407418F6E45D00BE6E36 /* hit.caf in Resources */,
 				9DB23CC91902013B00455CE4 /* trainjeff-fall-right-1.png in Resources */,
 				9DF18E2F18FF779E00E25903 /* trainjeff-right-4.png in Resources */,
-				9DE4E73718F73A2A00A4E876 /* soldier_blue_left.png in Resources */,
 				9DB23CC81902013B00455CE4 /* trainjeff-fall-left-3.png in Resources */,
 				9DF8089818F847EA001CBB82 /* jeff-fall-right-2.png in Resources */,
 				9DF18E4318FF79BC00E25903 /* trainjeff-left-1.png in Resources */,
@@ -2087,7 +2073,6 @@
 				9DF8089418F847EA001CBB82 /* jeff-fall-left-1.png in Resources */,
 				9D88408018F6FC5100BE6E36 /* TileMap.tmx in Resources */,
 				9D883DF418F6E38D00BE6E36 /* iTunesArtwork@2x in Resources */,
-				9DE4E73818F73A2A00A4E876 /* soldier_blue_right.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2149,6 +2134,7 @@
 				9D883E5718F6E38E00BE6E36 /* CCNode.m in Sources */,
 				9D883E4218F6E38E00BE6E36 /* CCLabelBMFont.m in Sources */,
 				9D883E0018F6E38E00BE6E36 /* CCActionEase.m in Sources */,
+				9DEB63BB1913DF5B00E7088D /* Tower.m in Sources */,
 				9D883E0F18F6E38E00BE6E36 /* CCActionTween.m in Sources */,
 				9D883F7D18F6E38F00BE6E36 /* NSMutableDictionary+WeakReferences.m in Sources */,
 				9D883E5A18F6E38E00BE6E36 /* CCNode+Debug.m in Sources */,
