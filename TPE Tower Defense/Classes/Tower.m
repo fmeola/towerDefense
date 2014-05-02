@@ -18,7 +18,8 @@
         attackRange = 70;
         damage = 10;
         fireRate = 1;
-        mySprite = [CCSprite spriteWithImageNamed:@"Gattling.png"];
+        mySprite = [CCSprite spriteWithImageNamed:
+                    [NSString stringWithFormat:@"%@.png",[self getTowerName]]];
 		[self addChild:mySprite];
         //ver de hacerlo más genérico
         CGPoint trueLocation = ccp(location.x+20, location.y+20);
@@ -110,4 +111,8 @@
 //    [self unschedule:@selector(shootWeapon)];
 //}
 
+-(NSString *)getTowerName
+{
+    return @"Gattling";
+}
 @end

@@ -230,6 +230,8 @@
 		9D88407918F6E45D00BE6E36 /* TileMap.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407218F6E45D00BE6E36 /* TileMap.caf */; };
 		9D88408018F6FC5100BE6E36 /* TileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407F18F6FC5100BE6E36 /* TileMap.tmx */; };
 		9D8B350219034DF00060272D /* terrain.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8B350119034DF00060272D /* terrain.png */; };
+		9D958C1819146122005B6DE4 /* MissileTower.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D958C1719146122005B6DE4 /* MissileTower.m */; };
+		9D958C1A1914628A005B6DE4 /* Missile.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D958C191914628A005B6DE4 /* Missile.png */; };
 		9DA01FA8190207760018CDB3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA01FA7190207760018CDB3 /* XCTest.framework */; };
 		9DA01FA9190207760018CDB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DBF18F6E38D00BE6E36 /* Foundation.framework */; };
 		9DA01FAA190207760018CDB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DBD18F6E38D00BE6E36 /* UIKit.framework */; };
@@ -751,6 +753,9 @@
 		9D88407218F6E45D00BE6E36 /* TileMap.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TileMap.caf; sourceTree = "<group>"; };
 		9D88407F18F6FC5100BE6E36 /* TileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TileMap.tmx; sourceTree = "<group>"; };
 		9D8B350119034DF00060272D /* terrain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = terrain.png; sourceTree = "<group>"; };
+		9D958C1619146122005B6DE4 /* MissileTower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MissileTower.h; path = Classes/MissileTower.h; sourceTree = "<group>"; };
+		9D958C1719146122005B6DE4 /* MissileTower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MissileTower.m; path = Classes/MissileTower.m; sourceTree = "<group>"; };
+		9D958C191914628A005B6DE4 /* Missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Missile.png; sourceTree = "<group>"; };
 		9DA01FA6190207760018CDB3 /* TPE Tower Defense Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TPE Tower Defense Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA01FA7190207760018CDB3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9DA01FAD190207760018CDB3 /* TPE Tower Defense Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TPE Tower Defense Tests-Info.plist"; sourceTree = "<group>"; };
@@ -856,6 +861,7 @@
 		9D6DF56518F838B90014622B /* Más */ = {
 			isa = PBXGroup;
 			children = (
+				9D958C191914628A005B6DE4 /* Missile.png */,
 				9DEB63C01913F20C00E7088D /* Gattling.png */,
 			);
 			name = "Más";
@@ -1751,6 +1757,8 @@
 				9D88405F18F6E39000BE6E36 /* HelloWorldScene.m */,
 				9DEB63B91913DF5B00E7088D /* Tower.h */,
 				9DEB63BA1913DF5B00E7088D /* Tower.m */,
+				9D958C1619146122005B6DE4 /* MissileTower.h */,
+				9D958C1719146122005B6DE4 /* MissileTower.m */,
 				9D88406118F6E39000BE6E36 /* IntroScene.h */,
 				9D88406218F6E39000BE6E36 /* IntroScene.m */,
 				9DCE6DD91902F9EE005D9ECF /* AboutScene.h */,
@@ -2057,6 +2065,7 @@
 				9D883DDF18F6E38D00BE6E36 /* Icon-76.png in Resources */,
 				9D6DF56D18F839160014622B /* jeff-down-1.png in Resources */,
 				9DF18E4018FF79BC00E25903 /* trainjeff-down-1.png in Resources */,
+				9D958C1A1914628A005B6DE4 /* Missile.png in Resources */,
 				9D73E5A718FA174C00BB2A98 /* wave_bg.png in Resources */,
 				9D6DF56F18F839160014622B /* jeff-down-3.png in Resources */,
 				9DB23CC71902013B00455CE4 /* trainjeff-fall-left-2.png in Resources */,
@@ -2156,6 +2165,7 @@
 				9D883E5318F6E38E00BE6E36 /* CCMotionStreak.m in Sources */,
 				9D883E0318F6E38E00BE6E36 /* CCActionInstant.m in Sources */,
 				9D883EFD18F6E38F00BE6E36 /* base64.c in Sources */,
+				9D958C1819146122005B6DE4 /* MissileTower.m in Sources */,
 				9D883F3C18F6E38F00BE6E36 /* OALAudioTrack.m in Sources */,
 				9D883E7F18F6E38E00BE6E36 /* CCProgressNode.m in Sources */,
 				9D883E7218F6E38E00BE6E36 /* CCPhysicsBody.m in Sources */,
