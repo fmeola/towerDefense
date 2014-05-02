@@ -124,11 +124,12 @@
     for(NSDictionary * tb in [towersGroup objects]) {
         NSInteger towerX = [tb[@"x"] intValue];
         NSInteger towerY = [tb[@"y"] intValue];
-        if(x == towerX && y == towerY && [self spaceIsEmpty:tb]) {
+        if(x == towerX && y == towerY && [self spaceIsEmpty:tb] && [self canBuyTower]) {
             CGPoint towerDestinyPosition = ccp(towerX,towerY);
             Tower * tower = [Tower nodeWithTheGame:self location:towerDestinyPosition];
             [towers addObject:tower];
             [placedTowers addObject:tb];
+            
         }
     }
 }
@@ -347,16 +348,19 @@
 {
     for (NSDictionary * d in placedTowers) {
         if(d == towerPlace){
-            return FALSE;
+            return NO;
         }
     }
-    return TRUE;
+    return YES;
 }
 
 -(BOOL)canBuyTower
 {
-    //TODO que reciba el tipo de torre y así controla correctamente el precio
-    return YES;
+    if(money - TOWER_PRICE >= 0) {
+        [self changeMoney:-TOWER_PRICE];
+        return YES;
+    }
+    return NO;
 }
 
 //- (CGPoint)tileToPosition:(CGPoint)p

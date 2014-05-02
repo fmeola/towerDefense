@@ -1,7 +1,7 @@
 #import "cocos2d.h"
 #import "HelloWorldScene.h"
 
-#define kTOWER_COST 300
+#define TOWER_PRICE 10
 
 @class HelloWorldScene;
 //, Enemy
