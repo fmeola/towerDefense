@@ -24,6 +24,7 @@
     CCSpriteBatchNode * spriteSheet;
     NSString * currrentCharacterName;
     NSMutableSet * placedTowers;
+    BOOL buybuttonselected;
 }
 
 @synthesize towers;
@@ -63,6 +64,7 @@
     [bgmusic playBg:@"LevelMusic.mp3" loop:TRUE];
     
     placedTowers = [NSMutableSet setWithObjects:nil];
+    buybuttonselected = NO;
     
     //////////
     currrentCharacterName = @"jeff";
@@ -117,19 +119,20 @@
 
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    CGPoint location = [touch locationInView: [touch view]];
-    NSInteger x = [self tileFromPosition:location].x * _tileMap.tileSize.width;
-    NSInteger y = [self tileFromPosition:location].y * _tileMap.tileSize.height;
-    NSLog(@"x:%ld, y:%ld",(long)x,(long)y);
-    for(NSDictionary * tb in [towersGroup objects]) {
-        NSInteger towerX = [tb[@"x"] intValue];
-        NSInteger towerY = [tb[@"y"] intValue];
-        if(x == towerX && y == towerY && [self spaceIsEmpty:tb] && [self canBuyTower]) {
-            CGPoint towerDestinyPosition = ccp(towerX,towerY);
-            Tower * tower = [Tower nodeWithTheGame:self location:towerDestinyPosition];
-            [towers addObject:tower];
-            [placedTowers addObject:tb];
-            
+    if(buybuttonselected){
+        CGPoint location = [touch locationInView: [touch view]];
+        NSInteger x = [self tileFromPosition:location].x * _tileMap.tileSize.width;
+        NSInteger y = [self tileFromPosition:location].y * _tileMap.tileSize.height;
+        NSLog(@"x:%ld, y:%ld",(long)x,(long)y);
+        for(NSDictionary * tb in [towersGroup objects]) {
+            NSInteger towerX = [tb[@"x"] intValue];
+            NSInteger towerY = [tb[@"y"] intValue];
+            if(x == towerX && y == towerY && [self spaceIsEmpty:tb] && [self canBuyTower]) {
+                [self addTower:tb inPosition:ccp(towerX,towerY)];
+                CCButton * button = (CCButton *)[self getChildByName:@"tower1buybutton" recursively:YES];
+                buybuttonselected = NO;
+                button.selected = NO;
+            }
         }
     }
 }
@@ -138,9 +141,22 @@
 #pragma mark - Button Callbacks
 // -----------------------------------------------------------------------
 
-- (void)onBackClicked:(id)sender
+-(void)onBackClicked:(id)sender
 {
     [[CCDirector sharedDirector] replaceScene:[IntroScene scene] withTransition:[CCTransition transitionCrossFadeWithDuration:1.0f]];
+}
+
+-(void)onBuyClicked:(id)sender
+{
+    CCButton * button = (CCButton *)[self getChildByName:@"tower1buybutton" recursively:YES];
+    if(buybuttonselected) {
+        buybuttonselected = NO;
+        button.selected = NO;
+    }
+    else {
+        buybuttonselected = YES;
+        button.selected = YES;
+    }
 }
 
 // -----------------------------------------------------------------------
@@ -174,10 +190,10 @@
     CCSprite * waveBg = [CCSprite spriteWithImageNamed:@"wave_bg.png"];
     waveBg.positionType = CCPositionTypeNormalized;
     waveBg.position = ccp(0.95f, 0.92f);
-    [self addChild:waveBg];
+    [self addChild:waveBg z:5];
     waveCount = 1;
     [self defaultWavesLabel];
-    [self addChild:wavesLabel];
+    [self addChild:wavesLabel z:6];
 }
 
 -(void)increaseWavesCount:(int)diff
@@ -185,7 +201,7 @@
     waveCount += diff;
     [self removeChild:wavesLabel];
     [self defaultWavesLabel];
-    [self addChild:wavesLabel];
+    [self addChild:wavesLabel z:6];
 }
 
 -(void)defaultWavesLabel
@@ -202,10 +218,10 @@
     CCSprite * moneyBg = [CCSprite spriteWithImageNamed:@"money_bg.png"];
     moneyBg.positionType = CCPositionTypeNormalized;
     moneyBg.position = ccp(0.95f, 0.80f);
-    [self addChild:moneyBg];
+    [self addChild:moneyBg z:5];
     money = initial;
     [self defaultMoneyLabel];
-    [self addChild:moneyLabel];
+    [self addChild:moneyLabel z:6];
 }
 
 -(void)changeMoney:(int)diff
@@ -213,7 +229,7 @@
     money += diff;
     [self removeChild:moneyLabel];
     [self defaultMoneyLabel];
-    [self addChild:moneyLabel];
+    [self addChild:moneyLabel z:6];
 }
 
 -(void)defaultMoneyLabel
@@ -233,15 +249,19 @@
 
 -(void)createTower1Button
 {
-    CCSprite * tower1buybutton = [CCSprite spriteWithImageNamed:@"icon-tower-1-enabled.png"];
+    CCButton * tower1buybutton = [CCButton buttonWithTitle:@""
+                                               spriteFrame:[CCSpriteFrame frameWithImageNamed:@"icon-tower-1-enabled.png"]
+                                    highlightedSpriteFrame:[CCSpriteFrame frameWithImageNamed:@"icon-tower-1-disabled.png"]
+                                       disabledSpriteFrame:nil];
     tower1buybutton.positionType = CCPositionTypeNormalized;
     tower1buybutton.position = ccp(0.83f, 0.10f);
-    [self addChild:tower1buybutton];
+    [tower1buybutton setTarget:self selector:@selector(onBuyClicked:)];
+    [self addChild:tower1buybutton z:5 name:@"tower1buybutton"];
     CCLabelTTF * tower1price = [CCLabelTTF labelWithString:@"$10" fontName:@"Helvetica-Bold" fontSize:11.0f];
     tower1price.positionType = CCPositionTypeNormalized;
     tower1price.color = [CCColor blackColor];
     tower1price.position = [self getTowerPriceLabelPositionWithTowerButtonInPosition: tower1buybutton.position];
-    [self addChild:tower1price];
+    [self addChild:tower1price z:6];
 }
 
 -(void)createTower2Button
@@ -249,12 +269,12 @@
     CCSprite * tower2buybutton = [CCSprite spriteWithImageNamed:@"icon-tower-2-enabled.png"];
     tower2buybutton.positionType = CCPositionTypeNormalized;
     tower2buybutton.position = ccp(0.93f, 0.10f);
-    [self addChild:tower2buybutton];
+    [self addChild:tower2buybutton z:5];
     CCLabelTTF * tower2price = [CCLabelTTF labelWithString:@"$20" fontName:@"Helvetica-Bold" fontSize:11.0f];
     tower2price.positionType = CCPositionTypeNormalized;
     tower2price.color = [CCColor blackColor];
     tower2price.position = [self getTowerPriceLabelPositionWithTowerButtonInPosition: tower2buybutton.position];
-    [self addChild:tower2price];
+    [self addChild:tower2price z:6];
 }
 
 -(CGPoint)getTowerPriceLabelPositionWithTowerButtonInPosition:(CGPoint) point
@@ -361,6 +381,13 @@
         return YES;
     }
     return NO;
+}
+
+-(void)addTower:(NSDictionary *)towerBase inPosition:(CGPoint)position
+{
+    Tower * tower = [Tower nodeWithTheGame:self location:position];
+    [towers addObject:tower];
+    [placedTowers addObject:towerBase];
 }
 
 //- (CGPoint)tileToPosition:(CGPoint)p
