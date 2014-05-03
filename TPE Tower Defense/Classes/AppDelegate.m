@@ -5,7 +5,7 @@
 @implementation AppDelegate
 
 // 
--(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	// This is the only app delegate method you need to implement when inheriting from CCAppDelegate.
 	// This method is a good place to add one time setup code that only runs when your app is first launched.
@@ -37,7 +37,7 @@
 	return YES;
 }
 
--(CCScene *)startScene
+- (CCScene *)startScene
 {
 	// This method should return the very first scene to be run when your app starts.
 	return [IntroScene scene];

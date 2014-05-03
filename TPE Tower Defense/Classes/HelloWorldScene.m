@@ -122,7 +122,7 @@
 #pragma mark - Touch Handler
 // -----------------------------------------------------------------------
 
--(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
     if([self anyBuyButtonIsSelected])
         [self tryAddTower:touch];
@@ -132,12 +132,12 @@
 #pragma mark - Button Callbacks
 // -----------------------------------------------------------------------
 
--(void)onBackClicked:(id)sender
+- (void)onBackClicked:(id)sender
 {
     [[CCDirector sharedDirector] replaceScene:[IntroScene scene] withTransition:[CCTransition transitionCrossFadeWithDuration:1.0f]];
 }
 
--(void)onBuy1Clicked:(id)sender
+- (void)onBuy1Clicked:(id)sender
 {
     CCButton * button = (CCButton *)[self getChildByName:@"tower1buybutton" recursively:YES];
     if(buybutton1selected) {
@@ -150,7 +150,7 @@
     }
 }
 
--(void)onBuy2Clicked:(id)sender
+- (void)onBuy2Clicked:(id)sender
 {
     CCButton * button = (CCButton *)[self getChildByName:@"tower2buybutton" recursively:YES];
     if(buybutton2selected) {
@@ -165,14 +165,14 @@
 
 // -----------------------------------------------------------------------
 
--(void)createScoreLabelWithInitialScore:(int)initial
+- (void)createScoreLabelWithInitialScore:(int)initial
 {
     score = initial;
     [self defaultScoreLabel];
     [self addChild:scoreLabel];
 }
 
--(void)changeScore:(int)diff
+- (void)changeScore:(int)diff
 {
     score += diff;
     [self removeChild:scoreLabel];
@@ -180,7 +180,7 @@
     [self addChild:scoreLabel];
 }
 
--(void)defaultScoreLabel
+- (void)defaultScoreLabel
 {
     scoreString = [NSString stringWithFormat:@"Puntaje: %d",score];
     scoreLabel = [CCLabelTTF labelWithString: scoreString fontName:@"Helvetica" fontSize:16.0f];
@@ -189,7 +189,7 @@
     scoreLabel.position = ccp(0.50f, 0.05f);
 }
 
--(void)createWavesLabel
+- (void)createWavesLabel
 {
     CCSprite * waveBg = [CCSprite spriteWithImageNamed:@"wave_bg.png"];
     waveBg.positionType = CCPositionTypeNormalized;
@@ -200,7 +200,7 @@
     [self addChild:wavesLabel z:6];
 }
 
--(void)increaseWavesCount:(int)diff
+- (void)increaseWavesCount:(int)diff
 {
     waveCount += diff;
     [self removeChild:wavesLabel];
@@ -208,7 +208,7 @@
     [self addChild:wavesLabel z:6];
 }
 
--(void)defaultWavesLabel
+- (void)defaultWavesLabel
 {
     wavesString = [NSString stringWithFormat:@"%d / N",waveCount];
     wavesLabel = [CCLabelTTF labelWithString: wavesString fontName:@"Helvetica-Bold" fontSize:16.0f];
@@ -217,7 +217,7 @@
     wavesLabel.position = ccp(0.95f, 0.91f);
 }
 
--(void)createMoneyLabelWithInitialMoney:(int)initial
+- (void)createMoneyLabelWithInitialMoney:(int)initial
 {
     CCSprite * moneyBg = [CCSprite spriteWithImageNamed:@"money_bg.png"];
     moneyBg.positionType = CCPositionTypeNormalized;
@@ -228,7 +228,7 @@
     [self addChild:moneyLabel z:6];
 }
 
--(void)changeMoney:(int)diff
+- (void)changeMoney:(int)diff
 {
     money += diff;
     [self removeChild:moneyLabel];
@@ -236,7 +236,7 @@
     [self addChild:moneyLabel z:6];
 }
 
--(void)defaultMoneyLabel
+- (void)defaultMoneyLabel
 {
     moneyString = [NSString stringWithFormat:@"$ %d",money];
     moneyLabel = [CCLabelTTF labelWithString: moneyString fontName:@"Helvetica-Bold" fontSize:16.0f];
@@ -245,13 +245,13 @@
     moneyLabel.position = ccp(0.95f, 0.79f);
 }
 
--(void)createTowerButtons
+- (void)createTowerButtons
 {
     [self createTower1Button];
     [self createTower2Button];
 }
 
--(void)createTower1Button
+- (void)createTower1Button
 {
     CCButton * tower1buybutton = [CCButton buttonWithTitle:@""
                                                spriteFrame:[CCSpriteFrame frameWithImageNamed:@"icon-tower-1-enabled.png"]
@@ -268,7 +268,7 @@
     [self addChild:tower1price z:6];
 }
 
--(void)createTower2Button
+- (void)createTower2Button
 {
     CCButton * tower2buybutton = [CCButton buttonWithTitle:@""
                                                spriteFrame:[CCSpriteFrame frameWithImageNamed:@"icon-tower-2-enabled.png"]
@@ -285,12 +285,12 @@
     [self addChild:tower2price z:6];
 }
 
--(CGPoint)getTowerPriceLabelPositionWithTowerButtonInPosition:(CGPoint) point
+- (CGPoint)getTowerPriceLabelPositionWithTowerButtonInPosition:(CGPoint) point
 {
     return ccp(point.x+0.015,point.y-0.061);
 }
 
--(void)createBackButton
+- (void)createBackButton
 {
     CCButton * backButton = [CCButton buttonWithTitle:@"[ Volver ]" fontName:@"Helvetica-Bold" fontSize:16.0f];
     backButton.color = [CCColor blackColor];
@@ -300,14 +300,13 @@
     [self addChild:backButton];
 }
 
--(void)playAudioEffectNamed:(NSString *)name
+- (void)playAudioEffectNamed:(NSString *)name
 {
     OALSimpleAudio * audio = [OALSimpleAudio sharedInstance];
     [audio playEffect:name];
 }
 
-// Cómo saber el SPRITE_SIZE? En algunos son 3 y en otros 4.
--(void)createCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point
+- (void)createCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point
 {
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist",characterName]];
     spriteSheet = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.png",characterName]];
@@ -326,7 +325,7 @@
     [spriteSheet addChild:_character];
 }
 
--(void)updateCharacerSprite:(NSString *)characterName
+- (void)updateCharacerSprite:(NSString *)characterName
 {
     NSMutableArray * walkAnimFrames = [NSMutableArray array];
     for (int i=1; i<=SPRITE_SIZE; i++) {
@@ -372,7 +371,7 @@
     return ccp(x, y);
 }
 
--(BOOL)spaceIsEmpty:(NSDictionary *)towerPlace
+- (BOOL)spaceIsEmpty:(NSDictionary *)towerPlace
 {
     for (NSDictionary * d in placedTowers) {
         if(d == towerPlace){
@@ -382,7 +381,7 @@
     return YES;
 }
 
--(BOOL)canBuyTower:(Tower*)tower
+- (BOOL)canBuyTower:(Tower*)tower
 {
     if(money - [tower getPrice] >= 0) {
         [self changeMoney:-[tower getPrice]];
@@ -391,19 +390,19 @@
     return NO;
 }
 
--(void)addTower:(NSDictionary *)towerBase inPosition:(CGPoint)position withType:(Tower *)type
+- (void)addTower:(NSDictionary *)towerBase inPosition:(CGPoint)position withType:(Tower *)type
 {
     Tower * tower = [type.class nodeWithTheGame:self location:position];
     [towers addObject:tower];
     [placedTowers addObject:towerBase];
 }
 
--(BOOL)anyBuyButtonIsSelected
+- (BOOL)anyBuyButtonIsSelected
 {
     return buybutton1selected || buybutton2selected;
 }
 
--(void)tryAddTower:(UITouch *)touch
+- (void)tryAddTower:(UITouch *)touch
 {
     CGPoint location = [touch locationInView: [touch view]];
     NSInteger x = [self tileFromPosition:location].x * _tileMap.tileSize.width;

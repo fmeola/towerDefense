@@ -2,12 +2,12 @@
 
 @implementation MissileTower : Tower
 
--(NSString *)getTowerName
+- (NSString *)getTowerName
 {
     return @"Missile";
 }
 
--(int)getPrice
+- (int)getPrice
 {
     return 20;
 }

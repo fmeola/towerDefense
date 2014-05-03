@@ -23,27 +23,27 @@
 + (HelloWorldScene *) scene;
 - (id)init;
 
--(void)createScoreLabelWithInitialScore:(int)initial;
--(void)changeScore:(int)diff;
--(void)defaultScoreLabel;
+- (void)createScoreLabelWithInitialScore:(int)initial;
+- (void)changeScore:(int)diff;
+- (void)defaultScoreLabel;
 
--(void)createWavesLabel;
--(void)increaseWavesCount:(int)diff;
--(void)defaultWavesLabel;
+- (void)createWavesLabel;
+- (void)increaseWavesCount:(int)diff;
+- (void)defaultWavesLabel;
 
--(void)createMoneyLabelWithInitialMoney:(int)initial;
--(void)changeMoney:(int)diff;
--(void)defaultMoneyLabel;
+- (void)createMoneyLabelWithInitialMoney:(int)initial;
+- (void)changeMoney:(int)diff;
+- (void)defaultMoneyLabel;
 
--(void)createTowerButtons;
--(void)createTower1Button;
--(void)createTower2Button;
--(CGPoint)getTowerPriceLabelPositionWithTowerButtonInPosition:(CGPoint) point;
--(void)createBackButton;
+- (void)createTowerButtons;
+- (void)createTower1Button;
+- (void)createTower2Button;
+- (CGPoint)getTowerPriceLabelPositionWithTowerButtonInPosition:(CGPoint) point;
+- (void)createBackButton;
 
--(void)playAudioEffectNamed:(NSString *)name;
+- (void)playAudioEffectNamed:(NSString *)name;
 
--(void)createCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point;
--(void)updateCharacerSprite:(NSString *)characterName;
+- (void)createCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point;
+- (void)updateCharacerSprite:(NSString *)characterName;
 // -----------------------------------------------------------------------
 @end

@@ -13,8 +13,8 @@
 @property (nonatomic,strong) HelloWorldScene * theGame;
 @property (nonatomic,strong) CCSprite * towerSprite;
 
-+(id)nodeWithTheGame:(HelloWorldScene *)_game location:(CGPoint)location;
--(id)initWithTheGame:(HelloWorldScene *)_game location:(CGPoint)location;
--(int)getPrice;
++ (id)nodeWithTheGame:(HelloWorldScene *)_game location:(CGPoint)location;
+- (id)initWithTheGame:(HelloWorldScene *)_game location:(CGPoint)location;
+- (int)getPrice;
 
 @end
