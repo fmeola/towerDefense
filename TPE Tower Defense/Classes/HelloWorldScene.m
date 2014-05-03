@@ -64,11 +64,13 @@
     // Música de fondo
     OALSimpleAudio * bgmusic = [OALSimpleAudio sharedInstance];
     [bgmusic playBg:@"LevelMusic.mp3" loop:TRUE];
-    
     placedTowers = [NSMutableSet setWithObjects:nil];
+
+    //////////
     buybutton1selected = NO;
     buybutton2selected = NO;
-
+    //////////
+    
     //////////
     currrentCharacterName = @"jeff";
     //////////
@@ -122,37 +124,8 @@
 
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    if(buybutton1selected){
-        CGPoint location = [touch locationInView: [touch view]];
-        NSInteger x = [self tileFromPosition:location].x * _tileMap.tileSize.width;
-        NSInteger y = [self tileFromPosition:location].y * _tileMap.tileSize.height;
-        NSLog(@"x:%ld, y:%ld",(long)x,(long)y);
-        for(NSDictionary * tb in [towersGroup objects]) {
-            NSInteger towerX = [tb[@"x"] intValue];
-            NSInteger towerY = [tb[@"y"] intValue];
-            if(x == towerX && y == towerY && [self spaceIsEmpty:tb] && [self canBuyTower1]) {
-                [self addTower1:tb inPosition:ccp(towerX,towerY)];
-                CCButton * button = (CCButton *)[self getChildByName:@"tower1buybutton" recursively:YES];
-                buybutton1selected = NO;
-                button.selected = NO;
-            }
-        }
-    } else if(buybutton2selected){
-        CGPoint location = [touch locationInView: [touch view]];
-        NSInteger x = [self tileFromPosition:location].x * _tileMap.tileSize.width;
-        NSInteger y = [self tileFromPosition:location].y * _tileMap.tileSize.height;
-        NSLog(@"x:%ld, y:%ld",(long)x,(long)y);
-        for(NSDictionary * tb in [towersGroup objects]) {
-            NSInteger towerX = [tb[@"x"] intValue];
-            NSInteger towerY = [tb[@"y"] intValue];
-            if(x == towerX && y == towerY && [self spaceIsEmpty:tb] && [self canBuyTower2]) {
-                [self addTower2:tb inPosition:ccp(towerX,towerY)];
-                CCButton * button = (CCButton *)[self getChildByName:@"tower2buybutton" recursively:YES];
-                buybutton2selected = NO;
-                button.selected = NO;
-            }
-        }
-    }
+    if([self anyBuyButtonIsSelected])
+        [self tryAddTower:touch];
 }
 
 // -----------------------------------------------------------------------
@@ -409,46 +382,50 @@
     return YES;
 }
 
--(BOOL)canBuyTower1
+-(BOOL)canBuyTower:(Tower*)tower
 {
-    if(money - TOWER_1_PRICE >= 0) {
-        [self changeMoney:-TOWER_1_PRICE];
+    if(money - [tower getPrice] >= 0) {
+        [self changeMoney:-[tower getPrice]];
         return YES;
     }
     return NO;
 }
 
--(BOOL)canBuyTower2
+-(void)addTower:(NSDictionary *)towerBase inPosition:(CGPoint)position withType:(Tower *)type
 {
-    if(money - TOWER_2_PRICE >= 0) {
-        [self changeMoney:-TOWER_2_PRICE];
-        return YES;
+    Tower * tower = [type.class nodeWithTheGame:self location:position];
+    [towers addObject:tower];
+    [placedTowers addObject:towerBase];
+}
+
+-(BOOL)anyBuyButtonIsSelected
+{
+    return buybutton1selected || buybutton2selected;
+}
+
+-(void)tryAddTower:(UITouch *)touch
+{
+    CGPoint location = [touch locationInView: [touch view]];
+    NSInteger x = [self tileFromPosition:location].x * _tileMap.tileSize.width;
+    NSInteger y = [self tileFromPosition:location].y * _tileMap.tileSize.height;
+    NSLog(@"x:%ld, y:%ld",(long)x,(long)y);
+    for(NSDictionary * tb in [towersGroup objects]) {
+        NSInteger towerX = [tb[@"x"] intValue];
+        NSInteger towerY = [tb[@"y"] intValue];
+        if(x == towerX && y == towerY && [self spaceIsEmpty:tb]) {
+            if(buybutton1selected && [self canBuyTower: [Tower alloc]]) {
+                [self addTower:tb inPosition:ccp(towerX,towerY) withType:[Tower alloc]];
+                CCButton * button = (CCButton *)[self getChildByName:@"tower1buybutton" recursively:YES];
+                buybutton1selected = NO;
+                button.selected = NO;
+            } else if (buybutton2selected && [self canBuyTower: [MissileTower alloc]]) {
+                [self addTower:tb inPosition:ccp(towerX,towerY) withType: [MissileTower alloc]];
+                CCButton * button = (CCButton *)[self getChildByName:@"tower2buybutton" recursively:YES];
+                buybutton2selected = NO;
+                button.selected = NO;
+            }
+        }
     }
-    return NO;
 }
-
--(void)addTower1:(NSDictionary *)towerBase inPosition:(CGPoint)position
-{
-    Tower * tower = [Tower nodeWithTheGame:self location:position];
-    [towers addObject:tower];
-    [placedTowers addObject:towerBase];
-}
-
--(void)addTower2:(NSDictionary *)towerBase inPosition:(CGPoint)position
-{
-    MissileTower * tower = [MissileTower nodeWithTheGame:self location:position];
-    [towers addObject:tower];
-    [placedTowers addObject:towerBase];
-}
-
-
-//- (CGPoint)tileToPosition:(CGPoint)p
-//{
-//    p = ccpMult(p, _tileMap.tileSize.width);
-//    p.x += _tileMap.tileSize.width / 2;
-//    p.y = _tileMap.contentSize.height - p.y;
-//    p.y -= _tileMap.tileSize.height / 2;
-//    return p;
-//}
 
 @end

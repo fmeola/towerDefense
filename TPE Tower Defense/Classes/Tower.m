@@ -6,12 +6,12 @@
 
 @synthesize mySprite,theGame;
 
-+(id) nodeWithTheGame:(HelloWorldScene *)_game location:(CGPoint)location
++(id)nodeWithTheGame:(HelloWorldScene *)_game location:(CGPoint)location
 {
     return [[self alloc] initWithTheGame:_game location:location];
 }
 
--(id) initWithTheGame:(HelloWorldScene *)_game location:(CGPoint)location
+-(id)initWithTheGame:(HelloWorldScene *)_game location:(CGPoint)location
 {
 	if( (self=[super init])) {
 		theGame = _game;
@@ -30,8 +30,25 @@
 	return self;
 }
 
--(void)update:(CCTime)dt
+-(NSString *)getTowerName
 {
+    return @"Gattling";
+}
+
+-(int)getPrice
+{
+    return 10;
+}
+
+-(void)draw
+{
+    ccDrawColor4B(255,255,255,255);
+    ccDrawCircle(mySprite.position, attackRange, 360, 30, false);
+    [super draw];
+}
+
+//-(void)update:(CCTime)dt
+//{
 //    if (chosenEnemy){
 //        
 //        //We make it turn to target the enemy chosen
@@ -52,15 +69,8 @@
 //            }
 //        }
 //    }
-}
-
--(void)draw
-{
-    ccDrawColor4B(255,255,255,255);
-    ccDrawCircle(mySprite.position, attackRange, 360, 30, false);
-    [super draw];
-}
-
+//}
+//
 //-(void)attackEnemy
 //{
 //    [self schedule:@selector(shootWeapon) interval:fireRate];
@@ -111,8 +121,4 @@
 //    [self unschedule:@selector(shootWeapon)];
 //}
 
--(NSString *)getTowerName
-{
-    return @"Gattling";
-}
 @end

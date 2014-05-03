@@ -1,8 +1,6 @@
 #import "cocos2d.h"
 #import "HelloWorldScene.h"
 
-#define TOWER_1_PRICE 10
-
 @class HelloWorldScene;
 //, Enemy
 
@@ -20,5 +18,5 @@
 +(id)nodeWithTheGame:(HelloWorldScene *)_game location:(CGPoint)location;
 -(id)initWithTheGame:(HelloWorldScene *)_game location:(CGPoint)location;
 //-(void)targetKilled;
-
+-(int)getPrice;
 @end

@@ -1,3 +1,12 @@
+//- (CGPoint)tileToPosition:(CGPoint)p
+//{
+//    p = ccpMult(p, _tileMap.tileSize.width);
+//    p.x += _tileMap.tileSize.width / 2;
+//    p.y = _tileMap.contentSize.height - p.y;
+//    p.y -= _tileMap.tileSize.height / 2;
+//    return p;
+//}
+
     while(![currentPoint[@"next"] isEqual: @"p0"]) {
         CGPoint destinyLocation = ccp([currentPoint[@"x"] integerValue],[currentPoint[@"y"] integerValue]);
         CGPoint moveDifference = ccpSub(destinyLocation, _jeff.position);
