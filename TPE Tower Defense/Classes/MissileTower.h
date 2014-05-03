@@ -8,6 +8,8 @@
 
 #import "Tower.h"
 
+#define TOWER_2_PRICE 20
+
 @interface MissileTower : Tower
 
 @end

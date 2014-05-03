@@ -130,7 +130,7 @@
         for(NSDictionary * tb in [towersGroup objects]) {
             NSInteger towerX = [tb[@"x"] intValue];
             NSInteger towerY = [tb[@"y"] intValue];
-            if(x == towerX && y == towerY && [self spaceIsEmpty:tb] && [self canBuyTower]) {
+            if(x == towerX && y == towerY && [self spaceIsEmpty:tb] && [self canBuyTower1]) {
                 [self addTower1:tb inPosition:ccp(towerX,towerY)];
                 CCButton * button = (CCButton *)[self getChildByName:@"tower1buybutton" recursively:YES];
                 buybutton1selected = NO;
@@ -145,7 +145,7 @@
         for(NSDictionary * tb in [towersGroup objects]) {
             NSInteger towerX = [tb[@"x"] intValue];
             NSInteger towerY = [tb[@"y"] intValue];
-            if(x == towerX && y == towerY && [self spaceIsEmpty:tb] && [self canBuyTower]) {
+            if(x == towerX && y == towerY && [self spaceIsEmpty:tb] && [self canBuyTower2]) {
                 [self addTower2:tb inPosition:ccp(towerX,towerY)];
                 CCButton * button = (CCButton *)[self getChildByName:@"tower2buybutton" recursively:YES];
                 buybutton2selected = NO;
@@ -409,10 +409,19 @@
     return YES;
 }
 
--(BOOL)canBuyTower
+-(BOOL)canBuyTower1
 {
-    if(money - TOWER_PRICE >= 0) {
-        [self changeMoney:-TOWER_PRICE];
+    if(money - TOWER_1_PRICE >= 0) {
+        [self changeMoney:-TOWER_1_PRICE];
+        return YES;
+    }
+    return NO;
+}
+
+-(BOOL)canBuyTower2
+{
+    if(money - TOWER_2_PRICE >= 0) {
+        [self changeMoney:-TOWER_2_PRICE];
         return YES;
     }
     return NO;
