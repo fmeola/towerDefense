@@ -16,38 +16,18 @@
 
 - (id)init
 {
-    // Apple recommend assigning self with supers return value
     self = [super init];
     if (!self) return(nil);
-    
-    // Create a colored background (Dark Grey)
-    //    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
-    //    [self addChild:background];
-    
-    // Imagen de la Splash-Screen
     CCSprite * image = [CCSprite spriteWithImageNamed:@"splash_screen.png"];
     image.positionType = CCPositionTypeNormalized;
     image.position = ccp(0.5f, 0.8f);
     [self addChild:image];
-    
-    CCLabelTTF * label = [CCLabelTTF labelWithString:@"Acerca De" fontName:@"Helvetica-Bold" fontSize:30.0f];
-    label.positionType = CCPositionTypeNormalized;
-    label.color = [CCColor blackColor];
-    label.position = ccp(0.5f, 0.80f);
-    [self addChild:label];
-    
-    CCButton * helloWorldButton = [CCButton buttonWithTitle:@"[ Volver ]" fontName:@"Helvetica-Bold" fontSize:24.0f];
-    helloWorldButton.positionType = CCPositionTypeNormalized;
-    helloWorldButton.position = ccp(0.5f, 0.15f);
-    [helloWorldButton setTarget:self selector:@selector(onSpinningClicked:)];
-    [self addChild:helloWorldButton];
-    
-    // access audio object
     OALSimpleAudio * bgmusic = [OALSimpleAudio sharedInstance];
-    // play background sound
     [bgmusic playBg:@"DayBreak.mp3" loop:TRUE];
-    
-    // done
+    [self createBackButton];
+    [self createTitleLabel];
+    [self createAuthorLabel];
+    [self createThankLabel];
 	return self;
 }
 
@@ -57,11 +37,46 @@
 
 - (void)onSpinningClicked:(id)sender
 {
-    // start spinning scene with transition
     [[CCDirector sharedDirector] replaceScene:[IntroScene scene]
                                withTransition:[CCTransition transitionCrossFadeWithDuration:1.0f]];
 }
 
 // -----------------------------------------------------------------------
+
+- (void)createBackButton
+{
+    CCButton * backButton = [CCButton buttonWithTitle:@"[ Volver ]" fontName:@"Helvetica-Bold" fontSize:24.0f];
+    backButton.positionType = CCPositionTypeNormalized;
+    backButton.position = ccp(0.5f, 0.15f);
+    [backButton setTarget:self selector:@selector(onSpinningClicked:)];
+    [self addChild:backButton];
+}
+
+- (void)createTitleLabel
+{
+    CCLabelTTF * titleLabel = [CCLabelTTF labelWithString:@"Acerca De" fontName:@"Helvetica-Bold" fontSize:30.0f];
+    titleLabel.positionType = CCPositionTypeNormalized;
+    titleLabel.color = [CCColor grayColor];
+    titleLabel.position = ccp(0.5f, 0.80f);
+    [self addChild:titleLabel];
+}
+
+- (void)createAuthorLabel
+{
+    CCLabelTTF * authorLabel = [CCLabelTTF labelWithString:@"Creado por Franco Román Meola" fontName:@"Helvetica-Bold" fontSize:24.0f];
+    authorLabel.positionType = CCPositionTypeNormalized;
+    authorLabel.color = [CCColor blackColor];
+    authorLabel.position = ccp(0.5f, 0.60f);
+    [self addChild:authorLabel];
+}
+
+- (void)createThankLabel
+{
+    CCLabelTTF * thankLabel = [CCLabelTTF labelWithString:@"Inspirado en Digital Estate Planning: The Game" fontName:@"Helvetica-Bold" fontSize:22.0f];
+    thankLabel.positionType = CCPositionTypeNormalized;
+    thankLabel.color = [CCColor whiteColor];
+    thankLabel.position = ccp(0.5f, 0.40f);
+    [self addChild:thankLabel];
+}
 
 @end
