@@ -3,7 +3,6 @@
 #import "CCAnimation.h"
 #import "Tower.h"
 #import "MissileTower.h"
-#import "Enemy.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
@@ -28,7 +27,7 @@
     NSMutableSet * placedTowers;
     BOOL buybutton1selected;
     BOOL buybutton2selected;
-//    int wave;
+    CGPoint startPosition;
 }
 
 @synthesize towers;
@@ -57,34 +56,22 @@
     objectGroup = [_tileMap objectGroupNamed:@"Path"];
     NSAssert(objectGroup != nil, @"tile map has no Path object layer");
     NSDictionary * startPoint = [objectGroup objectNamed:_tileMap.properties[@"startPosition"]];
+    startPosition = ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue]);
     currentPoint = startPoint;
     towersGroup = [_tileMap objectGroupNamed:@"Towers"];
     NSAssert(towersGroup != nil, @"tile map has no objects Towers layer");
     // Música de fondo
     OALSimpleAudio * bgmusic = [OALSimpleAudio sharedInstance];
     [bgmusic playBg:@"LevelMusic.mp3" loop:TRUE];
-    placedTowers = [NSMutableSet setWithObjects:nil];
-
-    //////////
     buybutton1selected = NO;
     buybutton2selected = NO;
-    //////////
-    
-    //////////
     currrentCharacterName = @"jeff";
-    //////////
-    
     [self createBackButton];
     [self createMoneyLabelWithInitialMoney:100];
     [self createWavesLabel];
     [self createScoreLabelWithInitialScore:100000];
     [self createTowerButtons];
-    [self createCharacterSprite:currrentCharacterName withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
-    
-    ////////////
-//    _enemies = [[NSMutableArray alloc] init];
-//    [self loadWave];
-    ///////////
+    [self createCharacterSprite:currrentCharacterName withPosition:startPosition];
     return self;
 }
 
@@ -106,11 +93,6 @@
     // In pre-v3, touch enable and scheduleUpdate was called here
     // In v3, touch is enabled by setting userInterActionEnabled for the individual nodes
     // Per frame update is automatically enabled, if update is overridden
-    //[self schedule:@selector(addSoldier:) interval:1.5];
-    
-    // ¿Está bien así?
-    // ¿No puedo precalcular todos los moveTo y ponerlos en un CCSequence?
-    // ¿Cómo hago con más de una spritesheet?
     [self schedule:@selector(moveCharacter:) interval:1.0f];
 }
 
@@ -349,19 +331,15 @@
 {
     NSDictionary * nextPoint = [objectGroup objectNamed:currentPoint[@"next"]];
     currentPoint = nextPoint;
-    // Ver si lo actualizo de más
     [self updateCharacerSprite:currrentCharacterName];
-    // Si llego a la posición final
     if([currentPoint[@"next"] isEqual: @"p0"]) {
         [self playAudioEffectNamed:@"pickup.caf"];
         [self increaseWavesCount:1];
         [self changeScore:-10000];
         [_character stopAction:_walkAction];
         [spriteSheet removeChild:_character cleanup: YES];
-        NSDictionary * startPoint = [objectGroup objectNamed:_tileMap.properties[@"startPosition"]];
-        // Ver si cargo de más.
         currrentCharacterName = @"trainjeff";
-        [self createCharacterSprite:currrentCharacterName withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
+        [self createCharacterSprite:currrentCharacterName withPosition:startPosition];
     } else {
         CGPoint destinyLocation = ccp([currentPoint[@"x"] floatValue],[currentPoint[@"y"] floatValue]);
         _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];
@@ -369,9 +347,11 @@
     }
 }
 
+/*
+ * Devuelve la posición de la Matriz Tile. Ejemplo:(3,5)
+ */
 - (CGPoint)tileFromPosition:(CGPoint)position
 {
-    // Devuelve la posición de la matriz Tile
     NSInteger x = (NSInteger)(position.x / _tileMap.tileSize.width);
     NSInteger y = (NSInteger)(((_tileMap.mapSize.height * _tileMap.tileSize.width) - position.y) / _tileMap.tileSize.width);
     return ccp(x, y);
@@ -408,6 +388,7 @@
     return buybutton1selected || buybutton2selected;
 }
 
+
 - (void)tryAddTower:(UITouch *)touch
 {
     CGPoint location = [touch locationInView: [touch view]];
@@ -434,21 +415,5 @@
         }
     }
 }
-
-//- (BOOL)loadWave {
-//    NSString * plistPath = [[NSBundle mainBundle] pathForResource:@"Waves" ofType:@"plist"];
-//    NSArray * waveData = [NSArray arrayWithContentsOfFile:plistPath];
-//    if(wave >= [waveData count]){
-//        return NO;
-//    }
-//    NSArray * currentWaveData = [NSArray arrayWithArray:[waveData objectAtIndex:wave]];
-//    for(NSDictionary * enemyData in currentWaveData) {
-//        Enemy * enemy = [Enemy nodeWithTheGame:self];
-//        [_enemies addObject:enemy];
-//        [enemy schedule:@selector(doActivate) interval:[[enemyData objectForKey:@"spawnTime"]floatValue]];
-//    }
-//    wave++;
-//    return YES;
-//}
 
 @end
