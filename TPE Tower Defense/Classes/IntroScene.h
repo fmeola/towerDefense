@@ -6,8 +6,6 @@
 
 + (IntroScene *)scene;
 - (id)init;
-- (void)onSpinningClicked:(id)sender;
-- (void)onAboutClicked:(id)sender;
 
 // -----------------------------------------------------------------------
 @end
