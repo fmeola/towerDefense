@@ -13,6 +13,7 @@
 @property (nonatomic,strong) CCAction * moveAction;
 @property (nonatomic,strong) CCAnimation * walkAnim;
 @property (nonatomic,strong) NSMutableArray * towers;
+//@property (nonatomic,strong) NSMutableArray * enemies;
 
 // -----------------------------------------------------------------------
 

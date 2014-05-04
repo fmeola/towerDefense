@@ -3,6 +3,7 @@
 #import "CCAnimation.h"
 #import "Tower.h"
 #import "MissileTower.h"
+#import "Enemy.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - HelloWorldScene
@@ -27,6 +28,7 @@
     NSMutableSet * placedTowers;
     BOOL buybutton1selected;
     BOOL buybutton2selected;
+//    int wave;
 }
 
 @synthesize towers;
@@ -78,6 +80,11 @@
     [self createScoreLabelWithInitialScore:100000];
     [self createTowerButtons];
     [self createCharacterSprite:currrentCharacterName withPosition:ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])];
+    
+    ////////////
+//    _enemies = [[NSMutableArray alloc] init];
+//    [self loadWave];
+    ///////////
     return self;
 }
 
@@ -423,5 +430,21 @@
         }
     }
 }
+
+//- (BOOL)loadWave {
+//    NSString * plistPath = [[NSBundle mainBundle] pathForResource:@"Waves" ofType:@"plist"];
+//    NSArray * waveData = [NSArray arrayWithContentsOfFile:plistPath];
+//    if(wave >= [waveData count]){
+//        return NO;
+//    }
+//    NSArray * currentWaveData = [NSArray arrayWithArray:[waveData objectAtIndex:wave]];
+//    for(NSDictionary * enemyData in currentWaveData) {
+//        Enemy * enemy = [Enemy nodeWithTheGame:self];
+//        [_enemies addObject:enemy];
+//        [enemy schedule:@selector(doActivate) interval:[[enemyData objectForKey:@"spawnTime"]floatValue]];
+//    }
+//    wave++;
+//    return YES;
+//}
 
 @end

@@ -1,4 +1,3 @@
-#import "cocos2d.h"
 #import "HelloWorldScene.h"
 
 @interface Tower : CCNode {
@@ -12,8 +11,8 @@
 @property (nonatomic,strong) HelloWorldScene * theGame;
 @property (nonatomic,strong) CCSprite * towerSprite;
 
-+ (id)nodeWithTheGame:(HelloWorldScene *)_game location:(CGPoint)location;
-- (id)initWithTheGame:(HelloWorldScene *)_game location:(CGPoint)location;
++ (id)nodeWithTheGame:(HelloWorldScene *)game location:(CGPoint)location;
+- (id)initWithTheGame:(HelloWorldScene *)game location:(CGPoint)location;
 - (int)getPrice;
 
 // -----------------------------------------------------------------------

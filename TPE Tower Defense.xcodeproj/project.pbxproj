@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9D0FCD2F18F822EB002BF610 /* LevelMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D0FCD2E18F822EB002BF610 /* LevelMusic.mp3 */; };
 		9D0FCD3118F823B4002BF610 /* IntroMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D0FCD3018F823B4002BF610 /* IntroMusic.mp3 */; };
+		9D12806E1915C33A00CE2BE6 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D12806D1915C33A00CE2BE6 /* Enemy.m */; };
 		9D6C72AD18FB72C600824413 /* Test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C72AC18FB72C600824413 /* Test.txt */; };
 		9D6DF56D18F839160014622B /* jeff-down-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56718F839160014622B /* jeff-down-1.png */; };
 		9D6DF56E18F839160014622B /* jeff-down-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56818F839160014622B /* jeff-down-2.png */; };
@@ -309,6 +310,8 @@
 /* Begin PBXFileReference section */
 		9D0FCD2E18F822EB002BF610 /* LevelMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LevelMusic.mp3; sourceTree = "<group>"; };
 		9D0FCD3018F823B4002BF610 /* IntroMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IntroMusic.mp3; sourceTree = "<group>"; };
+		9D12806C1915C33A00CE2BE6 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enemy.h; path = Classes/Enemy.h; sourceTree = "<group>"; };
+		9D12806D1915C33A00CE2BE6 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enemy.m; path = Classes/Enemy.m; sourceTree = "<group>"; };
 		9D6C72AC18FB72C600824413 /* Test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Test.txt; sourceTree = "<group>"; };
 		9D6DF56718F839160014622B /* jeff-down-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-down-1.png"; sourceTree = "<group>"; };
 		9D6DF56818F839160014622B /* jeff-down-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-down-2.png"; sourceTree = "<group>"; };
@@ -1755,6 +1758,8 @@
 				9D88405C18F6E39000BE6E36 /* AppDelegate.m */,
 				9D88405E18F6E39000BE6E36 /* HelloWorldScene.h */,
 				9D88405F18F6E39000BE6E36 /* HelloWorldScene.m */,
+				9D12806C1915C33A00CE2BE6 /* Enemy.h */,
+				9D12806D1915C33A00CE2BE6 /* Enemy.m */,
 				9DEB63B91913DF5B00E7088D /* Tower.h */,
 				9DEB63BA1913DF5B00E7088D /* Tower.m */,
 				9D958C1619146122005B6DE4 /* MissileTower.h */,
@@ -2236,6 +2241,7 @@
 				9D883F6118F6E38F00BE6E36 /* ALSource.m in Sources */,
 				9D883E6918F6E38E00BE6E36 /* CCParticleSystem.m in Sources */,
 				9D883E8E18F6E38E00BE6E36 /* CCScene.m in Sources */,
+				9D12806E1915C33A00CE2BE6 /* Enemy.m in Sources */,
 				9D883EBC18F6E38E00BE6E36 /* CCTexture.m in Sources */,
 				9D883F4E18F6E38F00BE6E36 /* ALCaptureDevice.m in Sources */,
 				9D883E8A18F6E38E00BE6E36 /* CCResponderManager.m in Sources */,
