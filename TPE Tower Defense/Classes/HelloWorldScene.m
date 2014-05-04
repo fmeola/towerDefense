@@ -143,6 +143,7 @@
 
 - (void)onBuy1Clicked:(id)sender
 {
+    [self playAudioEffectNamed:@"move.caf"];
     CCButton * button = (CCButton *)[self getChildByName:@"tower1buybutton" recursively:YES];
     if(buybutton1selected) {
         buybutton1selected = NO;
@@ -156,6 +157,7 @@
 
 - (void)onBuy2Clicked:(id)sender
 {
+    [self playAudioEffectNamed:@"move.caf"];
     CCButton * button = (CCButton *)[self getChildByName:@"tower2buybutton" recursively:YES];
     if(buybutton2selected) {
         buybutton2selected = NO;
@@ -419,11 +421,13 @@
             if(buybutton1selected && [self canBuyTower: [Tower alloc]]) {
                 [self addTower:tb inPosition:ccp(towerX,towerY) withType:[Tower alloc]];
                 CCButton * button = (CCButton *)[self getChildByName:@"tower1buybutton" recursively:YES];
+                [self playAudioEffectNamed:@"hit.caf"];
                 buybutton1selected = NO;
                 button.selected = NO;
             } else if (buybutton2selected && [self canBuyTower: [MissileTower alloc]]) {
                 [self addTower:tb inPosition:ccp(towerX,towerY) withType: [MissileTower alloc]];
                 CCButton * button = (CCButton *)[self getChildByName:@"tower2buybutton" recursively:YES];
+                [self playAudioEffectNamed:@"hit.caf"];
                 buybutton2selected = NO;
                 button.selected = NO;
             }
