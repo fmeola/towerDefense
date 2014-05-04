@@ -208,6 +208,10 @@
 		// Easy case: 0 duration.
 		for(OALAction* action in actions_)
 		{
+            /* Me molestaba este warning */
+            OALAction* aux = action;
+            aux = aux;
+            /**/
 			[pDurations_ addObject:[NSNumber numberWithFloat:0]];
 		}
 	}

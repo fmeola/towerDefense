@@ -49,9 +49,6 @@
     if (!self) return(nil);
     // Enable touch handling on scene node
     self.userInteractionEnabled = YES;
-    // Create a colored background (Dark Grey)
-    CCNodeColor * background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
-    [self addChild:background];
     _tileMap = [CCTiledMap tiledMapWithFile:@"TileMap.tmx"];
     _background = [_tileMap layerNamed:@"Background"];
     [self addChild:_tileMap];
