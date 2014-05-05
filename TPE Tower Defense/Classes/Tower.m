@@ -17,7 +17,7 @@
         fireRate = 1;
         _towerSprite = [CCSprite spriteWithImageNamed:
                     [NSString stringWithFormat:@"%@.png",[self getTowerName]]];
-		[self addChild:_towerSprite];
+		[self addChild:_towerSprite z:4 name:@"torre"];
         [_towerSprite setPosition:[self getCorrectLocationOnTileMap:location]];
         [_theGame addChild:self];
 	}

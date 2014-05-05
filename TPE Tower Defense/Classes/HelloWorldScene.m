@@ -318,6 +318,7 @@
     _character.position = point;
     _walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:_walkAnim]];
     [_character runAction:_walkAction];
+//    [_physicsWorld addChild:_character];
     [spriteSheet addChild:_character];
 }
 
@@ -352,6 +353,20 @@
         CGPoint destinyLocation = ccp([currentPoint[@"x"] floatValue],[currentPoint[@"y"] floatValue]);
         _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];
         [_character runAction: _moveAction];
+    }
+//    for (NSDictionary * d in placedTowers) {
+//
+//    }
+    CCSprite * t = (CCSprite *)[self getChildByName:@"torre" recursively:YES];
+    if(t != nil) {
+        float diff = ccpDistance(_character.position, t.position);
+        if(diff < 70 + [_character contentSize].width/2) {
+            CCLOG(@"Dentro del rango de la torre");
+        } else {
+            CCLOG(@"Fuera del rango de la torre");
+        }
+    } else {
+        CCLOG(@"No hay torres todavía");
     }
 }
 
@@ -395,7 +410,6 @@
 {
     return buybutton1selected || buybutton2selected;
 }
-
 
 - (void)tryAddTower:(UITouch *)touch
 {
