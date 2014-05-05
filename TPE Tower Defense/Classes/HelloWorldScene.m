@@ -441,7 +441,7 @@
 {
     [self removeChildByName:@"healthbar"];
     CCNodeColor * rectangleNode = [CCNodeColor nodeWithColor:[CCColor greenColor] width:10 height:2];
-    rectangleNode.position = ccp(_character.position.x,_character.position.y + 25);
+    rectangleNode.position = ccp(_character.position.x-5,_character.position.y + 25);
     [self addChild:rectangleNode z:3 name:@"healthbar"];
 }
 
