@@ -14,7 +14,12 @@
 
 - (int)getDamage
 {
-    return 50;
+    return 10;
+}
+
+-(int)getAttackRange
+{
+    return 100;
 }
 
 @end

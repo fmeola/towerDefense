@@ -1,11 +1,6 @@
 #import "HelloWorldScene.h"
 
-@interface Tower : CCNode {
-    int attackRange;
-    int damage;
-    float fireRate;
-    BOOL attacking;
-}
+@interface Tower : CCNode
 // -----------------------------------------------------------------------
 
 @property (nonatomic,strong) HelloWorldScene * theGame;
@@ -15,6 +10,7 @@
 - (id)initWithTheGame:(HelloWorldScene *)game location:(CGPoint)location;
 - (int)getPrice;
 - (int)getDamage;
+- (int)getAttackRange;
 
 // -----------------------------------------------------------------------
 @end

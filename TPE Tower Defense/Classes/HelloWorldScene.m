@@ -76,7 +76,7 @@
     buybutton1selected = NO;
     buybutton2selected = NO;
     currrentCharacterName = @"jeff";
-    maxHP = 100;
+    maxHP = 1000;
     placedTowers = [NSMutableSet setWithCapacity:100];
     [self createBackButton];
     [self createMoneyLabelWithInitialMoney:100];
@@ -361,14 +361,18 @@
     }
 }
 
+- (BOOL)checkCircleCollision:(CGPoint)center1 ofRadius:(float)radius1 withCircleCentered:(CGPoint)center2 ofRadius:(float)radius2 {
+    float distance = sqrt(pow((center2.x-center1.x), 2) + pow((center2.y-center1.y), 2));
+    return distance < (radius1 + radius2);
+}
+
 - (void)characterIsNearATower
 {
     for (NSDictionary * t in placedTowers) {
-        float diff = ccpDistance(_character.position, ccp([t[@"x"] floatValue],[t[@"y"] floatValue]));
-        if(diff < 70 + [_character contentSize].width/2) {
-//            CCLOG(@"Dentro del rango de una torre");
-            currentHP -= [[t valueForKey:@"towerInstance"] getDamage];
-            if(currentHP-- <= 0) {
+        Tower * currentTower = [t valueForKey:@"towerInstance"];
+        if([self checkCircleCollision:_character.position ofRadius:[_character contentSize].width/4  withCircleCentered:ccp([t[@"x"] floatValue],[t[@"y"] floatValue]) ofRadius:[currentTower getAttackRange]]) {
+            currentHP -= [currentTower getDamage];
+            if(currentHP <= 0) {
                 _character.visible = NO;
             }
         }
@@ -455,7 +459,7 @@
     if(currentHP > 0) {
         CCNodeColor * baseBar = [CCNodeColor nodeWithColor:[CCColor redColor] width:10 height:2];
         baseBar.position = ccp(_character.position.x-5,_character.position.y + 25);
-        CCNodeColor * healthBar = [CCNodeColor nodeWithColor:[CCColor greenColor] width:currentHP/10 height:2];
+        CCNodeColor * healthBar = [CCNodeColor nodeWithColor:[CCColor greenColor] width:currentHP/100 height:2];
         healthBar.position = ccp(_character.position.x-5,_character.position.y + 25);
         [self addChild:baseBar z:3 name:@"baseBar"];
         [self addChild:healthBar z:3 name:@"healthBar"];

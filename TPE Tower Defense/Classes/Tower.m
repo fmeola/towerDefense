@@ -12,9 +12,6 @@
 {
 	if( (self=[super init])) {
 		_theGame = game;
-        attackRange = 70;
-        damage = 10;
-        fireRate = 1;
         _towerSprite = [CCSprite spriteWithImageNamed:
                     [NSString stringWithFormat:@"%@.png",[self getTowerName]]];
 		[self addChild:_towerSprite z:4 name:@"torre"];
@@ -37,7 +34,7 @@
 - (void)draw
 {
     ccDrawColor4B(255,255,255,255);
-    ccDrawCircle(_towerSprite.position, attackRange, 360, 30, false);
+    ccDrawCircle(_towerSprite.position, [self getAttackRange], 360, 30, false);
     [super draw];
 }
 
@@ -48,7 +45,12 @@
 
 - (int)getDamage
 {
-    return 10;
+    return 5;
+}
+
+-(int)getAttackRange
+{
+    return 80;
 }
 
 @end
