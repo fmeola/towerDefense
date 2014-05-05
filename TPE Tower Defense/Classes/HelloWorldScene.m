@@ -29,6 +29,8 @@
     BOOL buybutton2selected;
     CGPoint startPosition;
     CCPhysicsNode *_physicsWorld;
+    int currentHP;
+    int maxHP;
 }
 
 @synthesize towers;
@@ -355,7 +357,6 @@
         _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];
         [_character runAction: _moveAction];
     }
-    [self characterIsNearATower];
 }
 
 - (void)characterIsNearATower
@@ -434,6 +435,20 @@
             }
         }
     }
+}
+
+- (void)drawHealthBar
+{
+    [self removeChildByName:@"healthbar"];
+    CCNodeColor * rectangleNode = [CCNodeColor nodeWithColor:[CCColor greenColor] width:10 height:2];
+    rectangleNode.position = ccp(_character.position.x,_character.position.y + 25);
+    [self addChild:rectangleNode z:3 name:@"healthbar"];
+}
+
+- (void)update:(CCTime)delta
+{
+    [self characterIsNearATower];
+    [self drawHealthBar];
 }
 
 @end
