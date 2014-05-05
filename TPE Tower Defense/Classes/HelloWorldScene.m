@@ -76,13 +76,14 @@
     buybutton1selected = NO;
     buybutton2selected = NO;
     currrentCharacterName = @"jeff";
+    maxHP = 100;
+    placedTowers = [NSMutableSet setWithCapacity:100];
     [self createBackButton];
     [self createMoneyLabelWithInitialMoney:100];
     [self createWavesLabel];
     [self createScoreLabelWithInitialScore:100000];
     [self createTowerButtons];
     [self createCharacterSprite:currrentCharacterName withPosition:startPosition];
-    placedTowers = [NSMutableSet setWithCapacity:100];
     return self;
 }
 
@@ -323,6 +324,7 @@
     [_character runAction:_walkAction];
 //    [_physicsWorld addChild:_character];
     [spriteSheet addChild:_character];
+    currentHP = maxHP;
 }
 
 - (void)updateCharacerSprite:(NSString *)characterName
@@ -364,7 +366,10 @@
     for (NSDictionary * t in placedTowers) {
         float diff = ccpDistance(_character.position, ccp([t[@"x"] floatValue],[t[@"y"] floatValue]));
         if(diff < 70 + [_character contentSize].width/2) {
-            CCLOG(@"Dentro del rango de una torre");
+//            CCLOG(@"Dentro del rango de una torre");
+            if(currentHP-- == 0) {
+                _character.visible = NO;
+            }
         }
     }
 }
@@ -439,10 +444,20 @@
 
 - (void)drawHealthBar
 {
-    [self removeChildByName:@"healthbar"];
-    CCNodeColor * rectangleNode = [CCNodeColor nodeWithColor:[CCColor greenColor] width:10 height:2];
-    rectangleNode.position = ccp(_character.position.x-5,_character.position.y + 25);
-    [self addChild:rectangleNode z:3 name:@"healthbar"];
+    if([self getChildByName:@"baseBar" recursively:NO] != nil) {
+        [self removeChildByName:@"baseBar"];
+    }
+    if([self getChildByName:@"healthBar" recursively:NO] != nil) {
+        [self removeChildByName:@"healthBar"];
+    }
+    if(currentHP > 0) {
+        CCNodeColor * baseBar = [CCNodeColor nodeWithColor:[CCColor redColor] width:10 height:2];
+        baseBar.position = ccp(_character.position.x-5,_character.position.y + 25);
+        CCNodeColor * healthBar = [CCNodeColor nodeWithColor:[CCColor greenColor] width:currentHP/10 height:2];
+        healthBar.position = ccp(_character.position.x-5,_character.position.y + 25);
+        [self addChild:baseBar z:3 name:@"baseBar"];
+        [self addChild:healthBar z:3 name:@"healthBar"];
+    }
 }
 
 - (void)update:(CCTime)delta
