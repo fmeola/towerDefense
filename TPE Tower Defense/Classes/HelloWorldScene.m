@@ -367,7 +367,8 @@
         float diff = ccpDistance(_character.position, ccp([t[@"x"] floatValue],[t[@"y"] floatValue]));
         if(diff < 70 + [_character contentSize].width/2) {
 //            CCLOG(@"Dentro del rango de una torre");
-            if(currentHP-- == 0) {
+            currentHP -= [[t valueForKey:@"towerInstance"] getDamage];
+            if(currentHP-- <= 0) {
                 _character.visible = NO;
             }
         }
@@ -407,6 +408,7 @@
 {
     Tower * tower = [type.class nodeWithTheGame:self location:position];
     [towers addObject:tower];
+    [towerBase setValue:tower forKey:@"towerInstance"];
     [placedTowers addObject:towerBase];
 }
 

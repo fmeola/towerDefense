@@ -12,4 +12,9 @@
     return 20;
 }
 
+- (int)getDamage
+{
+    return 50;
+}
+
 @end

@@ -46,4 +46,9 @@
     return ccp(location.x+20, location.y+20);
 }
 
+- (int)getDamage
+{
+    return 10;
+}
+
 @end

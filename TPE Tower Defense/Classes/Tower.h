@@ -14,6 +14,7 @@
 + (id)nodeWithTheGame:(HelloWorldScene *)game location:(CGPoint)location;
 - (id)initWithTheGame:(HelloWorldScene *)game location:(CGPoint)location;
 - (int)getPrice;
+- (int)getDamage;
 
 // -----------------------------------------------------------------------
 @end
