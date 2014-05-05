@@ -80,6 +80,7 @@
     [self createScoreLabelWithInitialScore:100000];
     [self createTowerButtons];
     [self createCharacterSprite:currrentCharacterName withPosition:startPosition];
+    placedTowers = [NSMutableSet setWithCapacity:100];
     return self;
 }
 
@@ -354,19 +355,16 @@
         _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];
         [_character runAction: _moveAction];
     }
-//    for (NSDictionary * d in placedTowers) {
-//
-//    }
-    CCSprite * t = (CCSprite *)[self getChildByName:@"torre" recursively:YES];
-    if(t != nil) {
-        float diff = ccpDistance(_character.position, t.position);
+    [self characterIsNearATower];
+}
+
+- (void)characterIsNearATower
+{
+    for (NSDictionary * t in placedTowers) {
+        float diff = ccpDistance(_character.position, ccp([t[@"x"] floatValue],[t[@"y"] floatValue]));
         if(diff < 70 + [_character contentSize].width/2) {
-            CCLOG(@"Dentro del rango de la torre");
-        } else {
-            CCLOG(@"Fuera del rango de la torre");
+            CCLOG(@"Dentro del rango de una torre");
         }
-    } else {
-        CCLOG(@"No hay torres todavía");
     }
 }
 
