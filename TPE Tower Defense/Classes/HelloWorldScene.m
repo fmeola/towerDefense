@@ -26,7 +26,6 @@
     BOOL buybutton1selected;
     BOOL buybutton2selected;
     CGPoint startPosition;
-    CCPhysicsNode *_physicsWorld;
     int maxHP;
     NSMutableSet * currentEnemies;
     NSDictionary * startPoint;
@@ -53,11 +52,6 @@
     if (!self) return(nil);
     // Enable touch handling on scene node
     self.userInteractionEnabled = YES;
-//    _physicsWorld = [CCPhysicsNode node];
-//    _physicsWorld.gravity = ccp(0,0);
-//    _physicsWorld.debugDraw = NO;
-//    _physicsWorld.collisionDelegate = self;
-//    [self addChild:_physicsWorld];
     _tileMap = [CCTiledMap tiledMapWithFile:@"TileMap.tmx"];
     _background = [_tileMap layerNamed:@"Background"];
     [self addChild:_tileMap];
@@ -498,9 +492,6 @@
 {
     [self characterIsNearATower];
     [self drawHealthBar];
-//    for (NSMutableDictionary * d in currentEnemies) {
-//        [self updateCharacterSprite:d];
-//    }
 }
 
 - (void)createCharacter:(CCTime)dt
