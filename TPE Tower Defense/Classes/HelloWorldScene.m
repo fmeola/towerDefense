@@ -104,7 +104,6 @@
     // Per frame update is automatically enabled, if update is overridden
     [self schedule:@selector(moveCharacter:) interval:1.0f];
     [self schedule:@selector(createCharacter:) interval:3.0f];
-
 }
 
 // -----------------------------------------------------------------------
@@ -361,6 +360,7 @@
             [s stopAction:_walkAction];
             s.visible = NO;
 //            [spriteSheet removeChildByName:[NSString stringWithFormat:@"nc%@",d[@"id"]] cleanup:YES];
+            [d setObject:[NSString stringWithFormat:@"0"] forKey:@"characterHP"];
         } else {
             CGPoint destinyLocation = ccp([d[@"characterPoint"][@"x"] floatValue],[d[@"characterPoint"][@"y"] floatValue]);
             _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];
@@ -505,7 +505,9 @@
 
 - (void)createCharacter:(CCTime)dt
 {
-    [self createCharacterSprite:@"jeff" withPosition:startPosition];
+    if(count <= 5) {
+        [self createCharacterSprite:@"jeff" withPosition:startPosition];
+    }
 }
 
 @end
