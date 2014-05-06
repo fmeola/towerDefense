@@ -12,7 +12,7 @@
 {
     CCTiledMapObjectGroup * objectGroup;
     CCTiledMapObjectGroup * towersGroup;
-    NSDictionary * currentPoint;
+//    NSDictionary * currentPoint;
     NSString * wavesString;
     CCLabelTTF * wavesLabel;
     int waveCount;
@@ -23,14 +23,18 @@
     CCLabelTTF * scoreLabel;
     int score;
     CCSpriteBatchNode * spriteSheet;
-    NSString * currrentCharacterName;
+//    NSString * currrentCharacterName;
     NSMutableSet * placedTowers;
     BOOL buybutton1selected;
     BOOL buybutton2selected;
     CGPoint startPosition;
     CCPhysicsNode *_physicsWorld;
-    int currentHP;
+//    int currentHP;
     int maxHP;
+    NSMutableSet * currentEnemies;
+    NSDictionary * startPoint;
+    int charactersCount;
+    int count;
 }
 
 @synthesize towers;
@@ -65,9 +69,9 @@
     [self addChild:_tileMap];
     objectGroup = [_tileMap objectGroupNamed:@"Path"];
     NSAssert(objectGroup != nil, @"tile map has no Path object layer");
-    NSDictionary * startPoint = [objectGroup objectNamed:_tileMap.properties[@"startPosition"]];
+    startPoint = [objectGroup objectNamed:_tileMap.properties[@"startPosition"]];
     startPosition = ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue]);
-    currentPoint = startPoint;
+//    currentPoint = startPoint;
     towersGroup = [_tileMap objectGroupNamed:@"Towers"];
     NSAssert(towersGroup != nil, @"tile map has no objects Towers layer");
     // Música de fondo
@@ -75,15 +79,17 @@
     [bgmusic playBg:@"LevelMusic.mp3" loop:TRUE];
     buybutton1selected = NO;
     buybutton2selected = NO;
-    currrentCharacterName = @"jeff";
+//    currrentCharacterName = @"jeff";
     maxHP = 1000;
+    count = 1;
     placedTowers = [NSMutableSet setWithCapacity:100];
+    currentEnemies = [NSMutableSet setWithCapacity:100];
     [self createBackButton];
     [self createMoneyLabelWithInitialMoney:100];
     [self createWavesLabel];
     [self createScoreLabelWithInitialScore:100000];
     [self createTowerButtons];
-    [self createCharacterSprite:currrentCharacterName withPosition:startPosition];
+    [self createCharacterSprite:@"jeff" withPosition:startPosition];
     return self;
 }
 
@@ -122,6 +128,7 @@
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    [self createCharacterSprite:@"jeff" withPosition:startPosition];
     if([self anyBuyButtonIsSelected])
         [self tryAddTower:touch];
 }
@@ -315,49 +322,62 @@
     for (int i=1; i<=SPRITE_SIZE; i++) {
         [walkAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"%@-%@-%d.png",characterName,currentPoint[@"direction"],i]]];
+          [NSString stringWithFormat:@"%@-%@-%d.png",characterName,startPoint[@"direction"],i]]];
     }
     _walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.1f];
-    _character = [CCSprite spriteWithImageNamed:[NSString stringWithFormat:@"%@-%@-1.png",characterName,currentPoint[@"direction"]]];
-    _character.position = point;
+    CCSprite * newCharacter;
+    newCharacter = [CCSprite spriteWithImageNamed:[NSString stringWithFormat:@"%@-%@-1.png",characterName,startPoint[@"direction"]]];
+    newCharacter.position = point;
     _walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:_walkAnim]];
-    [_character runAction:_walkAction];
+    [newCharacter runAction:_walkAction];
 //    [_physicsWorld addChild:_character];
-    [spriteSheet addChild:_character];
-    currentHP = maxHP;
+    [spriteSheet addChild:newCharacter z:2 name:[NSString stringWithFormat:@"nc%d",count]];
+//    currentHP = maxHP;
+    
+    NSMutableDictionary * characterMutableDictionary = [NSMutableDictionary dictionary];
+    [characterMutableDictionary setObject:newCharacter forKey:@"characterSprite"];
+    [characterMutableDictionary setObject:startPoint forKey:@"characterPoint"];
+    [characterMutableDictionary setObject:@"jeff" forKey:@"characterName"];
+    [characterMutableDictionary setObject:[NSString stringWithFormat:@"%d",maxHP] forKey:@"characterHP"];
+    [characterMutableDictionary setObject:[NSString stringWithFormat:@"%d",count] forKey:@"id"];
+    [currentEnemies addObject:characterMutableDictionary];
+    count++;
 }
 
-- (void)updateCharacerSprite:(NSString *)characterName
+- (void)updateCharacerSprite:(NSDictionary *)character
 {
-    NSMutableArray * walkAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=SPRITE_SIZE; i++) {
-        [walkAnimFrames addObject:
-         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-          [NSString stringWithFormat:@"%@-%@-%d.png",characterName,currentPoint[@"direction"],i]]];
-    }
-    _walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.1f];
-    [_character stopAction:_walkAction];
-    _walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:_walkAnim]];
-    [_character runAction:_walkAction];
+        CCSprite * s = character[@"characterSprite"];
+        NSMutableArray * walkAnimFrames = [NSMutableArray array];
+        for (int i=1; i<=SPRITE_SIZE; i++) {
+            [walkAnimFrames addObject:
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+              [NSString stringWithFormat:@"%@-%@-%d.png",character[@"characterName"],character[@"characterPoint"][@"direction"],i]]];
+        }
+        _walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.1f];
+        [s stopAction:_walkAction];
+        _walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:_walkAnim]];
+        [s runAction:_walkAction];
 }
 
 - (void)moveCharacter:(CCTime)dt
 {
-    NSDictionary * nextPoint = [objectGroup objectNamed:currentPoint[@"next"]];
-    currentPoint = nextPoint;
-    [self updateCharacerSprite:currrentCharacterName];
-    if([currentPoint[@"next"] isEqual: @"p0"]) {
-        [self playAudioEffectNamed:@"pickup.caf"];
-        [self increaseWavesCount:1];
-        [self changeScore:-10000];
-        [_character stopAction:_walkAction];
-        [spriteSheet removeChild:_character cleanup: YES];
-        currrentCharacterName = @"trainjeff";
-        [self createCharacterSprite:currrentCharacterName withPosition:startPosition];
-    } else {
-        CGPoint destinyLocation = ccp([currentPoint[@"x"] floatValue],[currentPoint[@"y"] floatValue]);
-        _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];
-        [_character runAction: _moveAction];
+    for (NSMutableDictionary * d in currentEnemies) {
+        NSDictionary * nextPoint = [objectGroup objectNamed:d[@"characterPoint"][@"next"]];
+        d[@"characterPoint"] = nextPoint;
+        [self updateCharacerSprite:d];
+        CCSprite * s = d[@"characterSprite"];
+        if([d[@"characterPoint"][@"next"] isEqual: @"p0"]) {
+            [self playAudioEffectNamed:@"pickup.caf"];
+            [self increaseWavesCount:1];
+            [self changeScore:-10000];
+            [s stopAction:_walkAction];
+            [spriteSheet removeChildByName:[NSString stringWithFormat:@"nc%@",d[@"id"]] cleanup:YES];
+//            [self createCharacterSprite:@"trainjeff" withPosition:startPosition];
+        } else {
+            CGPoint destinyLocation = ccp([d[@"characterPoint"][@"x"] floatValue],[d[@"characterPoint"][@"y"] floatValue]);
+            _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];
+            [s runAction: _moveAction];
+        }
     }
 }
 
@@ -368,12 +388,18 @@
 
 - (void)characterIsNearATower
 {
-    for (NSDictionary * t in placedTowers) {
-        Tower * currentTower = [t valueForKey:@"towerInstance"];
-        if([self checkCircleCollision:_character.position ofRadius:[_character contentSize].width/4  withCircleCentered:ccp([t[@"x"] floatValue],[t[@"y"] floatValue]) ofRadius:[currentTower getAttackRange]]) {
-            currentHP -= [currentTower getDamage];
-            if(currentHP <= 0) {
-                _character.visible = NO;
+    for (NSMutableDictionary * d in currentEnemies) {
+        for (NSDictionary * t in placedTowers) {
+            Tower * currentTower = [t valueForKey:@"towerInstance"];
+            CCSprite * s = d[@"characterSprite"];
+            if([self checkCircleCollision:s.position ofRadius:[s contentSize].width/4  withCircleCentered:ccp([t[@"x"] floatValue],[t[@"y"] floatValue]) ofRadius:[currentTower getAttackRange]]) {
+                int auxHP = [d[@"characterHP"] integerValue];
+                auxHP -= [currentTower getDamage];
+                [d setObject:[NSString stringWithFormat:@"%d",auxHP] forKey:@"characterHP"];
+                if(auxHP <= 0) {
+                    s.visible = NO;
+                    charactersCount--;
+                }
             }
         }
     }
@@ -450,19 +476,23 @@
 
 - (void)drawHealthBar
 {
-    if([self getChildByName:@"baseBar" recursively:NO] != nil) {
-        [self removeChildByName:@"baseBar"];
-    }
-    if([self getChildByName:@"healthBar" recursively:NO] != nil) {
-        [self removeChildByName:@"healthBar"];
-    }
-    if(currentHP > 0) {
-        CCNodeColor * baseBar = [CCNodeColor nodeWithColor:[CCColor redColor] width:10 height:2];
-        baseBar.position = ccp(_character.position.x-5,_character.position.y + 25);
-        CCNodeColor * healthBar = [CCNodeColor nodeWithColor:[CCColor greenColor] width:currentHP/100 height:2];
-        healthBar.position = ccp(_character.position.x-5,_character.position.y + 25);
-        [self addChild:baseBar z:3 name:@"baseBar"];
-        [self addChild:healthBar z:3 name:@"healthBar"];
+    for (NSMutableDictionary * d in currentEnemies) {
+        CCSprite * s = d[@"characterSprite"];
+        if([self getChildByName:[NSString stringWithFormat:@"baseBar%@",d[@"id"]] recursively:NO] != nil) {
+            [self removeChildByName:[NSString stringWithFormat:@"baseBar%@",d[@"id"]]];
+        }
+        if([self getChildByName:[NSString stringWithFormat:@"healthBar%@",d[@"id"]] recursively:NO] != nil) {
+            [self removeChildByName:[NSString stringWithFormat:@"healthBar%@",d[@"id"]]];
+        }
+        int auxHP = [d[@"characterHP"] integerValue];
+        if(auxHP > 0) {
+            CCNodeColor * baseBar = [CCNodeColor nodeWithColor:[CCColor redColor] width:10 height:2];
+            baseBar.position = ccp(s.position.x-5,s.position.y + 25);
+            CCNodeColor * healthBar = [CCNodeColor nodeWithColor:[CCColor greenColor] width:auxHP/100 height:2];
+            healthBar.position = ccp(s.position.x-5,s.position.y + 25);
+            [self addChild:baseBar z:3 name:[NSString stringWithFormat:@"baseBar%@",d[@"id"]]];
+            [self addChild:healthBar z:3 name:[NSString stringWithFormat:@"healthBar%@",d[@"id"]]];
+        }
     }
 }
 
