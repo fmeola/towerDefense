@@ -4,7 +4,8 @@
 #define SPRITE_SIZE 3
 // -----------------------------------------------------------------------
 
-@interface HelloWorldScene : CCScene <CCPhysicsCollisionDelegate>
+//@interface HelloWorldScene : CCScene <CCPhysicsCollisionDelegate>
+@interface HelloWorldScene : CCScene
 
 @property (nonatomic,strong) CCTiledMap * tileMap;
 @property (nonatomic,strong) CCTiledMapLayer * background;
