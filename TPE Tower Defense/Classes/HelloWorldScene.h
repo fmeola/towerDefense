@@ -8,9 +8,7 @@
 
 @property (nonatomic,strong) CCTiledMap * tileMap;
 @property (nonatomic,strong) CCTiledMapLayer * background;
-@property (nonatomic,strong) CCAction * walkAction;
 @property (nonatomic,strong) CCAction * moveAction;
-@property (nonatomic,strong) CCAnimation * walkAnim;
 @property (nonatomic,strong) NSMutableArray * towers;
 
 // -----------------------------------------------------------------------

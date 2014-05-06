@@ -97,7 +97,7 @@
     // In v3, touch is enabled by setting userInterActionEnabled for the individual nodes
     // Per frame update is automatically enabled, if update is overridden
     [self schedule:@selector(moveCharacter:) interval:1.0f];
-    [self schedule:@selector(createCharacter:) interval:3.0f];
+    [self schedule:@selector(createCharacter:) interval:2.0f];
 }
 
 // -----------------------------------------------------------------------
@@ -309,12 +309,15 @@
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
           [NSString stringWithFormat:@"%@-%@-%d.png",characterName,startPoint[@"direction"],i]]];
     }
-    _walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.1f];
+    CCAnimation * walkAnim;
+    walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.1f];
     CCSprite * newCharacter;
     newCharacter = [CCSprite spriteWithImageNamed:[NSString stringWithFormat:@"%@-%@-1.png",characterName,startPoint[@"direction"]]];
     newCharacter.position = point;
-    _walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:_walkAnim]];
-    [newCharacter runAction:_walkAction];
+    CCAction * walkAction;
+    walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:walkAnim]];
+    walkAction.tag = @"walk";
+    [newCharacter runAction:walkAction];
     [spriteSheet addChild:newCharacter z:2 name:[NSString stringWithFormat:@"nc%d",count]];
     NSMutableDictionary * characterMutableDictionary = [NSMutableDictionary dictionary];
     [characterMutableDictionary setObject:newCharacter forKey:@"characterSprite"];
@@ -326,7 +329,7 @@
     count++;
 }
 
-- (void)updateCharacterSprite:(NSDictionary *)character
+- (void)updateCharacterSprite:(NSMutableDictionary *)character
 {
     CCSprite * s = character[@"characterSprite"];
     NSMutableArray * walkAnimFrames = [NSMutableArray array];
@@ -334,24 +337,27 @@
         [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
         [NSString stringWithFormat:@"%@-%@-%d.png",character[@"characterName"],character[@"characterPoint"][@"direction"],i]]];
     }
-    _walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.1f];
-    [s stopAction:_walkAction];
-    _walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:_walkAnim]];
-    [s runAction:_walkAction];
+    CCAnimation * walkAnim;
+    walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.1f];
+    [s stopAction:[s getActionByTag:@"walk"]];
+    CCAction * walkAction;
+    walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:walkAnim]];
+    walkAction.tag = @"walk";
+    [s runAction:walkAction];
 }
 
 - (void)moveCharacter:(CCTime)dt
 {
     for (NSMutableDictionary * d in currentEnemies) {
         NSDictionary * nextPoint = [objectGroup objectNamed:d[@"characterPoint"][@"next"]];
-        d[@"characterPoint"] = nextPoint;
-//        [self updateCharacterSprite:d];
+        [d setObject:nextPoint forKey:@"characterPoint"];
+        [self updateCharacterSprite:d];
         CCSprite * s = d[@"characterSprite"];
         if([d[@"characterPoint"][@"next"] isEqual: @"p0"]) {
             [self playAudioEffectNamed:@"pickup.caf"];
             [self increaseWavesCount:1];
             [self changeScore:-10000];
-            [s stopAction:_walkAction];
+            [s stopAction:[s getActionByTag:@"walk"]];
             s.visible = NO;
 //            [spriteSheet removeChildByName:[NSString stringWithFormat:@"nc%@",d[@"id"]] cleanup:YES];
             [d setObject:[NSString stringWithFormat:@"0"] forKey:@"characterHP"];
@@ -378,6 +384,7 @@
             if([self checkCircleCollision:s.position ofRadius:[s contentSize].width/4  withCircleCentered:ccp([t[@"x"] floatValue],[t[@"y"] floatValue]) ofRadius:[currentTower getAttackRange]]) {
                 long auxHP = [d[@"characterHP"] integerValue];
                 auxHP -= [currentTower getDamage];
+                [self playAudioEffectNamed:@"move.caf"];
                 [d setObject:[NSString stringWithFormat:@"%ld",auxHP] forKey:@"characterHP"];
                 if(auxHP <= 0) {
                     s.visible = NO;
@@ -391,9 +398,6 @@
     }
 }
 
-/*
- * Devuelve la posición de la Matriz Tile. Ejemplo:(3,5)
- */
 - (CGPoint)tileFromPosition:(CGPoint)position
 {
     NSInteger x = (NSInteger)(position.x / _tileMap.tileSize.width);
@@ -496,7 +500,7 @@
 
 - (void)createCharacter:(CCTime)dt
 {
-    if(count <= 5) {
+    if(count <= 10) {
         [self createCharacterSprite:@"jeff" withPosition:startPosition];
     }
 }
