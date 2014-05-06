@@ -21,7 +21,6 @@
     NSString * scoreString;
     CCLabelTTF * scoreLabel;
     int score;
-    CCSpriteBatchNode * spriteSheet;
     NSMutableSet * placedTowers;
     BOOL buybutton1selected;
     BOOL buybutton2selected;
@@ -75,6 +74,7 @@
     [self createWavesLabel];
     [self createScoreLabelWithInitialScore:100000];
     [self createTowerButtons];
+    [self initSpriteSheetWithCharacterName:@"jeff"];
     return self;
 }
 
@@ -130,7 +130,7 @@
 - (void)onBuy1Clicked:(id)sender
 {
     [self playAudioEffectNamed:@"move.caf"];
-    CCButton * button = (CCButton *)[self getChildByName:@"tower1buybutton" recursively:YES];
+    CCButton * button = (CCButton *)[self getChildByName:@"tower1buybutton" recursively:NO];
     if(buybutton1selected) {
         buybutton1selected = NO;
         button.selected = NO;
@@ -144,7 +144,7 @@
 - (void)onBuy2Clicked:(id)sender
 {
     [self playAudioEffectNamed:@"move.caf"];
-    CCButton * button = (CCButton *)[self getChildByName:@"tower2buybutton" recursively:YES];
+    CCButton * button = (CCButton *)[self getChildByName:@"tower2buybutton" recursively:NO];
     if(buybutton2selected) {
         buybutton2selected = NO;
         button.selected = NO;
@@ -298,11 +298,16 @@
     [audio playEffect:name];
 }
 
-- (void)createCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point
+- (void)initSpriteSheetWithCharacterName:(NSString *)characterName
 {
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist",characterName]];
+    CCSpriteBatchNode * spriteSheet;
     spriteSheet = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.png",characterName]];
-    [self addChild:spriteSheet];
+    [self addChild:spriteSheet z:10 name:@"spriteSheet"];
+}
+
+- (void)createCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point
+{
     NSMutableArray * walkAnimFrames = [NSMutableArray array];
     for (int i=1; i<=SPRITE_SIZE; i++) {
         [walkAnimFrames addObject:
@@ -318,7 +323,7 @@
     walkAction = [CCActionRepeatForever actionWithAction:[CCActionAnimate actionWithAnimation:walkAnim]];
     walkAction.tag = @"walk";
     [newCharacter runAction:walkAction];
-    [spriteSheet addChild:newCharacter z:2 name:[NSString stringWithFormat:@"nc%d",count]];
+    [[self getChildByName:@"spriteSheet" recursively:NO] addChild:newCharacter z:2 name:[NSString stringWithFormat:@"nc%d",count]];
     NSMutableDictionary * characterMutableDictionary = [NSMutableDictionary dictionary];
     [characterMutableDictionary setObject:newCharacter forKey:@"characterSprite"];
     [characterMutableDictionary setObject:startPoint forKey:@"characterPoint"];
@@ -358,8 +363,7 @@
             [self increaseWavesCount:1];
             [self changeScore:-10000];
             [s stopAction:[s getActionByTag:@"walk"]];
-            s.visible = NO;
-//            [spriteSheet removeChildByName:[NSString stringWithFormat:@"nc%@",d[@"id"]] cleanup:YES];
+            [[self getChildByName:@"spriteSheet" recursively:NO] removeChildByName:[NSString stringWithFormat:@"nc%@",d[@"id"]] cleanup:YES];
             [d setObject:[NSString stringWithFormat:@"0"] forKey:@"characterHP"];
         } else {
             CGPoint destinyLocation = ccp([d[@"characterPoint"][@"x"] floatValue],[d[@"characterPoint"][@"y"] floatValue]);
@@ -387,7 +391,7 @@
                 [self playAudioEffectNamed:@"move.caf"];
                 [d setObject:[NSString stringWithFormat:@"%ld",auxHP] forKey:@"characterHP"];
                 if(auxHP <= 0) {
-                    s.visible = NO;
+                    [[self getChildByName:@"spriteSheet" recursively:NO] removeChildByName:[NSString stringWithFormat:@"nc%@",d[@"id"]] cleanup:YES];
                     [toRemove addObject:d];
                 }
             }
@@ -449,13 +453,13 @@
         if(x == towerX && y == towerY && [self spaceIsEmpty:tb]) {
             if(buybutton1selected && [self canBuyTower: [Tower alloc]]) {
                 [self addTower:tb inPosition:ccp(towerX,towerY) withType:[Tower alloc]];
-                CCButton * button = (CCButton *)[self getChildByName:@"tower1buybutton" recursively:YES];
+                CCButton * button = (CCButton *)[self getChildByName:@"tower1buybutton" recursively:NO];
                 [self playAudioEffectNamed:@"hit.caf"];
                 buybutton1selected = NO;
                 button.selected = NO;
             } else if (buybutton2selected && [self canBuyTower: [MissileTower alloc]]) {
                 [self addTower:tb inPosition:ccp(towerX,towerY) withType: [MissileTower alloc]];
-                CCButton * button = (CCButton *)[self getChildByName:@"tower2buybutton" recursively:YES];
+                CCButton * button = (CCButton *)[self getChildByName:@"tower2buybutton" recursively:NO];
                 [self playAudioEffectNamed:@"hit.caf"];
                 buybutton2selected = NO;
                 button.selected = NO;
@@ -468,12 +472,12 @@
 {
     for(int i = 1; i < count; i++) {
         NSString * baseBarString = [NSString stringWithFormat:@"baseBar%@",[NSString stringWithFormat:@"%d",i]];
-        if ([self getChildByName:baseBarString recursively:YES] != nil){
-            [self removeChildByName:baseBarString];
+        if ([self getChildByName:baseBarString recursively:NO] != nil){
+            [self removeChildByName:baseBarString cleanup:YES];
         }
         NSString * healthBarString = [NSString stringWithFormat:@"healthBar%@",[NSString stringWithFormat:@"%d",i]];
-        if ([self getChildByName:healthBarString recursively:YES] != nil){
-            [self removeChildByName:healthBarString];
+        if ([self getChildByName:healthBarString recursively:NO] != nil){
+            [self removeChildByName:healthBarString cleanup:YES];
         }
     }
     for (NSMutableDictionary * d in currentEnemies) {
