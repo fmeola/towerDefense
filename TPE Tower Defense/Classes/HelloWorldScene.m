@@ -29,6 +29,7 @@
     NSMutableSet * currentEnemies;
     NSDictionary * startPoint;
     int count;
+    int deadCount;
 }
 
 @synthesize towers;
@@ -67,6 +68,7 @@
     buybutton2selected = NO;
     maxHP = 1000;
     count = 1;
+    deadCount = 0;
     placedTowers = [NSMutableSet setWithCapacity:100];
     currentEnemies = [NSMutableSet setWithCapacity:100];
     [self createBackButton];
@@ -96,6 +98,7 @@
     // In pre-v3, touch enable and scheduleUpdate was called here
     // In v3, touch is enabled by setting userInterActionEnabled for the individual nodes
     // Per frame update is automatically enabled, if update is overridden
+    [self schedule:@selector(endCharacter:) interval:1.0f];
     [self schedule:@selector(moveCharacter:) interval:1.0f];
     [self schedule:@selector(createCharacter:) interval:2.0f];
 }
@@ -393,6 +396,8 @@
                 if(auxHP <= 0) {
                     [[self getChildByName:@"spriteSheet" recursively:NO] removeChildByName:[NSString stringWithFormat:@"nc%@",d[@"id"]] cleanup:YES];
                     [toRemove addObject:d];
+                    CGPoint currentPosition = ccp([d[@"characterPoint"][@"x"] floatValue],[d[@"characterPoint"][@"y"] floatValue]);
+                    [self createFallingCharacterSprite:d[@"characterName"] withPosition:currentPosition];
                 }
             }
         }
@@ -506,6 +511,42 @@
 {
     if(count <= 10) {
         [self createCharacterSprite:@"jeff" withPosition:startPosition];
+    }
+}
+
+- (void)createFallingCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point
+{
+    NSMutableArray * walkAnimFrames = [NSMutableArray array];
+    for (int i=1; i<=SPRITE_SIZE; i++) {
+        [walkAnimFrames addObject:
+         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+          [NSString stringWithFormat:@"%@-fall-%@-%d.png",characterName,startPoint[@"direction"],i]]];
+    }
+    CCAnimation * walkAnim;
+    walkAnim = [CCAnimation animationWithSpriteFrames:walkAnimFrames delay:0.2f];
+    CCSprite * newCharacter;
+    newCharacter = [CCSprite spriteWithImageNamed:[NSString stringWithFormat:@"%@-%@-1.png",characterName,startPoint[@"direction"]]];
+    newCharacter.position = point;
+    CCAction * fallAction;
+    fallAction = [CCActionRepeat actionWithAction:[CCActionAnimate actionWithAnimation:walkAnim] times:1];
+    fallAction.tag = @"fall";
+    [newCharacter runAction:fallAction];
+    [[self getChildByName:@"spriteSheet" recursively:NO] addChild:newCharacter z:2 name:[NSString stringWithFormat:@"fall%d",deadCount]];
+    deadCount++;
+}
+
+- (void)endCharacter:(CCTime)delta
+{
+    NSMutableSet * s = [NSMutableSet setWithCapacity:100];
+    CCNode * a = [self getChildByName:@"spriteSheet" recursively:NO];
+    for (int i = 0; i <= deadCount; i++) {
+        CCNode * x = [a getChildByName:[NSString stringWithFormat:@"fall%d",i] recursively:NO];
+        if (x != nil) {
+            [s addObject:x];
+        }
+    }
+    for (CCNode * r in s) {
+        [a removeChild:r cleanup:YES];
     }
 }
 
