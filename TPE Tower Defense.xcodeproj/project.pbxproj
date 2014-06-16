@@ -319,7 +319,7 @@
 		9D73E5A218FA113F00BB2A98 /* money_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = money_bg.png; sourceTree = "<group>"; };
 		9D73E5A618FA174C00BB2A98 /* wave_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wave_bg.png; sourceTree = "<group>"; };
 		9D79F40918FA2EEF00E843D9 /* community-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "community-logo.png"; sourceTree = "<group>"; };
-		9D883DB018F6E38D00BE6E36 /* Gr. Runners.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gr. Runners.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D883DB018F6E38D00BE6E36 /* Greendale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greendale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D883DB318F6E38D00BE6E36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9D883DB518F6E38D00BE6E36 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		9D883DB718F6E38D00BE6E36 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -893,7 +893,7 @@
 		9D883DB118F6E38D00BE6E36 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9D883DB018F6E38D00BE6E36 /* Gr. Runners.app */,
+				9D883DB018F6E38D00BE6E36 /* Greendale.app */,
 				9D883DC718F6E38D00BE6E36 /* libObjectiveChipmunk.a */,
 				9DA01FA6190207760018CDB3 /* TPE Tower Defense Tests.xctest */,
 			);
@@ -1917,7 +1917,7 @@
 			);
 			name = "TPE Tower Defense";
 			productName = "TPE Tower Defense";
-			productReference = 9D883DB018F6E38D00BE6E36 /* Gr. Runners.app */;
+			productReference = 9D883DB018F6E38D00BE6E36 /* Greendale.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9D883DC618F6E38D00BE6E36 /* ObjectiveChipmunk */ = {
@@ -2417,7 +2417,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "Gr. Runners";
+				PRODUCT_NAME = Greendale;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2444,7 +2444,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "Gr. Runners";
+				PRODUCT_NAME = Greendale;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
