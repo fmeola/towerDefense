@@ -5,6 +5,8 @@
 #define MAX_TRIES_COUNT 5
 #define WAVE_ENEMY_COUNT 5
 #define LEVEL_WAVE_COUNT 2
+#define SPRITESHEET_NAME "greendale"
+
 // -----------------------------------------------------------------------
 
 @interface HelloWorldScene : CCScene

@@ -287,6 +287,9 @@
 		9DF8089918F847EA001CBB82 /* jeff-fall-right-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8089318F847EA001CBB82 /* jeff-fall-right-3.png */; };
 		9DF8089B18F84ABF001CBB82 /* splash_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8089A18F84ABF001CBB82 /* splash_screen.png */; };
 		9DF8089D18F84CAA001CBB82 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8089C18F84CAA001CBB82 /* Images.xcassets */; };
+		D1CF91931951FBEA003EE4AC /* greendale.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1CF91901951FBEA003EE4AC /* greendale.plist */; };
+		D1CF91941951FBEA003EE4AC /* greendale.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CF91911951FBEA003EE4AC /* greendale.png */; };
+		D1CF91951951FBEA003EE4AC /* greendale.tps in Resources */ = {isa = PBXBuildFile; fileRef = D1CF91921951FBEA003EE4AC /* greendale.tps */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -814,6 +817,9 @@
 		9DF8089318F847EA001CBB82 /* jeff-fall-right-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-fall-right-3.png"; sourceTree = "<group>"; };
 		9DF8089A18F84ABF001CBB82 /* splash_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash_screen.png; path = ../Resources/splash_screen.png; sourceTree = "<group>"; };
 		9DF8089C18F84CAA001CBB82 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D1CF91901951FBEA003EE4AC /* greendale.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = greendale.plist; sourceTree = "<group>"; };
+		D1CF91911951FBEA003EE4AC /* greendale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greendale.png; sourceTree = "<group>"; };
+		D1CF91921951FBEA003EE4AC /* greendale.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = greendale.tps; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1770,6 +1776,9 @@
 		9D88406C18F6E45D00BE6E36 /* Game Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D1CF91901951FBEA003EE4AC /* greendale.plist */,
+				D1CF91911951FBEA003EE4AC /* greendale.png */,
+				D1CF91921951FBEA003EE4AC /* greendale.tps */,
 				9D6DF56418F838A20014622B /* Music */,
 				9DB23CCC190202B200455CE4 /* Train Jeff */,
 				9DB23CD01902031400455CE4 /* Splash Screen */,
@@ -2047,13 +2056,16 @@
 				9D6DF57218F839160014622B /* jeff-up-3.png in Resources */,
 				9DF8089D18F84CAA001CBB82 /* Images.xcassets in Resources */,
 				9DB23CCA1902013B00455CE4 /* trainjeff-fall-right-2.png in Resources */,
+				D1CF91931951FBEA003EE4AC /* greendale.plist in Resources */,
 				9D883DED18F6E38D00BE6E36 /* Icon-Spotlight-iOS7.png in Resources */,
 				9D883DE118F6E38D00BE6E36 /* Icon-76@2x.png in Resources */,
 				9DF18E2E18FF779E00E25903 /* trainjeff-right-3.png in Resources */,
+				D1CF91941951FBEA003EE4AC /* greendale.png in Resources */,
 				9D88405518F6E39000BE6E36 /* LICENSE_Chipmunk.txt in Resources */,
 				9DAFE37D18F81EBA00153902 /* jeff-right-1.png in Resources */,
 				9DF18E2C18FF779E00E25903 /* trainjeff-right-1.png in Resources */,
 				9D73E5A318FA113F00BB2A98 /* money_bg.png in Resources */,
+				D1CF91951951FBEA003EE4AC /* greendale.tps in Resources */,
 				9DF18E4418FF79BC00E25903 /* trainjeff-left-2.png in Resources */,
 				9D88407718F6E45D00BE6E36 /* pickup.caf in Resources */,
 				9DAFE37A18F81EBA00153902 /* jeff-left-2.png in Resources */,

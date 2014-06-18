@@ -82,7 +82,7 @@
     [self createScoreLabelWithInitialScore:100000];
     [self createTowerButtons];
     waveCount = 1;
-    [self initSpriteSheetWithCharacterName:currentCharacterName];
+    [self initSpriteSheet];
     return self;
 }
 
@@ -322,11 +322,11 @@
     [audio playEffect:name];
 }
 
-- (void)initSpriteSheetWithCharacterName:(NSString *)characterName
+- (void)initSpriteSheet
 {
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist",characterName]];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%s.plist",SPRITESHEET_NAME]];
     CCSpriteBatchNode * spriteSheet;
-    spriteSheet = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.png",characterName]];
+    spriteSheet = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%s.png",SPRITESHEET_NAME]];
     [self addChild:spriteSheet z:10 name:@"spriteSheet"];
 }
 
@@ -391,6 +391,10 @@
             [[d objectForKey:@"characterSprite"]removeFromParentAndCleanup:YES];
             [d setObject:[NSString stringWithFormat:@"0"] forKey:@"characterHP"];
             totalEnemyCount--;
+            // ¿Por qué pasa esto?
+            if(totalEnemyCount < 0) {
+                totalEnemyCount = 0;
+            }
         } else {
             CGPoint destinyLocation = ccp([d[@"characterPoint"][@"x"] floatValue],[d[@"characterPoint"][@"y"] floatValue]);
             _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];
@@ -551,7 +555,7 @@
             }
         }
         [currentEnemies removeAllObjects];
-//        currentCharacterName = @"trainjeff";
+        currentCharacterName = @"trainjeff";
     }
 }
 
