@@ -2,6 +2,7 @@
 #import "cocos2d-ui.h"
 
 #define SPRITE_SIZE 3
+#define MAX_TRIES_COUNT 5
 // -----------------------------------------------------------------------
 
 @interface HelloWorldScene : CCScene

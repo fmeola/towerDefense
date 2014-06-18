@@ -12,9 +12,9 @@
 {
     CCTiledMapObjectGroup * objectGroup;
     CCTiledMapObjectGroup * towersGroup;
-    NSString * wavesString;
-    CCLabelTTF * wavesLabel;
-    int waveCount;
+    NSString * triesString;
+    CCLabelTTF * triesLabel;
+    int triesCount;
     NSString * moneyString;
     CCLabelTTF * moneyLabel;
     int money;
@@ -190,26 +190,41 @@
     waveBg.positionType = CCPositionTypeNormalized;
     waveBg.position = ccp(0.95f, 0.92f);
     [self addChild:waveBg z:5];
-    waveCount = 1;
+    triesCount = 1;
     [self defaultWavesLabel];
-    [self addChild:wavesLabel z:6];
+    [self addChild:triesLabel z:6];
 }
 
-- (void)increaseWavesCount:(int)diff
+- (void)increaseTriesCount:(int)diff
 {
-    waveCount += diff;
-    [self removeChild:wavesLabel];
+    triesCount += diff;
+    [self removeChild:triesLabel];
     [self defaultWavesLabel];
-    [self addChild:wavesLabel z:6];
+    [self addChild:triesLabel z:6];
+    if (triesCount == MAX_TRIES_COUNT) {
+        [self lostGame];
+    }
+}
+
+- (void)lostGame
+{
+    UIAlertView * alert = [[UIAlertView alloc]
+                           initWithTitle:@"Perdiste"
+                           message: [NSString stringWithFormat:@"Puntaje: %d",score]
+                           delegate:nil
+                           cancelButtonTitle:@"Continuar"
+                           otherButtonTitles:nil];
+    [alert show];
+    [self onBackClicked:self];
 }
 
 - (void)defaultWavesLabel
 {
-    wavesString = [NSString stringWithFormat:@"%d / N",waveCount];
-    wavesLabel = [CCLabelTTF labelWithString: wavesString fontName:@"Helvetica-Bold" fontSize:16.0f];
-    wavesLabel.positionType = CCPositionTypeNormalized;
-    wavesLabel.color = [CCColor whiteColor];
-    wavesLabel.position = ccp(0.95f, 0.91f);
+    triesString = [NSString stringWithFormat:@"%d / %d",triesCount, MAX_TRIES_COUNT];
+    triesLabel = [CCLabelTTF labelWithString: triesString fontName:@"Helvetica-Bold" fontSize:16.0f];
+    triesLabel.positionType = CCPositionTypeNormalized;
+    triesLabel.color = [CCColor whiteColor];
+    triesLabel.position = ccp(0.95f, 0.91f);
 }
 
 - (void)createMoneyLabelWithInitialMoney:(int)initial
@@ -362,8 +377,9 @@
         [self updateCharacterSprite:d];
         CCSprite * s = d[@"characterSprite"];
         if([d[@"characterPoint"][@"next"] isEqual: @"p0"]) {
+            // Un soldado llegó al final del camino con vida.
             [self playAudioEffectNamed:@"pickup.caf"];
-            [self increaseWavesCount:1];
+            [self increaseTriesCount:1];
             [self changeScore:-10000];
             [s stopAction:[s getActionByTag:@"walk"]];
             [[self getChildByName:@"spriteSheet" recursively:NO] removeChildByName:[NSString stringWithFormat:@"nc%@",d[@"id"]] cleanup:YES];
