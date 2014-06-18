@@ -17,6 +17,7 @@
 		[self addChild:_towerSprite z:4 name:@"torre"];
         [_towerSprite setPosition:[self getCorrectLocationOnTileMap:location]];
         [_theGame addChild:self];
+        _isShooting = NO;
 	}
 	return self;
 }

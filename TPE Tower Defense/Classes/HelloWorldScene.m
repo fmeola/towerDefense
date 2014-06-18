@@ -32,6 +32,7 @@
     int deadCount;
     NSString * currentCharacterName;
     int waveCount;
+    int totalEnemyCount;
 }
 
 @synthesize towers;
@@ -71,6 +72,7 @@
     maxHP = 1000;
     count = 1;
     deadCount = 0;
+    totalEnemyCount = WAVE_ENEMY_COUNT;
     currentCharacterName = @"jeff";
     placedTowers = [NSMutableSet setWithCapacity:100];
     currentEnemies = [NSMutableSet setWithCapacity:100];
@@ -386,8 +388,9 @@
             [self increaseTriesCount:1];
             [self changeScore:-10000];
             [s stopAction:[s getActionByTag:@"walk"]];
-            [[self getChildByName:@"spriteSheet" recursively:NO] removeChildByName:[NSString stringWithFormat:@"nc%@",d[@"id"]] cleanup:YES];
+            [[d objectForKey:@"characterSprite"]removeFromParentAndCleanup:YES];
             [d setObject:[NSString stringWithFormat:@"0"] forKey:@"characterHP"];
+            totalEnemyCount--;
         } else {
             CGPoint destinyLocation = ccp([d[@"characterPoint"][@"x"] floatValue],[d[@"characterPoint"][@"y"] floatValue]);
             _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];
@@ -408,13 +411,14 @@
         for (NSDictionary * t in placedTowers) {
             Tower * currentTower = [t valueForKey:@"towerInstance"];
             CCSprite * s = d[@"characterSprite"];
-            if([self checkCircleCollision:s.position ofRadius:[s contentSize].width/4  withCircleCentered:ccp([t[@"x"] floatValue],[t[@"y"] floatValue]) ofRadius:[currentTower getAttackRange]]) {
+            if([self checkCircleCollision:s.position ofRadius:[s contentSize].width/4  withCircleCentered:ccp([t[@"x"] floatValue],[t[@"y"] floatValue]) ofRadius:[currentTower getAttackRange]] && !currentTower.isShooting) {
+                currentTower.isShooting = YES;
                 long auxHP = [d[@"characterHP"] integerValue];
                 auxHP -= [currentTower getDamage];
                 [self playAudioEffectNamed:@"move.caf"];
                 [d setObject:[NSString stringWithFormat:@"%ld",auxHP] forKey:@"characterHP"];
                 if(auxHP <= 0) {
-                    [[self getChildByName:@"spriteSheet" recursively:NO] removeChildByName:[NSString stringWithFormat:@"nc%@",d[@"id"]] cleanup:YES];
+                    [[d objectForKey:@"characterSprite"] removeFromParentAndCleanup:YES];
                     [toRemove addObject:d];
                     CGPoint currentPosition = ccp([d[@"characterPoint"][@"x"] floatValue],[d[@"characterPoint"][@"y"] floatValue]);
                     [self createFallingCharacterSprite:d[@"characterName"] withPosition:currentPosition];
@@ -424,6 +428,10 @@
     }
     for (NSMutableDictionary * d in toRemove) {
         [currentEnemies removeObject:d];
+    }
+    for (NSDictionary * t in placedTowers) {
+        Tower * currentTower = [t valueForKey:@"towerInstance"];
+        currentTower.isShooting = NO;
     }
 }
 
@@ -498,11 +506,11 @@
     for(int i = 1; i < count; i++) {
         NSString * baseBarString = [NSString stringWithFormat:@"baseBar%@",[NSString stringWithFormat:@"%d",i]];
         if ([self getChildByName:baseBarString recursively:NO] != nil){
-            [self removeChildByName:baseBarString cleanup:YES];
+            [[self getChildByName:baseBarString recursively:NO] removeFromParentAndCleanup:YES];
         }
         NSString * healthBarString = [NSString stringWithFormat:@"healthBar%@",[NSString stringWithFormat:@"%d",i]];
         if ([self getChildByName:healthBarString recursively:NO] != nil){
-            [self removeChildByName:healthBarString cleanup:YES];
+            [[self getChildByName:healthBarString recursively:NO] removeFromParentAndCleanup:YES];
         }
     }
     for (NSMutableDictionary * d in currentEnemies) {
@@ -528,14 +536,22 @@
     if(WAVE_ENEMY_COUNT == deadCount){
         if(waveCount == LEVEL_WAVE_COUNT) {
             [self wonGame];
-        } else {
-            // Comienza la siguiente oleada.
-            waveCount++;
-            deadCount = 0;
-            count = 0;
-            currentEnemies = [NSMutableSet setWithCapacity:100];
-            [self onEnter];
         }
+    }
+    CCLOG(@"%d",totalEnemyCount);
+    if(totalEnemyCount == 0) {
+        // Comienza la siguiente oleada.
+        totalEnemyCount = WAVE_ENEMY_COUNT;
+        waveCount++;
+        deadCount = 0;
+        count = 1;
+        for (NSMutableDictionary * d in currentEnemies) {
+            if ([d objectForKey:@"characterSprite"] != nil){
+                [[d objectForKey:@"characterSprite"] removeFromParentAndCleanup:YES];
+            }
+        }
+        [currentEnemies removeAllObjects];
+//        currentCharacterName = @"trainjeff";
     }
 }
 
@@ -585,14 +601,18 @@
 {
     NSMutableSet * s = [NSMutableSet setWithCapacity:100];
     CCNode * a = [self getChildByName:@"spriteSheet" recursively:NO];
-    for (int i = 0; i <= deadCount; i++) {
+    for (int i = 0; i <= 10; i++) {
         CCNode * x = [a getChildByName:[NSString stringWithFormat:@"fall%d",i] recursively:NO];
         if (x != nil) {
+            totalEnemyCount--;
+            // ¿Por qué pasa esto?
+            if(totalEnemyCount < 0)
+                totalEnemyCount = 0;
             [s addObject:x];
         }
     }
     for (CCNode * r in s) {
-        [a removeChild:r cleanup:YES];
+        [r removeFromParentAndCleanup:YES];
     }
 }
 
