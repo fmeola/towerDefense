@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9D0FCD2F18F822EB002BF610 /* LevelMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D0FCD2E18F822EB002BF610 /* LevelMusic.mp3 */; };
 		9D0FCD3118F823B4002BF610 /* IntroMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D0FCD3018F823B4002BF610 /* IntroMusic.mp3 */; };
-		9D6C72AD18FB72C600824413 /* Test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9D6C72AC18FB72C600824413 /* Test.txt */; };
 		9D6DF56D18F839160014622B /* jeff-down-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56718F839160014622B /* jeff-down-1.png */; };
 		9D6DF56E18F839160014622B /* jeff-down-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56818F839160014622B /* jeff-down-2.png */; };
 		9D6DF56F18F839160014622B /* jeff-down-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DF56918F839160014622B /* jeff-down-3.png */; };
@@ -227,7 +226,6 @@
 		9D88407418F6E45D00BE6E36 /* hit.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88406D18F6E45D00BE6E36 /* hit.caf */; };
 		9D88407618F6E45D00BE6E36 /* move.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88406F18F6E45D00BE6E36 /* move.caf */; };
 		9D88407718F6E45D00BE6E36 /* pickup.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407018F6E45D00BE6E36 /* pickup.caf */; };
-		9D88407918F6E45D00BE6E36 /* TileMap.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407218F6E45D00BE6E36 /* TileMap.caf */; };
 		9D88408018F6FC5100BE6E36 /* TileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9D88407F18F6FC5100BE6E36 /* TileMap.tmx */; };
 		9D8B350219034DF00060272D /* terrain.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8B350119034DF00060272D /* terrain.png */; };
 		9D958C1819146122005B6DE4 /* MissileTower.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D958C1719146122005B6DE4 /* MissileTower.m */; };
@@ -237,9 +235,6 @@
 		9DA01FAA190207760018CDB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D883DBD18F6E38D00BE6E36 /* UIKit.framework */; };
 		9DA01FB0190207760018CDB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9DA01FAE190207760018CDB3 /* InfoPlist.strings */; };
 		9DA01FB2190207760018CDB3 /* TPE_Tower_Defense_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA01FB1190207760018CDB3 /* TPE_Tower_Defense_Tests.m */; };
-		9DAFE36C18F814F000153902 /* jeff.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DAFE36A18F814F000153902 /* jeff.plist */; };
-		9DAFE36D18F814F000153902 /* jeff.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DAFE36B18F814F000153902 /* jeff.png */; };
-		9DAFE36F18F81B5B00153902 /* jeff.tps in Resources */ = {isa = PBXBuildFile; fileRef = 9DAFE36E18F81B5B00153902 /* jeff.tps */; };
 		9DAFE37918F81EBA00153902 /* jeff-left-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DAFE37118F81EBA00153902 /* jeff-left-1.png */; };
 		9DAFE37A18F81EBA00153902 /* jeff-left-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DAFE37218F81EBA00153902 /* jeff-left-2.png */; };
 		9DAFE37B18F81EBA00153902 /* jeff-left-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DAFE37318F81EBA00153902 /* jeff-left-3.png */; };
@@ -266,9 +261,6 @@
 		9DF18E2D18FF779E00E25903 /* trainjeff-right-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF18E2918FF779E00E25903 /* trainjeff-right-2.png */; };
 		9DF18E2E18FF779E00E25903 /* trainjeff-right-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF18E2A18FF779E00E25903 /* trainjeff-right-3.png */; };
 		9DF18E2F18FF779E00E25903 /* trainjeff-right-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF18E2B18FF779E00E25903 /* trainjeff-right-4.png */; };
-		9DF18E3318FF77AA00E25903 /* trainjeff.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DF18E3018FF77AA00E25903 /* trainjeff.plist */; };
-		9DF18E3418FF77AA00E25903 /* trainjeff.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF18E3118FF77AA00E25903 /* trainjeff.png */; };
-		9DF18E3518FF77AA00E25903 /* trainjeff.tps in Resources */ = {isa = PBXBuildFile; fileRef = 9DF18E3218FF77AA00E25903 /* trainjeff.tps */; };
 		9DF18E4018FF79BC00E25903 /* trainjeff-down-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF18E3618FF79BC00E25903 /* trainjeff-down-1.png */; };
 		9DF18E4118FF79BC00E25903 /* trainjeff-down-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF18E3718FF79BC00E25903 /* trainjeff-down-2.png */; };
 		9DF18E4218FF79BC00E25903 /* trainjeff-down-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF18E3818FF79BC00E25903 /* trainjeff-down-3.png */; };
@@ -287,6 +279,7 @@
 		9DF8089918F847EA001CBB82 /* jeff-fall-right-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8089318F847EA001CBB82 /* jeff-fall-right-3.png */; };
 		9DF8089B18F84ABF001CBB82 /* splash_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8089A18F84ABF001CBB82 /* splash_screen.png */; };
 		9DF8089D18F84CAA001CBB82 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8089C18F84CAA001CBB82 /* Images.xcassets */; };
+		D1CF7D341952161700B6D616 /* shot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1CF7D331952161700B6D616 /* shot.mp3 */; };
 		D1CF91931951FBEA003EE4AC /* greendale.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1CF91901951FBEA003EE4AC /* greendale.plist */; };
 		D1CF91941951FBEA003EE4AC /* greendale.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CF91911951FBEA003EE4AC /* greendale.png */; };
 		D1CF91951951FBEA003EE4AC /* greendale.tps in Resources */ = {isa = PBXBuildFile; fileRef = D1CF91921951FBEA003EE4AC /* greendale.tps */; };
@@ -312,7 +305,6 @@
 /* Begin PBXFileReference section */
 		9D0FCD2E18F822EB002BF610 /* LevelMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LevelMusic.mp3; sourceTree = "<group>"; };
 		9D0FCD3018F823B4002BF610 /* IntroMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IntroMusic.mp3; sourceTree = "<group>"; };
-		9D6C72AC18FB72C600824413 /* Test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Test.txt; sourceTree = "<group>"; };
 		9D6DF56718F839160014622B /* jeff-down-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-down-1.png"; sourceTree = "<group>"; };
 		9D6DF56818F839160014622B /* jeff-down-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-down-2.png"; sourceTree = "<group>"; };
 		9D6DF56918F839160014622B /* jeff-down-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-down-3.png"; sourceTree = "<group>"; };
@@ -753,7 +745,6 @@
 		9D88406D18F6E45D00BE6E36 /* hit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hit.caf; sourceTree = "<group>"; };
 		9D88406F18F6E45D00BE6E36 /* move.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = move.caf; sourceTree = "<group>"; };
 		9D88407018F6E45D00BE6E36 /* pickup.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pickup.caf; sourceTree = "<group>"; };
-		9D88407218F6E45D00BE6E36 /* TileMap.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TileMap.caf; sourceTree = "<group>"; };
 		9D88407F18F6FC5100BE6E36 /* TileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TileMap.tmx; sourceTree = "<group>"; };
 		9D8B350119034DF00060272D /* terrain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = terrain.png; sourceTree = "<group>"; };
 		9D958C1619146122005B6DE4 /* MissileTower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MissileTower.h; path = Classes/MissileTower.h; sourceTree = "<group>"; };
@@ -765,9 +756,6 @@
 		9DA01FAF190207760018CDB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9DA01FB1190207760018CDB3 /* TPE_Tower_Defense_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPE_Tower_Defense_Tests.m; sourceTree = "<group>"; };
 		9DA01FB3190207760018CDB3 /* TPE Tower Defense Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TPE Tower Defense Tests-Prefix.pch"; sourceTree = "<group>"; };
-		9DAFE36A18F814F000153902 /* jeff.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = jeff.plist; sourceTree = "<group>"; };
-		9DAFE36B18F814F000153902 /* jeff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jeff.png; sourceTree = "<group>"; };
-		9DAFE36E18F81B5B00153902 /* jeff.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = jeff.tps; sourceTree = "<group>"; };
 		9DAFE37118F81EBA00153902 /* jeff-left-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-left-1.png"; sourceTree = "<group>"; };
 		9DAFE37218F81EBA00153902 /* jeff-left-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-left-2.png"; sourceTree = "<group>"; };
 		9DAFE37318F81EBA00153902 /* jeff-left-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-left-3.png"; sourceTree = "<group>"; };
@@ -796,9 +784,6 @@
 		9DF18E2918FF779E00E25903 /* trainjeff-right-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-right-2.png"; sourceTree = "<group>"; };
 		9DF18E2A18FF779E00E25903 /* trainjeff-right-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-right-3.png"; sourceTree = "<group>"; };
 		9DF18E2B18FF779E00E25903 /* trainjeff-right-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-right-4.png"; sourceTree = "<group>"; };
-		9DF18E3018FF77AA00E25903 /* trainjeff.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = trainjeff.plist; sourceTree = "<group>"; };
-		9DF18E3118FF77AA00E25903 /* trainjeff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trainjeff.png; sourceTree = "<group>"; };
-		9DF18E3218FF77AA00E25903 /* trainjeff.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = trainjeff.tps; sourceTree = "<group>"; };
 		9DF18E3618FF79BC00E25903 /* trainjeff-down-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-down-1.png"; sourceTree = "<group>"; };
 		9DF18E3718FF79BC00E25903 /* trainjeff-down-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-down-2.png"; sourceTree = "<group>"; };
 		9DF18E3818FF79BC00E25903 /* trainjeff-down-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trainjeff-down-3.png"; sourceTree = "<group>"; };
@@ -817,6 +802,7 @@
 		9DF8089318F847EA001CBB82 /* jeff-fall-right-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jeff-fall-right-3.png"; sourceTree = "<group>"; };
 		9DF8089A18F84ABF001CBB82 /* splash_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash_screen.png; path = ../Resources/splash_screen.png; sourceTree = "<group>"; };
 		9DF8089C18F84CAA001CBB82 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D1CF7D331952161700B6D616 /* shot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shot.mp3; sourceTree = "<group>"; };
 		D1CF91901951FBEA003EE4AC /* greendale.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = greendale.plist; sourceTree = "<group>"; };
 		D1CF91911951FBEA003EE4AC /* greendale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greendale.png; sourceTree = "<group>"; };
 		D1CF91921951FBEA003EE4AC /* greendale.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = greendale.tps; sourceTree = "<group>"; };
@@ -1756,7 +1742,6 @@
 		9D88405A18F6E39000BE6E36 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				9D6C72AC18FB72C600824413 /* Test.txt */,
 				9D88405B18F6E39000BE6E36 /* AppDelegate.h */,
 				9D88405C18F6E39000BE6E36 /* AppDelegate.m */,
 				9D88405E18F6E39000BE6E36 /* HelloWorldScene.h */,
@@ -1780,11 +1765,9 @@
 				D1CF91911951FBEA003EE4AC /* greendale.png */,
 				D1CF91921951FBEA003EE4AC /* greendale.tps */,
 				9D6DF56418F838A20014622B /* Music */,
-				9DB23CCC190202B200455CE4 /* Train Jeff */,
 				9DB23CD01902031400455CE4 /* Splash Screen */,
 				9D6DF56618F838D40014622B /* HUD */,
 				9D6DF56518F838B90014622B /* Más */,
-				9DB23CCD190202BE00455CE4 /* Jeff */,
 				9DB23CCE190202D200455CE4 /* Map */,
 				9DB23CCF190202E300455CE4 /* Sounds */,
 			);
@@ -1859,26 +1842,6 @@
 			path = Resources/RawSprites;
 			sourceTree = "<group>";
 		};
-		9DB23CCC190202B200455CE4 /* Train Jeff */ = {
-			isa = PBXGroup;
-			children = (
-				9DF18E3018FF77AA00E25903 /* trainjeff.plist */,
-				9DF18E3118FF77AA00E25903 /* trainjeff.png */,
-				9DF18E3218FF77AA00E25903 /* trainjeff.tps */,
-			);
-			name = "Train Jeff";
-			sourceTree = "<group>";
-		};
-		9DB23CCD190202BE00455CE4 /* Jeff */ = {
-			isa = PBXGroup;
-			children = (
-				9DAFE36E18F81B5B00153902 /* jeff.tps */,
-				9DAFE36A18F814F000153902 /* jeff.plist */,
-				9DAFE36B18F814F000153902 /* jeff.png */,
-			);
-			name = Jeff;
-			sourceTree = "<group>";
-		};
 		9DB23CCE190202D200455CE4 /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -1893,8 +1856,8 @@
 			children = (
 				9D88406D18F6E45D00BE6E36 /* hit.caf */,
 				9D88406F18F6E45D00BE6E36 /* move.caf */,
+				D1CF7D331952161700B6D616 /* shot.mp3 */,
 				9D88407018F6E45D00BE6E36 /* pickup.caf */,
-				9D88407218F6E45D00BE6E36 /* TileMap.caf */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -2012,11 +1975,8 @@
 				9D883DEB18F6E38D00BE6E36 /* Icon-Small@2x.png in Resources */,
 				9D883DDD18F6E38D00BE6E36 /* Icon-72@2x.png in Resources */,
 				9DF18E4718FF79BC00E25903 /* trainjeff-up-1.png in Resources */,
-				9DAFE36D18F814F000153902 /* jeff.png in Resources */,
-				9DAFE36C18F814F000153902 /* jeff.plist in Resources */,
 				9DF18E4918FF79BC00E25903 /* trainjeff-up-3.png in Resources */,
 				9D6DF57018F839160014622B /* jeff-up-1.png in Resources */,
-				9D6C72AD18FB72C600824413 /* Test.txt in Resources */,
 				9D883DCE18F6E38D00BE6E36 /* Default.png in Resources */,
 				9DB23CC61902013B00455CE4 /* trainjeff-fall-left-1.png in Resources */,
 				9D883DD718F6E38D00BE6E36 /* Icon.png in Resources */,
@@ -2027,12 +1987,11 @@
 				9DAFE37F18F81EBA00153902 /* jeff-right-3.png in Resources */,
 				9DF18E4118FF79BC00E25903 /* trainjeff-down-2.png in Resources */,
 				9DF18E4518FF79BC00E25903 /* trainjeff-left-3.png in Resources */,
-				9DAFE36F18F81B5B00153902 /* jeff.tps in Resources */,
 				9DAFE37918F81EBA00153902 /* jeff-left-1.png in Resources */,
 				9DE71F1F18F789C6007CC645 /* icon-tower-1-disabled.png in Resources */,
 				9D883DD418F6E38D00BE6E36 /* Default-Landscape~ipad.png in Resources */,
+				D1CF7D341952161700B6D616 /* shot.mp3 in Resources */,
 				9DF18E4818FF79BC00E25903 /* trainjeff-up-2.png in Resources */,
-				9D88407918F6E45D00BE6E36 /* TileMap.caf in Resources */,
 				9D883DE918F6E38D00BE6E36 /* Icon-Small.png in Resources */,
 				9D0FCD3118F823B4002BF610 /* IntroMusic.mp3 in Resources */,
 				9D883DE718F6E38D00BE6E36 /* Icon-Small-50.png in Resources */,
@@ -2041,9 +2000,7 @@
 				9D883FD018F6E39000BE6E36 /* LICENSE_Kazmath.txt in Resources */,
 				9DAFE38018F81EBA00153902 /* jeff-right-4.png in Resources */,
 				9D883DDB18F6E38D00BE6E36 /* Icon-72.png in Resources */,
-				9DF18E3518FF77AA00E25903 /* trainjeff.tps in Resources */,
 				9DAFE37B18F81EBA00153902 /* jeff-left-3.png in Resources */,
-				9DF18E3318FF77AA00E25903 /* trainjeff.plist in Resources */,
 				9DAFE37C18F81EBA00153902 /* jeff-left-4.png in Resources */,
 				9D883F2918F6E38F00BE6E36 /* LICENSE_cocos2d.txt in Resources */,
 				9D883DD218F6E38D00BE6E36 /* Default-568h@2x.png in Resources */,
@@ -2070,7 +2027,6 @@
 				9D88407718F6E45D00BE6E36 /* pickup.caf in Resources */,
 				9DAFE37A18F81EBA00153902 /* jeff-left-2.png in Resources */,
 				9DE71F2218F789C6007CC645 /* icon-tower-2-disabled.png in Resources */,
-				9DF18E3418FF77AA00E25903 /* trainjeff.png in Resources */,
 				9DCE6DDD1902FD15005D9ECF /* DayBreak.mp3 in Resources */,
 				9DF18E2D18FF779E00E25903 /* trainjeff-right-2.png in Resources */,
 				9D883DEF18F6E38D00BE6E36 /* Icon-Spotlight-iOS7@2x.png in Resources */,

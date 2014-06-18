@@ -33,6 +33,7 @@
     NSString * currentCharacterName;
     int waveCount;
     int totalEnemyCount;
+    OALSimpleAudio * bgmusic;
 }
 
 @synthesize towers;
@@ -65,7 +66,7 @@
     towersGroup = [_tileMap objectGroupNamed:@"Towers"];
     NSAssert(towersGroup != nil, @"tile map has no objects Towers layer");
     // Música de fondo
-    OALSimpleAudio * bgmusic = [OALSimpleAudio sharedInstance];
+    bgmusic = [OALSimpleAudio sharedInstance];
     [bgmusic playBg:@"LevelMusic.mp3" loop:TRUE];
     buybutton1selected = NO;
     buybutton2selected = NO;
@@ -215,7 +216,7 @@
 - (void)lostGame
 {
     UIAlertView * alert = [[UIAlertView alloc]
-                           initWithTitle:@"Perdiste"
+                           initWithTitle:@"Perdiste 😭"
                            message: [NSString stringWithFormat:@"Puntaje: %d",score]
                            delegate:nil
                            cancelButtonTitle:@"Continuar"
@@ -419,7 +420,7 @@
                 currentTower.isShooting = YES;
                 long auxHP = [d[@"characterHP"] integerValue];
                 auxHP -= [currentTower getDamage];
-                [self playAudioEffectNamed:@"move.caf"];
+                [bgmusic playEffect:@"shot.mp3" volume:0.1f pitch:1.0f pan:0 loop:NO];
                 [d setObject:[NSString stringWithFormat:@"%ld",auxHP] forKey:@"characterHP"];
                 if(auxHP <= 0) {
                     [[d objectForKey:@"characterSprite"] removeFromParentAndCleanup:YES];
@@ -569,7 +570,7 @@
 - (void)wonGame
 {
     UIAlertView * alert = [[UIAlertView alloc]
-                               initWithTitle:@"Ganaste!"
+                               initWithTitle:@"¡Ganaste! 😃"
                                message: [NSString stringWithFormat:@"Puntaje: %d",score]
                                delegate:nil
                                cancelButtonTitle:@"Continuar"
