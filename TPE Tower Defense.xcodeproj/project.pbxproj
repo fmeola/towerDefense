@@ -283,6 +283,7 @@
 		D1CF91931951FBEA003EE4AC /* greendale.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1CF91901951FBEA003EE4AC /* greendale.plist */; };
 		D1CF91941951FBEA003EE4AC /* greendale.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CF91911951FBEA003EE4AC /* greendale.png */; };
 		D1CF91951951FBEA003EE4AC /* greendale.tps in Resources */ = {isa = PBXBuildFile; fileRef = D1CF91921951FBEA003EE4AC /* greendale.tps */; };
+		D1ECF75719525379004255E1 /* Tower.png in Resources */ = {isa = PBXBuildFile; fileRef = D1ECF75619525379004255E1 /* Tower.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -806,6 +807,7 @@
 		D1CF91901951FBEA003EE4AC /* greendale.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = greendale.plist; sourceTree = "<group>"; };
 		D1CF91911951FBEA003EE4AC /* greendale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greendale.png; sourceTree = "<group>"; };
 		D1CF91921951FBEA003EE4AC /* greendale.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = greendale.tps; sourceTree = "<group>"; };
+		D1ECF75619525379004255E1 /* Tower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tower.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -853,6 +855,7 @@
 		9D6DF56518F838B90014622B /* Más */ = {
 			isa = PBXGroup;
 			children = (
+				D1ECF75619525379004255E1 /* Tower.png */,
 				9D958C191914628A005B6DE4 /* Missile.png */,
 				9DEB63C01913F20C00E7088D /* Gattling.png */,
 			);
@@ -1980,6 +1983,7 @@
 				9D883DCE18F6E38D00BE6E36 /* Default.png in Resources */,
 				9DB23CC61902013B00455CE4 /* trainjeff-fall-left-1.png in Resources */,
 				9D883DD718F6E38D00BE6E36 /* Icon.png in Resources */,
+				D1ECF75719525379004255E1 /* Tower.png in Resources */,
 				9DF8089718F847EA001CBB82 /* jeff-fall-right-1.png in Resources */,
 				9D79F40A18FA2EEF00E843D9 /* community-logo.png in Resources */,
 				9DAFE37E18F81EBA00153902 /* jeff-right-2.png in Resources */,
