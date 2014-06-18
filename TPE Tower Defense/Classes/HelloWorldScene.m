@@ -30,6 +30,8 @@
     NSDictionary * startPoint;
     int count;
     int deadCount;
+    NSString * currentCharacterName;
+    int waveCount;
 }
 
 @synthesize towers;
@@ -69,14 +71,16 @@
     maxHP = 1000;
     count = 1;
     deadCount = 0;
+    currentCharacterName = @"jeff";
     placedTowers = [NSMutableSet setWithCapacity:100];
     currentEnemies = [NSMutableSet setWithCapacity:100];
     [self createBackButton];
     [self createMoneyLabelWithInitialMoney:100];
-    [self createWavesLabel];
+    [self createTriesLabel];
     [self createScoreLabelWithInitialScore:100000];
     [self createTowerButtons];
-    [self initSpriteSheetWithCharacterName:@"jeff"];
+    waveCount = 1;
+    [self initSpriteSheetWithCharacterName:currentCharacterName];
     return self;
 }
 
@@ -184,14 +188,14 @@
     scoreLabel.position = ccp(0.50f, 0.05f);
 }
 
-- (void)createWavesLabel
+- (void)createTriesLabel
 {
-    CCSprite * waveBg = [CCSprite spriteWithImageNamed:@"wave_bg.png"];
-    waveBg.positionType = CCPositionTypeNormalized;
-    waveBg.position = ccp(0.95f, 0.92f);
-    [self addChild:waveBg z:5];
-    triesCount = 1;
-    [self defaultWavesLabel];
+    CCSprite * triesBg = [CCSprite spriteWithImageNamed:@"wave_bg.png"];
+    triesBg.positionType = CCPositionTypeNormalized;
+    triesBg.position = ccp(0.95f, 0.92f);
+    [self addChild:triesBg z:5];
+    triesCount = 0;
+    [self defaultTriesLabel];
     [self addChild:triesLabel z:6];
 }
 
@@ -199,7 +203,7 @@
 {
     triesCount += diff;
     [self removeChild:triesLabel];
-    [self defaultWavesLabel];
+    [self defaultTriesLabel];
     [self addChild:triesLabel z:6];
     if (triesCount == MAX_TRIES_COUNT) {
         [self lostGame];
@@ -218,7 +222,7 @@
     [self onBackClicked:self];
 }
 
-- (void)defaultWavesLabel
+- (void)defaultTriesLabel
 {
     triesString = [NSString stringWithFormat:@"%d / %d",triesCount, MAX_TRIES_COUNT];
     triesLabel = [CCLabelTTF labelWithString: triesString fontName:@"Helvetica-Bold" fontSize:16.0f];
@@ -345,7 +349,7 @@
     NSMutableDictionary * characterMutableDictionary = [NSMutableDictionary dictionary];
     [characterMutableDictionary setObject:newCharacter forKey:@"characterSprite"];
     [characterMutableDictionary setObject:startPoint forKey:@"characterPoint"];
-    [characterMutableDictionary setObject:@"jeff" forKey:@"characterName"];
+    [characterMutableDictionary setObject:currentCharacterName forKey:@"characterName"];
     [characterMutableDictionary setObject:[NSString stringWithFormat:@"%d",maxHP] forKey:@"characterHP"];
     [characterMutableDictionary setObject:[NSString stringWithFormat:@"%d",count] forKey:@"id"];
     [currentEnemies addObject:characterMutableDictionary];
@@ -521,14 +525,24 @@
 {
     [self characterIsNearATower];
     [self drawHealthBar];
+    if(WAVE_ENEMY_COUNT == deadCount){
+        if(waveCount == LEVEL_WAVE_COUNT) {
+            [self wonGame];
+        } else {
+            // Comienza la siguiente oleada.
+            waveCount++;
+            deadCount = 0;
+            count = 0;
+            currentEnemies = [NSMutableSet setWithCapacity:100];
+            [self onEnter];
+        }
+    }
 }
 
 - (void)createCharacter:(CCTime)dt
 {
     if(count <= WAVE_ENEMY_COUNT) {
-        [self createCharacterSprite:@"jeff" withPosition:startPosition];
-    } else if(WAVE_ENEMY_COUNT == deadCount){
-        [self wonGame];
+        [self createCharacterSprite:currentCharacterName withPosition:startPosition];
     }
 }
 
@@ -563,6 +577,8 @@
     [newCharacter runAction:fallAction];
     [[self getChildByName:@"spriteSheet" recursively:NO] addChild:newCharacter z:2 name:[NSString stringWithFormat:@"fall%d",deadCount]];
     deadCount++;
+    [self changeScore:100];
+    [self changeMoney:5];
 }
 
 - (void)endCharacter:(CCTime)delta
