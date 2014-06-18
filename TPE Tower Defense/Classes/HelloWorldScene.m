@@ -525,9 +525,23 @@
 
 - (void)createCharacter:(CCTime)dt
 {
-    if(count <= 10) {
+    if(count <= WAVE_ENEMY_COUNT) {
         [self createCharacterSprite:@"jeff" withPosition:startPosition];
+    } else if(WAVE_ENEMY_COUNT == deadCount){
+        [self wonGame];
     }
+}
+
+- (void)wonGame
+{
+    UIAlertView * alert = [[UIAlertView alloc]
+                               initWithTitle:@"Ganaste!"
+                               message: [NSString stringWithFormat:@"Puntaje: %d",score]
+                               delegate:nil
+                               cancelButtonTitle:@"Continuar"
+                               otherButtonTitles:nil];
+    [alert show];
+    [self onBackClicked:self];
 }
 
 - (void)createFallingCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point
