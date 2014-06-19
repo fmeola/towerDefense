@@ -6,6 +6,7 @@
 #define WAVE_ENEMY_COUNT 5
 #define LEVEL_WAVE_COUNT 2
 #define SPRITESHEET_NAME "greendale"
+#define MAX_HP 1000
 
 // -----------------------------------------------------------------------
 

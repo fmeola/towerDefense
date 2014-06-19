@@ -10,30 +10,37 @@
 
 @implementation HelloWorldScene
 {
+    // TMX
     CCTiledMapObjectGroup * objectGroup;
     CCTiledMapObjectGroup * towersGroup;
+    NSDictionary * startPoint;
+    CGPoint startPosition;
+    // Music
+    OALSimpleAudio * bgmusic;
+    // Tries Label
     NSString * triesString;
     CCLabelTTF * triesLabel;
     int triesCount;
+    // Money Label
     NSString * moneyString;
     CCLabelTTF * moneyLabel;
     int money;
+    // Score Label
     NSString * scoreString;
     CCLabelTTF * scoreLabel;
     int score;
+    // Enemies
+    NSString * currentCharacterName;
+    NSMutableSet * currentEnemies;
+    // Towers
     NSMutableSet * placedTowers;
     BOOL buybutton1selected;
     BOOL buybutton2selected;
-    CGPoint startPosition;
-    int maxHP;
-    NSMutableSet * currentEnemies;
-    NSDictionary * startPoint;
+    // Counters
     int count;
-    int deadCount;
-    NSString * currentCharacterName;
     int waveCount;
+    int deadCount;
     int totalEnemyCount;
-    OALSimpleAudio * bgmusic;
 }
 
 @synthesize towers;
@@ -67,7 +74,6 @@
     [bgmusic playBg:@"LevelMusic.mp3" loop:TRUE];
     buybutton1selected = NO;
     buybutton2selected = NO;
-    maxHP = 1000;
     waveCount = 1;
     count = 1;
     deadCount = 0;
@@ -355,7 +361,7 @@
     [characterMutableDictionary setObject:newCharacter forKey:@"characterSprite"];
     [characterMutableDictionary setObject:startPoint forKey:@"characterPoint"];
     [characterMutableDictionary setObject:currentCharacterName forKey:@"characterName"];
-    [characterMutableDictionary setObject:[NSString stringWithFormat:@"%d",maxHP] forKey:@"characterHP"];
+    [characterMutableDictionary setObject:[NSString stringWithFormat:@"%d",MAX_HP] forKey:@"characterHP"];
     [characterMutableDictionary setObject:[NSString stringWithFormat:@"%d",count] forKey:@"id"];
     [currentEnemies addObject:characterMutableDictionary];
     count++;
@@ -409,7 +415,7 @@
 - (void)createFallingCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point
 {
     NSMutableArray * walkAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=SPRITE_SIZE; i++) {
+    for (int i = 1; i <= SPRITE_SIZE; i++) {
         [walkAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
           [NSString stringWithFormat:@"%@-fall-%@-%d.png",characterName,startPoint[@"direction"],i]]];
@@ -487,7 +493,6 @@
     [placedTowers addObject:towerBase];
 }
 
-
 - (BOOL)checkCircleCollision:(CGPoint)center1 ofRadius:(float)radius1 withCircleCentered:(CGPoint)center2 ofRadius:(float)radius2 {
     float distance = sqrt(pow((center2.x-center1.x), 2) + pow((center2.y-center1.y), 2));
     return distance < (radius1 + radius2);
@@ -501,8 +506,7 @@
             Tower * currentTower = [t valueForKey:@"towerInstance"];
             CCSprite * s = d[@"characterSprite"];
             if([self checkCircleCollision:s.position ofRadius:[s contentSize].width/4  withCircleCentered:ccp([t[@"x"] floatValue],[t[@"y"] floatValue]) ofRadius:[currentTower getAttackRange]] && !currentTower.isShooting) {
-                //                [currentTower towerSprite].rotation =
-                //                    135 + CC_RADIANS_TO_DEGREES(atanf(s.position.x / s.position.y));
+                // [currentTower towerSprite].rotation = (-1) * CC_RADIANS_TO_DEGREES(atanf(s.position.x / s.position.y));
                 currentTower.isShooting = YES;
                 long auxHP = [d[@"characterHP"] integerValue];
                 auxHP -= [currentTower getDamage];
@@ -534,25 +538,12 @@
 {
     [self characterIsNearATower];
     [self drawHealthBar];
-    if(WAVE_ENEMY_COUNT == deadCount){
-        if(waveCount == LEVEL_WAVE_COUNT) {
-            [self wonGame];
-        }
+    if (waveCount > LEVEL_WAVE_COUNT) {
+        [self wonGame];
     }
     CCLOG(@"%d",totalEnemyCount);
     if(totalEnemyCount == 0) {
-        // Comienza la siguiente oleada.
-        totalEnemyCount = WAVE_ENEMY_COUNT;
-        waveCount++;
-        deadCount = 0;
-        count = 1;
-        for (NSMutableDictionary * d in currentEnemies) {
-            if ([d objectForKey:@"characterSprite"] != nil){
-                [[d objectForKey:@"characterSprite"] removeFromParentAndCleanup:YES];
-            }
-        }
-        [currentEnemies removeAllObjects];
-        currentCharacterName = @"trainjeff";
+        [self nextWave];
     }
 }
 
@@ -607,6 +598,26 @@
     for (CCNode * r in s) {
         [r removeFromParentAndCleanup:YES];
     }
+}
+
+// -----------------------------------------------------------------------
+#pragma mark - Waves
+// -----------------------------------------------------------------------
+
+- (void)nextWave
+{
+    // Comienza la siguiente oleada.
+    totalEnemyCount = WAVE_ENEMY_COUNT;
+    waveCount++;
+    deadCount = 0;
+    count = 1;
+    for (NSMutableDictionary * d in currentEnemies) {
+        if ([d objectForKey:@"characterSprite"] != nil){
+            [[d objectForKey:@"characterSprite"] removeFromParentAndCleanup:YES];
+        }
+    }
+    [currentEnemies removeAllObjects];
+    currentCharacterName = @"trainjeff";
 }
 
 // -----------------------------------------------------------------------
