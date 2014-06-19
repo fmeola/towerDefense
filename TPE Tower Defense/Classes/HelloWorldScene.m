@@ -536,6 +536,10 @@
                 long auxHP = [d[@"characterHP"] integerValue];
                 auxHP -= [currentTower getDamage];
                 [bgmusic playEffect:@"shot.mp3" volume:0.1f pitch:1.0f pan:0 loop:NO];
+                CCSprite * bullet = [CCSprite spriteWithImageNamed:@"BulletSprite.png"];
+                [self addChild: bullet];
+                bullet.position =  currentTower.towerSprite.position;
+                [bullet runAction: [CCActionSequence actionOne:[CCActionMoveTo actionWithDuration:0.1 position:s.position] two:[CCActionRemove action]]];
                 [d setObject:[NSString stringWithFormat:@"%ld",auxHP] forKey:@"characterHP"];
                 if(auxHP <= 0) {
                     [[d objectForKey:@"characterSprite"] removeFromParentAndCleanup:YES];

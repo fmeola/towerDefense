@@ -278,6 +278,7 @@
 		9DF8089B18F84ABF001CBB82 /* splash_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8089A18F84ABF001CBB82 /* splash_screen.png */; };
 		9DF8089D18F84CAA001CBB82 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DF8089C18F84CAA001CBB82 /* Images.xcassets */; };
 		D1800F8E195317CE00F781AA /* Tower2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1800F8D195317CE00F781AA /* Tower2.png */; };
+		D1800F981953277F00F781AA /* BulletSprite.png in Resources */ = {isa = PBXBuildFile; fileRef = D1800F971953277F00F781AA /* BulletSprite.png */; };
 		D1CF7D341952161700B6D616 /* shot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1CF7D331952161700B6D616 /* shot.mp3 */; };
 		D1CF91931951FBEA003EE4AC /* greendale.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1CF91901951FBEA003EE4AC /* greendale.plist */; };
 		D1CF91941951FBEA003EE4AC /* greendale.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CF91911951FBEA003EE4AC /* greendale.png */; };
@@ -801,6 +802,7 @@
 		9DF8089A18F84ABF001CBB82 /* splash_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash_screen.png; path = ../Resources/splash_screen.png; sourceTree = "<group>"; };
 		9DF8089C18F84CAA001CBB82 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D1800F8D195317CE00F781AA /* Tower2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tower2.png; sourceTree = "<group>"; };
+		D1800F971953277F00F781AA /* BulletSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BulletSprite.png; sourceTree = "<group>"; };
 		D1CF7D331952161700B6D616 /* shot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shot.mp3; sourceTree = "<group>"; };
 		D1CF91901951FBEA003EE4AC /* greendale.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = greendale.plist; sourceTree = "<group>"; };
 		D1CF91911951FBEA003EE4AC /* greendale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greendale.png; sourceTree = "<group>"; };
@@ -853,6 +855,7 @@
 		9D6DF56518F838B90014622B /* Más */ = {
 			isa = PBXGroup;
 			children = (
+				D1800F971953277F00F781AA /* BulletSprite.png */,
 				D1ECF75619525379004255E1 /* Tower.png */,
 				D1800F8D195317CE00F781AA /* Tower2.png */,
 			);
@@ -2005,6 +2008,7 @@
 				9DAFE37B18F81EBA00153902 /* jeff-left-3.png in Resources */,
 				9DAFE37C18F81EBA00153902 /* jeff-left-4.png in Resources */,
 				9D883F2918F6E38F00BE6E36 /* LICENSE_cocos2d.txt in Resources */,
+				D1800F981953277F00F781AA /* BulletSprite.png in Resources */,
 				9D883DD218F6E38D00BE6E36 /* Default-568h@2x.png in Resources */,
 				9DF18E4218FF79BC00E25903 /* trainjeff-down-3.png in Resources */,
 				9DF8089918F847EA001CBB82 /* jeff-fall-right-3.png in Resources */,
