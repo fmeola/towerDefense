@@ -14,7 +14,6 @@
     CCTiledMapObjectGroup * objectGroup;
     CCTiledMapObjectGroup * towersGroup;
     NSDictionary * startPoint;
-    CGPoint startPosition;
     // Music
     OALSimpleAudio * bgmusic;
     // Tries Label
@@ -67,7 +66,6 @@
     objectGroup = [_tileMap objectGroupNamed:@"Path"];
     NSAssert(objectGroup != nil, @"tile map has no Path object layer");
     startPoint = [objectGroup objectNamed:_tileMap.properties[@"startPosition"]];
-    startPosition = ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue]);
     towersGroup = [_tileMap objectGroupNamed:@"Towers"];
     NSAssert(towersGroup != nil, @"tile map has no objects Towers layer");
     bgmusic = [OALSimpleAudio sharedInstance];
@@ -124,6 +122,8 @@
 {
     if([self anyBuyButtonIsSelected])
         [self tryAddTower:touch];
+    else
+        [self tryRemoveTower:touch];
 }
 
 // -----------------------------------------------------------------------
@@ -342,7 +342,7 @@
 - (void)createCharacterSprite:(NSString *)characterName withPosition:(CGPoint)point
 {
     NSMutableArray * walkAnimFrames = [NSMutableArray array];
-    for (int i=1; i<=SPRITE_SIZE; i++) {
+    for (int i = 1; i <= SPRITE_SIZE; i++) {
         [walkAnimFrames addObject:
          [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
           [NSString stringWithFormat:@"%@-%@-%d.png",characterName,startPoint[@"direction"],i]]];
@@ -463,7 +463,6 @@
     CGPoint location = [touch locationInView: [touch view]];
     NSInteger x = [self tileFromPosition:location].x * _tileMap.tileSize.width;
     NSInteger y = [self tileFromPosition:location].y * _tileMap.tileSize.height;
-    NSLog(@"x:%ld, y:%ld",(long)x,(long)y);
     for(NSDictionary * tb in [towersGroup objects]) {
         NSInteger towerX = [tb[@"x"] intValue];
         NSInteger towerY = [tb[@"y"] intValue];
@@ -482,6 +481,28 @@
                 button.selected = NO;
             }
         }
+    }
+}
+
+- (void)tryRemoveTower:(UITouch *)touch
+{
+    CGPoint location = [touch locationInView: [touch view]];
+    NSInteger x = [self tileFromPosition:location].x * _tileMap.tileSize.width;
+    NSInteger y = [self tileFromPosition:location].y * _tileMap.tileSize.height;
+    NSMutableSet * toRemove = [NSMutableSet setWithCapacity:10];
+    for (NSDictionary * t in placedTowers) {
+        Tower * currentTower = [t valueForKey:@"towerInstance"];
+        int tx = currentTower.towerSprite.position.x - 20;
+        int ty = currentTower.towerSprite.position.y - 20;
+        if(x == tx && y == ty) {
+            [toRemove addObject:t];
+            [[currentTower towerSprite] removeFromParentAndCleanup:YES];
+            [currentTower removeFromParentAndCleanup:YES];
+            
+        }
+    }
+    for (NSDictionary * tr in toRemove) {
+        [placedTowers removeObject:tr];
     }
 }
 
@@ -541,20 +562,21 @@
     if (waveCount > LEVEL_WAVE_COUNT) {
         [self wonGame];
     }
-    CCLOG(@"%d",totalEnemyCount);
     if(totalEnemyCount == 0) {
-        [self nextWave];
+        [self nextWaveWith:@"trainjeff"];
     }
 }
 
 - (void)createCharacter:(CCTime)delta
 {
     if(count <= WAVE_ENEMY_COUNT) {
-        [self createCharacterSprite:currentCharacterName withPosition:startPosition];
+        [self createCharacterSprite:currentCharacterName withPosition:
+         ccp([startPoint[@"x"] integerValue],[startPoint[@"y"] integerValue])
+         ];
     }
 }
 
-- (void)moveCharacter:(CCTime)dt
+- (void)moveCharacter:(CCTime)delta
 {
     for (NSMutableDictionary * d in currentEnemies) {
         NSDictionary * nextPoint = [objectGroup objectNamed:d[@"characterPoint"][@"next"]];
@@ -562,7 +584,9 @@
         [self updateCharacterSprite:d];
         CCSprite * s = d[@"characterSprite"];
         if([d[@"characterPoint"][@"next"] isEqual: @"p0"]) {
-            // Un soldado llegó al final del camino con vida.
+            /*
+             * Enemigos que cruzaron todo el mapa.
+             */
             [self playAudioEffectNamed:@"pickup.caf"];
             [self increaseTriesCount:1];
             [s stopAction:[s getActionByTag:@"walk"]];
@@ -575,7 +599,7 @@
             }
         } else {
             CGPoint destinyLocation = ccp([d[@"characterPoint"][@"x"] floatValue],[d[@"characterPoint"][@"y"] floatValue]);
-            _moveAction = [CCActionMoveTo actionWithDuration:dt position:destinyLocation];
+            _moveAction = [CCActionMoveTo actionWithDuration:delta position:destinyLocation];
             [s runAction: _moveAction];
         }
     }
@@ -583,6 +607,9 @@
 
 - (void)endCharacter:(CCTime)delta
 {
+    /*
+     * Para los enemigos que mató el jugador.
+     */
     NSMutableSet * s = [NSMutableSet setWithCapacity:100];
     CCNode * a = [self getChildByName:@"spriteSheet" recursively:NO];
     for (int i = 0; i <= WAVE_ENEMY_COUNT + 1; i++) {
@@ -604,9 +631,8 @@
 #pragma mark - Waves
 // -----------------------------------------------------------------------
 
-- (void)nextWave
+- (void)nextWaveWith:(NSString *)characterName
 {
-    // Comienza la siguiente oleada.
     totalEnemyCount = WAVE_ENEMY_COUNT;
     waveCount++;
     deadCount = 0;
@@ -617,7 +643,7 @@
         }
     }
     [currentEnemies removeAllObjects];
-    currentCharacterName = @"trainjeff";
+    currentCharacterName = characterName;
 }
 
 // -----------------------------------------------------------------------
