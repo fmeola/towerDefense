@@ -527,7 +527,11 @@
             Tower * currentTower = [t valueForKey:@"towerInstance"];
             CCSprite * s = d[@"characterSprite"];
             if([self checkCircleCollision:s.position ofRadius:[s contentSize].width/4  withCircleCentered:ccp([t[@"x"] floatValue],[t[@"y"] floatValue]) ofRadius:[currentTower getAttackRange]] && !currentTower.isShooting) {
-                // [currentTower towerSprite].rotation = (-1) * CC_RADIANS_TO_DEGREES(atanf(s.position.x / s.position.y));
+                int ctx = currentTower.towerSprite.position.x;
+                int cty = currentTower.towerSprite.position.y;
+                CGPoint aux = ccp(s.position.x-ctx,s.position.y-cty);
+                CGPoint normalized = ccpNormalize(aux);
+                [currentTower towerSprite].rotation = CC_RADIANS_TO_DEGREES(atan2(normalized.y,-normalized.x)) + 90;
                 currentTower.isShooting = YES;
                 long auxHP = [d[@"characterHP"] integerValue];
                 auxHP -= [currentTower getDamage];

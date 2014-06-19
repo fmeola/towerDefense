@@ -24,7 +24,7 @@
 
 - (NSString *)getTowerName
 {
-    return @"Gattling";
+    return @"Tower";
 }
 
 - (int)getPrice

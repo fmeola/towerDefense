@@ -4,7 +4,7 @@
 
 - (NSString *)getTowerName
 {
-    return @"Missile";
+    return @"Tower2";
 }
 
 - (int)getPrice
