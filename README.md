@@ -7,5 +7,3 @@ Inspirado en: Digital Estate Planning: The Game
 https://github.com/hawkthorne/hawkthorne-journey
 
 Franco Román Meola
-
-Todos los derechos Reservados
